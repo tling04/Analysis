@@ -1,0 +1,100 @@
+\documentclass[12pt, letter]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{bm}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}
+\usepackage{setspace}
+
+\setstretch{1.25}
+\begin{document}
+
+\section*{2.2.1}
+For any natural numbers $a, b, c$, we have $(a+b)+c=a+(b+c)$.
+\begin{proof}
+    Induct on $b$ by keeping $a$ and $c$ fixed. Consider the base case $b=0$. In this case, LHS$=(a+0)+c=a+c$ and RHS$=a+(0+c)=a+c$. Now suppose that 
+    $(a+b)+c=a+(b+c)$. We need to show that $(a+(b++))+c=a+((b++)+c)$: 
+    \begin{equation*}
+        \begin{aligned}
+            \text{LHS}=(a+(b++))+c=((a+b)++)+c=(a+b+c)++,\\
+            \text{RHS}=a+((b++)+c)=a+((b+c)++)=(a+b+c)++.
+        \end{aligned}
+    \end{equation*}
+    Thus both sides are equal to each other, and we have closed the induction.
+\end{proof}
+
+\section*{2.2.2}
+Let $a$ be a positive number. Then there exists exactly one natural number $b$ such that $b++=a$. (I'm assuming that it meant $a$ is a positive natural number.)
+\begin{proof}
+    Induct on $a$. Since $0$ is not positive, we consider the base case $a=1$. We have $b++=b+1=0+1=1$. Cancellation law tells us that $b=0$, which is unique. Now suppose that there exists exactly one natural number $b_0$ such that $b_0++=a$, we need to show that
+    there exists exactly one natural number $b$ such that $b++=a++$. By Cancellation law, we have $b=a=b_0++$. Since $b$ is the successor of $b_0$ and $b_0$ is unique, $b$ is also unique. Thus we have closed the induction.
+\end{proof}
+
+\section*{2.2.3}
+\subsection*{(a)}
+$a\geq a$.
+\begin{proof}
+    There exists a natural number $0$ such that $a+0=a$. Thus, $a\geq a$.
+\end{proof}
+\subsection*{(b)}
+If $a\geq b$ and $b\geq c$, then $a\geq c$.
+\begin{proof}
+    Since $a\geq b$, there exists a natural number $m$ such that $b+m=a$. Since $b\geq c$, there exists a natural 
+    number $n$ such that $c+n=b$. Then $c+(n+m)=(c+n)+m=b+m=a$. Therefore, $c\geq a$.
+
+    Thus, if $a\geq b$ and $b\geq c$, then $a\geq c$.
+\end{proof}
+\subsection*{(c)}
+If $a\geq b$ and $b\geq a$, then $a=b$.
+\begin{proof}
+    Since $a\geq b$, there exists a natural number $m$ such that $b+m=a$. Since $b\geq a$, there exists a natural number $n$ such that $a+n=b$. Then we have $a+n=(b+m)+n=b+(m+n)=b$. 
+    By Cancellation law, we have $m+n=0$ which leads to $m=0$, $n=0$. Thus, $a=a+0=b$. 
+
+    Thus, if $a\geq b$ and $b\geq a$, then $a=b$.
+\end{proof}
+\subsection*{(d)}
+$a\geq b$ if and only if $a+c\geq b+c$.
+\begin{proof}
+    First, we need to show that $a\geq b \Rightarrow a+c\geq b+c$. Since $a\geq b$, there exists a natural number $n$ such that 
+    $b+n=a$. Then we have $b+n+c=b+c+n=(b+c)+n=a+c$. Thus, $a+c\geq b+c$. Then, we need to show that $a+c\geq b+c\Rightarrow a\geq b$. Since $a+c\geq b+c$, there should be a natural number $n$ such 
+    that $b+c+n=b+n+c=(b+n)+c=a+c$. By Cancellation law, we have $b+n=a$. Thus, $a\geq b$. 
+
+    Thus, if $a\geq b$ and $b\geq a$, then $a=b$.
+\end{proof}
+\subsection*{(e)}
+$a<b$ if and only if $a++\leq b$.
+\begin{proof}
+    First, we need to show that $a<b\Rightarrow a++\leq b$. $a<b$ means there exists a natural number $n$ such that 
+    $a+n=b$, particularly, $a\ne b$. Then $n$ must not be zero. So $n$ is the predecessor of a natural number, denote it as $m$. Then we have $a+n=a+(m++)=(a+m)++=(a++)+m=b$. Therefore, $a++\leq b$. Then 
+    we need to show that $a++\leq b\Rightarrow a<b$. There exists a natural number $n$ such that $(a++)+n=b$. $(a++)+n=(a+n)++=a+(n++)=b$. Since $n++$ is the successor of $n$, $n++$ must not be equal to $0$.
+    If $a=b$, there will be $a+(n++)=a\Rightarrow n++=0$, contradiction. Therefore, $a\ne b$. 
+    
+    Thus, $a<b$ if and only if $a++\leq b$.
+\end{proof}
+\subsection*{(f)}
+$a<b$ if and only if $b=a+d$ for some positive number $d$.
+\begin{proof}
+    First, we need to show that $a<b\Rightarrow b=a+d$ for some positive number $d$. There exists some natural number $d$ such that
+    $a+d=b$, $a\ne b$. By Cancellation law, $d$ must not be zero. Therefore, $d$ is positive. Then, we need to show that $a+d=b$ for some positive $d\Rightarrow a<b$. We only need to prove $a\ne b$.
+    If $a=b$, we have $a+d=a=a+0$. By Cancellation law, $d=0$ which contradicts to $d$ is positive. Therefore, $a\ne b$.
+    
+    Thus, $a<b$ if and only if $b=a+d$ for some positive number $d$.
+\end{proof}
+\section*{2.2.4}
+Justify the three statements marked in the proof of Proposition 2.2.13. 
+\begin{proof}
+    
+\end{proof}
+\section*{2.2.5}
+\end{document}
