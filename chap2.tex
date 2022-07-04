@@ -93,8 +93,42 @@ $a<b$ if and only if $b=a+d$ for some positive number $d$.
 \end{proof}
 \section*{2.2.4}
 Justify the three statements marked in the proof of Proposition 2.2.13. 
+\subsection*{(a)}
+$0\leq b$ for all $b$.
 \begin{proof}
-    
+    By definition of addition, we have $0+b=b$. Thus, $0\leq b$.
+\end{proof}
+\subsection*{(b)}
+If $a>b$, then $a++>b$.
+\begin{proof}
+    By Proposition 2.2.12.e, we have $a>b\Rightarrow a\geq b++$. And by Proposition 2.2.12.d, $a+1\geq (b++)+1$ that is equivalent to 
+    $a++\geq b+2$. Since 2 is positive, by Proposition 2.2.12.f, we have $a++>b$. 
+\end{proof}
+\subsection*{(c)}
+If $a=b$, then $a++>b$.
+\begin{proof}
+    We know from Proposition 2.2.12.a that $a\geq a$, so $a\geq a=b$. And again by Proposition 2.2.12.d, we have $a++=a+1\geq b+1$. Since 1 is positive, 
+    by Proposition 2.2.12.f, $a++>b$.
+
 \end{proof}
 \section*{2.2.5}
+Proposition 2.2.14 (Strong principle of induction). Let $m_0$ be a natural number, and let $P(m)$ be a property pertaining to an arbitrary natural 
+number $m$. Suppose that for each $m\geq m_0$, we have the following implication: if $P(m')$ is true for all natural numbers $m_0\leq m'<m$, then $P(m)$ is also true.
+Then we can conclude that $P(m)$ is true for all natural numbers $m\geq m_0$.
+\begin{proof}
+    Let $Q(n)$ be the property that $P(m)$ is true for all $m_0\leq m<n$. Induct on $n$. 
+    Consider the base case $n=0$. This is vacuously true. In fact, $Q(n)$ is vacuously true for all $n \leq m_0$. So we can assume $n>m_0$ to see if the implication stands. Suppose $Q(n)$ is true, that is, $P(m)$ is true for all $m_0\leq m<n$. 
+    We want to show that $Q(n+1)$ is also true. As stated in Proposition 2.2.14, if $Q(n)$ is true, then $P(n)$ is also true. 
+    So $P(m)$ is true for all $m_0\leq m\leq n$. Hence, $P(m)$ is true for all $m_0\leq m<n+1$. ($m\leq n \Leftrightarrow m<n+1$ can be shown using prop 2.2.12.) Thus, $Q(n+1)$ is true. This closes the induction.
+\end{proof}
+\section*{2.2.6}
+Let $n$ be a natural number, and let $P(m)$ be a property pertaining to the natural numbers such that whenever $P(m++)$ is true, then $P(m)$
+is true. Suppose that $P(n)$ is also true. Prove that $P(m)$ is true for all natural numbers $m\leq n$. (Principle of backwards induction.)
+\begin{proof}
+    Apply induction to $n$. For the base case $n=0$, suppose $P(0)$ is true. In this case, $m$ can only be 0 ($m+k=0 \Rightarrow m=0,k=0$). Since $P(0)$ is true, 
+    the base case is proved. Next, suppose if $P(n)$ is true then $P(m)$ is true for all natural numbers $m\leq n$. We want to show that if $P(n++)$ is true then $P(m)$ is true for all 
+    natural numbers $m\leq n++$. $m\leq n$ means there exists a natural number $a$ such that $m+a=n++$. $a$ is either 0 or a positive number. If $a$ is 0, $m=n++$. If $a$ is positive, $m<n++$ (by prop 2.2.12.f), this is equivalent to $m\leq n$ (can be shown using prop 2.2.12.). 
+    For $m=n++$, $P(m)$ is true because of the assumption. For each $m\leq n$, $P(m)$ is also true by induction hypothesis. Therefore, $P(m)$ is true for all natural numbers $m\leq n++$. And we have closed the induction.
+\end{proof}
+In the above proofs, $n++$ and $n+1$ got mixed up because $n++=n+1$ has been illustrated on Page 26 (and the $+1$ version is a little easier). But $++$ is a more desirable expression since it stands for the successor in a general way. 
 \end{document}
