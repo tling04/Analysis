@@ -153,6 +153,75 @@ Let $m$ be a natural number. To multiply zero to $m$, we define $0\times m:=0$. 
     Thus, both sides are equal to each other. This closes the induction.
 
     Now we can use the things above to show Lemma 2.3.2. We induct on $n$ by keeping $m$ fixed. Consider the base case $n=0$. $0\times m=m\times 0=0$ by definition and the lemma we have shown above. Assume inductively $n\times m = m\times n$. We want to show that 
-    $(n++)\times m=m\times (n++)$. By definition, we have the LFS is equal to $(n++)\times m=(n\times m)+m$. By the lemma we proved above, we have the RHS is equal to $m\times(n++)=m\times n+m=n\times m+m$. So both sides are equal to each other. We have closed the induction.  
+    $(n++)\times m=m\times (n++)$. By definition, the LHS is equal to $(n++)\times m=(n\times m)+m$. By the lemma we proved above, the RHS is equal to $m\times(n++)=m\times n+m=n\times m+m$. So both sides are equal to each other. We have closed the induction.  
+\end{proof}
+\subsection*{2.3.2}
+\textbf{Lemma 2.3.3} (Positive natural numbers have no zero divisors). Let $n,m$ be natural numbers. Then $n\times m=0$ if and only if at least one of $m,n$ is equal to zero. In particular, if $n$ and $m$ are both positive, then $nm$ is also positive.
+\begin{proof}
+    Try to prove the second statement first. Assume $n,m$ are both positive natural numbers. So we can represent $n$ as $a++$ where $a$ is a natural number. Then 
+    \begin{equation*}
+        \begin{aligned}
+            nm&=(a++)\times m\\
+            &=a\times m+m.
+        \end{aligned}
+    \end{equation*}
+    Since $m$ is positive and $a\times m$ is at least 0, $nm=a\times m+m$ must be positive. In this sense, we have shown $n\times m=0\Rightarrow$ at least one of $n,m$ is zero since\\ 
+    $p\rightarrow q\equiv ~q\rightarrow ~p$. The rest part is to show at least one of $n,m$ is zero $\Rightarrow n\times m=0$. This is trivial and can be directly proved using the definition. 
+
+    Thus, $n\times m=0$ if and only if at least one of $m,n$ is equal to zero.
+\end{proof}
+\subsection*{2.3.3}
+\textbf{Proposition 2.3.5} (Multiplication is associative). For any natural numbers $a,b,c$, we have $(a\times b)\times c=a\times (b\times c)$.
+\begin{proof}
+    Fix $a,c$ and induct on $b$. Consider the base case when $b=0$. 
+    \begin{equation*}
+        \begin{aligned}
+            \text{LHS}=(a\times 0)\times c=0\times c=0,\\
+            \text{RHS}=a\times(0\times c)=a\times 0=0.
+        \end{aligned}
+    \end{equation*}
+    Thus, the base case is proved. Assume inductively $(a\times b)\times c=a\times(b\times c)$. We need to show that $(a\times(b++))\times c=a\times((b++)\times c)$.
+    \begin{equation*}
+        \begin{aligned}
+            \text{LHS}&=(a\times(b++))\times c=(a\times b+a)\times c=(a\times b)\times c+ac,\\
+            \text{RHS}&=a\times ((b++)\times c)=a\times(b\times c+c)=a\times (b\times c)+ac.
+        \end{aligned}
+    \end{equation*}
+    By induction hypothesis, $(a\times b)\times c=a\times(b\times c)$. Thus, both sides are equal to each other. This closes the induction.
+\end{proof}
+\subsection*{2.3.4}
+Prove the identity $(a+b)^2=a^2+2ab+b^2$ for all natural numbers $a,b$.
+\begin{proof}
+    Suppose $a$ is an arbitrary natural number and keep $a$ fixed. Induct on $b$. First consider the base case $b=0$. 
+    \begin{equation*}
+        \begin{aligned}
+            \text{LHS}&=(a+0)^2=a^2,\\
+            \text{RHS}&=a^2+2ab+b^2=a^2+0+0=a^2.
+        \end{aligned}
+    \end{equation*}
+    So the base case is proved. Now assume inductively $(a+b)^2=a^2+2ab+b^2$. We need to show that $(a+(b++))^2=a^2+2a(b++)+(b++)^2$.
+    \begin{equation*}
+        \begin{aligned}
+            \text{LHS}&=(a+(b++))^2\\&=((a+b)++)^2\\
+            &=((a+b)++)\times((a+b)++)\\
+            &=(a+b)(a+b)+(a+b)+(a+b)++\\
+            &=\underbrace{a^2+2ab+b^2}_{\text{by induction hypothesis}}+(2a+2b)++,\\
+            \text{RHS}&=a^2+2a(b++)+(b++)^2\\
+            &=a^2+2ab+2a+b(b++)+(b++)\\
+            &=a^2+2ab+2a+b^2+b+(b++)\\
+            &=a^2+2ab+b^2+(2a+2b)++.
+        \end{aligned}
+    \end{equation*}
+    Thus, both sides are equal to each other. This closes the induction.
+\end{proof}
+\subsection*{2.3.5}
+\textbf{Proposition 2.3.9} (Euclidean algorithm). Let $n$ be a natural number, and let $q$ be a positive number. Then there exist natural numbers $m,r$ such that 
+$0\leq r<q$ and $n=mq+r$.
+\begin{proof}
+    Fix $q$ and induct on $n$. Consider the base case $n=0$. Let $m=0,r=0$, then $mq+r=0\times q+0=0$ as required. Now assume inductively there exist natural numbers $m,r$ such that 
+    $0\leq r<q$ and $n=mq+r$. What we want to show is there exist natural numbers $m',r'$ such that $0\leq r'<q$ and $n+1=m'q+r'$. Since $r<q$, we have two cases: $r+1<q$ and $r+1=q$. \\
+    Case 1: $r+1<q$. Let $m'=m$, $r'=r+1$, $0\leq r'<q$. Then $m'q+r'=mq+(r+1)=(mq+r)+1=n+1$ as required. \\
+    Case 2: $r+1=q$. $n+1=mq+(r+1)$ since $n=mq+r$ by induction hypothesis. Substitute $(r+1)$ with $q$, we have $n+1=mq+q=(m+1)q$. Let $m'=m+1,r'=0$. We got $n+1=m'q+r'$ as required.  
+    We got $n+1=m'q+r'$ as required. Thus, we have closed the induction.
 \end{proof}
 \end{document}
