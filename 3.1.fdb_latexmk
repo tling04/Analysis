@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1657759712 "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/3.1.tex" "3.1.pdf" "3.1" 1657759714
-  "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/3.1.tex" 1657759711 3148 120f437e2833760fb43773e7840f14a3 ""
+["pdflatex"] 1657762474 "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/3.1.tex" "3.1.pdf" "3.1" 1657762475
+  "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/3.1.tex" 1657762474 4492 1154fbf5c6b658135b4b470a4f5579d1 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
@@ -153,9 +153,9 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1586288239 4811913 0be9a7e86c70a26e5e3042966bcd7097 ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1600388267 2432463 5d4593b96709ee1f5a9ca033c656cab2 ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "3.1.aux" 1657759713 51 e307200bf934680127d789540f364594 "pdflatex"
-  "3.1.tex" 1657759711 3148 120f437e2833760fb43773e7840f14a3 ""
+  "3.1.aux" 1657762475 51 e307200bf934680127d789540f364594 "pdflatex"
+  "3.1.tex" 1657762474 4492 1154fbf5c6b658135b4b470a4f5579d1 ""
   (generated)
-  "3.1.log"
   "3.1.aux"
   "3.1.pdf"
+  "3.1.log"

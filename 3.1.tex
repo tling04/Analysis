@@ -50,6 +50,14 @@ Let $a,b,c,d$ be objects such that $\{a,b\}=\{c,d\}$. Show that at least one of 
     either $a=c, b=d$ or $a=d, b=c$ holds, exclusively.\\
     Thus, we have shown that at least one of the two statements "$a=c$ and $b=d$" and "$a=d$ and $b=c$" hold.
 \end{proof}
-
+\subsubsection*{Exercise 3.1.2}
+Using only Axiom 3.2, Axiom 3.1, Axiom 3.3, and Axiom 3.4, prove that the sets $\emptyset$, $\{\emptyset\}$, $\{\{\emptyset\}\}$, and $\{\emptyset,\{\emptyset\}\}$ are all distinct.
+\begin{proof}
+    First, let's consider $\emptyset$. $\emptyset$ contains no element while other sets all have at least one element in it. Therefore, $\emptyset$ is distinct from $\{\emptyset\}$, $\{\{\emptyset\}\}$ and $\{\emptyset,\{\emptyset\}\}$. 
+    Then, let's consider $\{\emptyset\}$. Is it distinct from $\{\{\emptyset\}\}$ and $\{\emptyset,\{\emptyset\}\}$?
+    We know that $\emptyset\in\{\emptyset\}$. But we have proved earlier $\emptyset$ and $\{\emptyset\}$ are not equal to each other, so $\emptyset\notin \{\{\emptyset\}\}$. So $\{\emptyset\}$ and $\{\{\emptyset\}\}$ are distinct. For the same reason, 
+    $\{\emptyset\}\notin \{\emptyset\}$. So $\{\emptyset\}$ and $\{\emptyset,\{\emptyset\}\}$ are also distinct. Last, consider $\{\{\emptyset\}\}$ and $\{\emptyset,\{\emptyset\}\}$. For the same reason ($\emptyset$ and $\{\emptyset\}$ are distinct), 
+    $\emptyset\notin \{\{\emptyset\}\}$. So $\{\{\emptyset\}\}$ and $\{\emptyset,\{\emptyset\}\}$ are distinct. Thus, we have proved the sets $\emptyset$, $\{\emptyset\}$, $\{\{\emptyset\}\}$, and $\{\emptyset,\{\emptyset\}\}$ are all distinct.
+\end{proof}
 
 \end{document}
