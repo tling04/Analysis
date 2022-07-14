@@ -1,0 +1,53 @@
+\documentclass[12pt, letter]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{bm}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}
+\usepackage{setspace}
+
+\setstretch{1.25}
+\begin{document}
+\section*{Chapter 3}
+\section*{Set Theory}
+\subsubsection*{Definition 3.1.1}
+(Informal) We define a $set$ $A$ to be any unordered collection of objects, e.g., ${3,8,5,2}$ is a set. If $x$ is an object, we say that $x$ is an element of $A$ or $x\in A$ if $x$ lies in the collection;
+otherwise we say that $x\notin A$. For instance, $3\in\{1,2,3,4,5\}$ but $7\notin \{1,2,3,4,5\}$.
+\subsubsection*{Axiom 3.1 (Sets are objects).} 
+If $A$ is a set, then $A$ is also an object. In particular, given two sets $A$ and $B$, it is meaningful to ask whether $A$ is also an element of $B$.
+\subsubsection*{Axiom 3.2 (Equality of sets).}
+Two sets $A$ and $B$ are equal, $A=B$, iff every element of $A$ is an element of $B$ and vice versa. To put it another way, $A=B$ if and only if every element $x$ of $A$ belongs also to $B$, and every element $y$
+of $B$ belongs also to $A$.
+\subsubsection*{Axiom 3.3 (Empty set).}
+There exists a set $\emptyset$, known as the empty set, which contains no elements, i.e., for every object $x$ we have $x\notin\emptyset$. 
+\subsubsection*{Lemma 3.1.5 (Single choice).}
+Let $A$ be a non-empty set. Then there exists an object $x$ such that $x\in A$. 
+\subsubsection*{Axiom 3.4 (Singleton sets and pair sets).}
+If $a$ is an object, then there exists a set $\{a\}$ whose only element is $a$, i.e., for every object $y$, we have $y\in\{a\}$ if and only if $y=a$; we refer to $\{a\}$ as the singleton set 
+whose element is $a$. Furthermore, if $a$ and $b$ are objects, then there exists a set $\{a, b\}$ whose only elements are $a$ and $b$; i.e., for every object $y$, we have $y\in\{a,b\}$ if and only if $y=a$ or $y=b$; 
+we refer to this set as the pair set formed by $a$ and $b$.
+
+
+\subsection*{Exercises}
+\subsubsection*{Exercise 3.1.1}
+Let $a,b,c,d$ be objects such that $\{a,b\}=\{c,d\}$. Show that at least one of the two statements "$a=c$ and $b=d$" and "$a=d$ and $b=c$" hold.
+\begin{proof}
+    Consider two cases: $a=b$ and $a\ne b$.\\
+    Case 1: $a=b$. Then $\{a,b\}=\{a\}$. By Axiom 3.2, if $\{a\}$ and $\{c,d\}$ are equal to each other, then every element belong to $\{c,d\}$ must also belong to $\{a\}$. 
+    Therefore, $c=a$, $d=a$. Since $a=b$, we have $a=b=c=d$. Thus, both statements hold.\\
+    Case 2: $a\ne b$. Similarly, by Axiom 3.2, every element belong to $\{a,b\}$ must also belong to $\{c,d\}$. So $\{c,d\}$, a set of two elements, contains two distinct elements $a$ and $b$. Therefore, 
+    either $a=c, b=d$ or $a=d, b=c$ holds, exclusively.\\
+    Thus, we have shown that at least one of the two statements "$a=c$ and $b=d$" and "$a=d$ and $b=c$" hold.
+\end{proof}
+\end{document}
