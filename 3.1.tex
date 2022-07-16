@@ -37,6 +37,23 @@ Let $A$ be a non-empty set. Then there exists an object $x$ such that $x\in A$.
 If $a$ is an object, then there exists a set $\{a\}$ whose only element is $a$, i.e., for every object $y$, we have $y\in\{a\}$ if and only if $y=a$; we refer to $\{a\}$ as the singleton set 
 whose element is $a$. Furthermore, if $a$ and $b$ are objects, then there exists a set $\{a, b\}$ whose only elements are $a$ and $b$; i.e., for every object $y$, we have $y\in\{a,b\}$ if and only if $y=a$ or $y=b$; 
 we refer to this set as the pair set formed by $a$ and $b$.
+\subsubsection*{Axiom 3.5 (Pairwise union).}
+Given any two sets $A,B$, there exists a set $A\cup B$, called the union of $A$ and $B$, which consists of all the elements which belong to $A$ or $B$ or both. In other words, for any object $x$,
+\begin{equation*}
+    x\in A\cup B\iff (x\in A \text{ or } x\in B).
+\end{equation*}
+\subsubsection*{Lemma 3.1.12}
+If $a$ and $b$ are objects, then $\{a,b\}=\{a\}\cup\{b\}$. If $A,B,C$ are sets, then the union operation is commutative (i.e., $A\cup B=B\cup A$) and associative (i.e., $(A\cup B)\cup C=A\cup (B\cup C)$). Also,
+we have $A\cup A=A\cup\emptyset=\emptyset\cup A=A$.
+\subsubsection*{Definition 3.1.14 (Subsets).}
+Let $A,B$ be sets. We say that $A$ is a subset of $B$, denoted $A\subseteq B$, iff every element of $A$ is also an element of $B$, i.e.
+\begin{equation*}
+    \text{For any object }x,\; x\in A\iff x\in B,
+\end{equation*} 
+We say that $A$ is a proper subset of $B$, denoted $A\subsetneq B$, if $A\subseteq B$ and $A\ne B$.
+\subsubsection*{Proposition 3.1.17 (Sets are partially ordered by set inclusion).}
+Let $A,B,C$ be sets. If $A\subseteq B$ and $B\subseteq C$ then $A\subseteq C$. If $A\subseteq B$ and $B\subseteq A$, then $A=B$. Finally, if $A\subsetneq B$ and $B\subsetneq C$ then $A\subsetneq C$.
+
 
 
 \subsection*{Exercises}
@@ -59,5 +76,23 @@ Using only Axiom 3.2, Axiom 3.1, Axiom 3.3, and Axiom 3.4, prove that the sets $
     $\{\emptyset\}\notin \{\emptyset\}$. So $\{\emptyset\}$ and $\{\emptyset,\{\emptyset\}\}$ are also distinct. Last, consider $\{\{\emptyset\}\}$ and $\{\emptyset,\{\emptyset\}\}$. For the same reason ($\emptyset$ and $\{\emptyset\}$ are distinct), 
     $\emptyset\notin \{\{\emptyset\}\}$. So $\{\{\emptyset\}\}$ and $\{\emptyset,\{\emptyset\}\}$ are distinct. Thus, we have proved the sets $\emptyset$, $\{\emptyset\}$, $\{\{\emptyset\}\}$, and $\{\emptyset,\{\emptyset\}\}$ are all distinct.
 \end{proof}
+\subsubsection*{Exercise 3.1.3}
+Prove the remaining claims in Lemma 3.1.12.
+\begin{proof}
+    First, prove the union operation is commutative (i.e., $A\cup B=B\cup A$). By definition, we know that $A\cup B$ consists of all the elements which belong to $A$ or $B$, inclusively. 
+    And $B\cup A$ also consists of all the elements belong to $A$ or $B$, inclusively. Therefore, $A\cup B$ and $B\cup A$ are containing exactly the same elements. Thus, $A\cup B=B\cup A$.
+    
+    The second part is to prove $A\cup A=A\cup\emptyset=\emptyset\cup A=A$. First, let's consider $A\cup A$. By definition, $A\cup A$ consists of all the element $x$ such that $x\in A$ or $x\in A$. So $A\cup A$ and $A$ have exactly the same elements. Therefore $A\cup A=A$.
+    Now let's consider $A\cup\emptyset$. $A\cup\emptyset$ consists of all the $x$ such that $x\in A$ or $x\in\emptyset$. Since no element would belong to $\emptyset$. $A\cup\emptyset$ contains exactly the same elements as $A$. Therefore, $A\cup\emptyset=A$. And by commutative law, 
+    we have $A\cup\emptyset=\emptyset\cup A=A$.
 
+    Thus, we have proved $A\cup A=A\cup\emptyset=\emptyset\cup A=A$.
+\end{proof}
+\subsubsection*{Exercise 3.1.4}
+Prove the remaining claims in Lemma 3.1.17.
+\begin{proof}
+    Part I. If $A\subseteq B$ and $B\subseteq A$, then $A=B$. Translate the if statement into propositional logic: $(x\in A \Rightarrow x\in B) \wedge (x\in B\Rightarrow x\in A)$. Therefore, we have $x\in A\iff x\in B$. Thus, $A=B$.
+
+    Part II. If $A\subsetneq B$ and $B\subsetneq C$ then $A\subsetneq C$. Since $A\ne B$ and $B\ne C$, by transitivity, $A\ne C$. And by the first part of this proposition (if $A\subseteq B$ and $B\subseteq C$ then $A\subseteq C$), we would have $A\subseteq C$. Since $A\subseteq C$ and $A\ne C$, $A\subsetneq C$.
+\end{proof}
 \end{document}
