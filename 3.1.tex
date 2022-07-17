@@ -87,6 +87,12 @@ Let $A,B,C$ be sets, and let $X$ be a set containing $A,B,C$ as subsets.
     \item (Partition) We have $A\cup(X\backslash A)=X$ and $A\cap (X\backslash A)=\emptyset$.
     \item (De Morgan laws) We have $X\backslash (A\cup B)=(X\backslash A)\cap (X\backslash B)$ and $X\backslash (A\cap B)=(X\backslash A)\cup(X\backslash B)$. 
 \end{enumerate}
+\subsubsection*{Axiom 3.7 (Replacement).}
+Let $A$ be a set. For any object $x\in A$, and any object $y$, suppose we have a statement $P(x,y)$ pertaining to $x$ and $y$, such that for each $x\in A$ there is at most one $y$
+for which $P(x,y)$ is true. Then there exists a set $\{y:P(x,y)\text{ is true for some }x\in A\}$, such that for any object $z$,
+\begin{equation*}
+    z\in\{y:P(x,y)\text{ is true for some }x\in A\}\iff P(x,z) \text{ is true for some }x\in A. 
+\end{equation*}
 \subsubsection*{Axiom 3.8 (Infinity).}
 There exists a set $\mathbb{N}$, whose elements are clled natural numbers, as well as an object 0 in $\mathbb{N}$, and an object $n++$ assigned to every natural number $n\in\mathbb{N}$, 
 such that the Peano axioms hold.
@@ -240,6 +246,8 @@ Let $A$ and $B$ be sets. Show that the three sets $A\backslash B$, $A\cap B$, an
 \subsubsection*{Exercise 3.1.11}
 Show that the axiom of replacement implies the axiom of specification.
 \begin{proof}
-    
+    Let $P(x)$ be a property pertaining to $x$. Let $P(x,y)$ be the statement $P(x)$ is true and $y = x$. Since there is at most one $y$ for which $P(x,y)$ is true, there exists a set 
+    $S_1=\{y|P(x,y)\text{ is true for some }x\in A\}$. Suppose $S_2=\{x\in A| P(x)\}$. We want to show that $z\in S_1\implies z\in S_2$. $x\in A$ and $P(x)$ is true, since $z=x$, $z\in A$ and $P(z)$ is true also stand. 
+    Therefore, $z\in S_2$. Thus, the axiom of replacement implies the axiom of specification.
 \end{proof}
 \end{document}
