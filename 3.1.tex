@@ -202,4 +202,44 @@ Prove Proposition 3.1.27.
         $X\backslash (A\cap B)\iff x\in X\land\sim(x\in A\land x\in B)\iff x\in X\land(x\notin A\lor x\notin B)\iff(x\in X\land x\notin A)\lor(x\in X\land x\in B)\iff (X\backslash A)\cup(X\backslash B)$.
     \end{proof}
 \end{enumerate}
+\subsubsection*{Exercise 3.1.7}
+Let $A,B,C$ be sets. Show that $A\cap B\subseteq A$ and $A\cap B\subseteq B$. Furthermore, show that $C\subseteq A$ and $C\subseteq B$ if and only if $C\subseteq A\cap B$. In a similar spirit, show that 
+$A\subseteq A\cup B$ and $B\subseteq A\cup B$, and furthermore that $A\subseteq C$ and $B\subseteq C$ if and only if $A\cup B\subseteq C$.
+\begin{proof}
+    Part I. $A\cap B\subseteq A$ and $A\cap B\subseteq B$. $x\in A\land x\in B\Rightarrow x\in A$, so $A\cap B\subseteq A$. Similarly, we can show that $A\cap B\subseteq B$.
+
+     Part II. $C\subseteq A$ and $C\subseteq B \iff C\subseteq A\cap B$. $(x\in C\Rightarrow x\in A)\land(x\in C\Rightarrow x\in B)\iff (x\in C\Rightarrow (x\in A\land x\in B))$. Therefore, 
+     $C\subseteq A$ and $C\subseteq B \iff C\subseteq A\cap B$.
+
+     Part III. $A\subseteq A\cup B$ and $B\subseteq A\cup B$. According to propositional logic, $x\in A\Rightarrow x\in A\lor x\in B$. Therefore, $A\subseteq A\cup B$. Similarly, we can show that $B\subseteq A\cup B$.
+
+     Part IV. $A\subseteq C$ and $B\subseteq C \iff A\cup B\subseteq C$. $x\in A\Rightarrow x\in C$ and $x\in B\Rightarrow x\in C$ is equivalent to $(x\in A\lor x\in B)\Rightarrow x\in C$. Thus, $A\subseteq C$ and $B\subseteq C\iff A\cup B\subseteq C$. 
+\end{proof}
+\subsubsection*{Exercise 3.1.8}
+Let $A,B$ be sets. Prove the absorption laws $A\cap(A\cup B)=A$ and $A\cup(A\cap B)=A$.
+\begin{proof}
+    $x\in A\land (x\in A\lor x\in B)\iff x\in A$. Therefore, $A\cap(A\cup B)=A$.
+
+    $x\in A\lor(x\in A\land x\in B) \iff x\in A$. Therefore, $A\cup(A\cap B)=A$.
+\end{proof}
+\subsubsection*{Exercise 3.1.9}
+Let $A,B,X$ be sets such that $A\cup B=X$ and $A\land B=\emptyset$. Show that $A=X\backslash B$ and $B=X\backslash A$.
+\begin{proof}
+    Since $A\cap B=\emptyset$, $A$ and $B$ have no element in common. So if $x\in A$, then $x\notin B$. And $x\in A\lor x\in B\Rightarrow x\in X$, so $x\in A\Rightarrow x\in X$. Therefore, $x\in A\Rightarrow x\in X\land x\notin B$.
+    On the other hand, if $x\in X$, then $x\in A\lor x\in B$. But $x\notin B$, so $x\in A$. Therefore, $A=X\backslash B$.
+    The proof of $B=X\backslash A$ is somewhat identical. 
+\end{proof}
+\subsubsection*{Exercise 3.1.10}
+Let $A$ and $B$ be sets. Show that the three sets $A\backslash B$, $A\cap B$, and $B\backslash A$ are disjoint, and that their union is $A\cup B$.
+\begin{proof}
+    $A\cap B$ consists of all elements $x$ such that $x\in A\land x\in B$. $A\backslash B\iff x\in A\land x\notin B$. So the elements in $A\cap B$ must not in $A\backslash B$. 
+    $B\backslash A\iff x\in B\land x\notin A$. So the elements of $B\backslash A$ are not belong to $A$, the elements in $A\cap B$ must not in $B\backslash A$. Therefore, $A\cap B$ and $A\backslash B$ are disjoint,
+    $A\cap B$ and $B\backslash A$ are disjoint. Since elements in $A\backslash B$ are belong to $A$ but the elements in $B\backslash A$ are not belong to $A$. So they are disjoint. 
+    So these three sets are disjoint. $(x\in A\land x\notin B)\lor(x\in A\land x\in B)\lor(x\in B\land x\notin A)\iff x\in A\lor x\in B$. Therefore, their union is $A\cup B$.
+\end{proof}
+\subsubsection*{Exercise 3.1.11}
+Show that the axiom of replacement implies the axiom of specification.
+\begin{proof}
+    
+\end{proof}
 \end{document}
