@@ -1,0 +1,74 @@
+\documentclass[12pt, letter]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{bm}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}
+\usepackage{setspace}
+
+\setstretch{1.25}
+\begin{document}
+\section*{3.2 Russell's Paradox}
+\subsubsection*{Axiom 3.9 (Universal spcification).}
+(Dangerous!) Suppose for every object $x$ we have a property $P(x)$ pertaining to $x$ (so that for every $x$, $P(x)$ is either a true statement of false statement). 
+Then there exists a set $\{x:P(x)\text{ is true}\}$ such that for every object $y$,
+\begin{equation*}
+    y\in\{x:P(x)\text{ is true}\} \iff P(y) \text{ is true}.
+\end{equation*}
+\subsubsection*{Axiom 3.10 (Regularity).}
+If $A$ is a non-empty set, then there is at least one element $x$ of $A$ which is either not as set, or is disjoint from $A$.
+
+\subsection*{Exercises}
+\subsubsection*{Exercise 3.2.1}
+Show that the universal specification axiom, Axiom 3.9, if assumed to be true, would imply Axioms 3.3, 3.4, 3.5, 3.6, and 3.7. Thus, this axiom, if 
+permitted, would simplify the foundations of set theory tremendously. Unfortunately, as we have een, Axiom 3.9 is ``too good to be true''!
+\begin{proof}
+    Basically, we want to give a list of statements so that we could construct the sets as desired.
+    \begin{enumerate}
+        \item Axiom 3.3 
+        $P(x)\iff x\ne x$.
+        \item Axiom 3.4
+        Singleton set: $P(x)\iff x=a$.
+        Pair set: $P(x)\iff x=a \text{ or } x=b$.
+        \item Axiom 3.5
+        $P(x)\iff x\in A\text{ or }x\in B$.
+        \item Axiom 3.6
+        $P_1(x)\iff x\in A\text{ and }P(x)\text{ is true}$.
+        \item Axiom 3.7 
+        $P(y)\iff P(x,y)\text{ is true for some }x\in A$.
+    \end{enumerate}
+\end{proof}
+\subsubsection*{Exercise 3.2.2}
+Use the axiom of regularity (and the singleton set axiom) to show that if $A$ is a set, then $A\notin A$. Furthermore, show that 
+if $A$ and $B$ are two sets, then either $A\notin B$ or $B\notin A$ (or both).
+\begin{proof}
+    Suppose $A$ is a set and $A\in A$. We have $A$ is a set and $A$ is not disjoint from $A$ which is a contradiction. Thus, $A\notin A$.
+
+    Suppose $A$ and $B$ are two sets, $A\in B$ and $B\in A$. Since $A\in B$ and $A$ is a set, by Axiom 3.10, we have $A$ is disjoint from $B$.
+    Thus, $B\notin A$ must stand. (contradiction) Then we need to show that $A\notin B$, $B\notin A$, $A\notin B$ and $B\notin A$ are possible by giving examples.
+    Let $A=\{1\}, B=\{1,3\}$, then $B\notin A$. Let $A=\{1,3\}$, $B=\{1\}$, then $A\notin B$. Let $A={1}$, $B=\{2\}$, then $A\notin B$ and $B\notin A$. Thus, we have shown that 
+    either $A\notin B$ or $B\notin A$ (or both).  
+\end{proof}
+\subsubsection*{Exercise 3.2.3}
+Show (assuming the other axioms of set theory) that the universal specification axiom, Axiom 3.9, is equivalent to an axiom postulating the existence of a "universal set" $\Omega$ consisting of 
+all objects (i.e., for all objects $x$, we have $x\in\Omega$). In other words, if Axiom 3.9 is true, then a universal set exists, and conversely, if a universal set exists, then Axiom 3.9 is true. 
+(This may explain why Axiom 3.9 is called the axiom of universal specification). Note that if a universal set $\Omega$ existed, then we would have $\Omega\in\Omega$ by Axiom 3.1, contradicting Exercise 3.2.2. Thus 
+the axiom of foundation specifically rules out the axiom of universal specification.
+\begin{proof}
+    Let $P(x)$ be $x$ is an object. Therefore, $\Omega$ consists of all objects $x$. (Axiom 3.9 $\Rightarrow$ existence of a universal set) On the other hand, 
+    if $\Omega$ consists of all objects, then for any statement $P(x)$, all $x$ such that $P(x)$ is true must be in $\Omega$. (existence of a universal set $\Rightarrow$ Axiom 3.9) Thus, 
+    Axiom 3.9 is equivalent to the existence of a ``universal set''. This cannot be possible since if $\Omega$ is a universal set, 
+    $\Omega\in\Omega$. (contradiction)
+\end{proof}
+\end{document}
