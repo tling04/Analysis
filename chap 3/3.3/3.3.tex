@@ -1,0 +1,116 @@
+\documentclass[12pt, letter]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{bm}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}
+\usepackage{setspace}
+
+\setstretch{1.25}
+\begin{document}
+\section*{3.3 Functions}
+\subsubsection*{Definition 3.3.1 (Functions).}
+Let $X,Y$ be sets, and let $P(x,y)$ be a property pertaining to an object $x\in X$ and an object $y\in Y$, such that
+for every $x\in X$, there is exactly one $y\in Y$ for which $P(x,y)$ is true (this is sometimes known as the vertical line test).
+Then we define the function $f: X\rightarrow Y$ defined by $P$ on the domain $X$ and range $Y$ to be the object which, 
+given any input $x\in X$, assigns an output $f(x)\in Y$, defined to be the unique object $f(x)$ for which $P(x,f(x))$ is true. 
+Thus, for any $x\in X$ and $y\in Y$,
+\begin{equation*}
+    y=f(x)\iff P(x,y) \text{ is true.}
+\end{equation*}
+
+\subsubsection*{Definition 3.3.7 (Equality of functions).}
+Two functions $f:X\rightarrow Y$, $g:X\rightarrow Y$ with the same domain and range are said to be equal, $f=g$,
+if and only if $f(x)=g(x)$ for all $x\in X$. If $f(x)$ and $g(x)$ agree for some values of $x$, but not others, then we do not consider $f$ and 
+$g$ to be equal. If two functions $f,g$ have different domains, or different ranges, we also do not consider them to be equal.
+
+\subsubsection*{Definition 3.3.11 (Composition).}
+Let $f:X\to Y$ and $g:Y\to Z$ be two functions, such that the range of $f$ is the same set as the domain of $g$. We then define the composition
+$g\circ f:X\to Z$ of the two functions $g$ and $f$ to be the function defined explicitly by the formula
+\begin{equation*}
+    (g\circ f)(x):=g(f(x)).
+\end{equation*}
+If the range of $f$ does not match the domain of $g$, we leave the composition $g\circ f$ undefined.
+\subsubsection*{Lemma 3.3.13 (Composition is associative).}
+Let $f:Z\to W$, $g:Y\to Z$, and $h:X\to Y$ be functions. Then $f\circ(g\circ h)=(f\circ g)\circ h$.
+\subsubsection*{Definition 3.3.15 (One-to-one functions).}
+A function $f$ is one-to-one (or injective) if different elements map to different elements:
+\begin{equation*}
+    x\ne x'\implies f(x)\ne f(x').
+\end{equation*}
+Equivalently, a function is one-to-one if 
+\begin{equation*}
+    f(x)=f(x')\implies x=x'.
+\end{equation*}
+\subsubsection*{Definition 3.3.18 (Onto functions).}
+A function $f$ is onto (or surjective) if every element if $Y$ comes from applying $f$ to some element in $X$:
+\begin{equation*}
+    \text{For every }y\in Y,\text{ there exists }x\in X \text{ such that }f(x)=y.
+\end{equation*}
+\subsubsection*{Definition 3.3.21 (Bijective functions).}
+Functions $f:X\to Y$ which are both one-to-one and onto are also called bijective or invertible.
+
+
+\subsection*{Exercises}
+\subsubsection*{Exercise 3.3.1}
+Show that the definition of equality in Definition 3.3.7 is reflexive, symmetric, and transitive. Also verify the substitution property: if 
+$f,\tilde{f}:X\to Y$ and $g,\tilde{g}:Y\to Z$ are functions such that $f=\tilde{f}$ and $g=\tilde{g}$, then $g\circ f=\tilde{g}\circ\tilde{f}$.
+\begin{proof}
+    Reflexivity: $f$ and $f$ have the same domain and range, and $f(x)=f(x)$ for all $x$ in the domain of $f$. Therefore, $f$ is equal to itself.
+
+    Symmetry: $g$ and $f$ have the same domain and range. For every $x$ in the domain of $g$, we have $g(x)=f(x)$. Therefore, by Definition 3.3.7, $g(x)$ and 
+    $f(x)$ are equal.
+
+    Transitivity: Suppose $f$ and $g$ have the same domain and range, and for every $x$ in the domain of $f$, $f(x)=g(x)$. And $g$ and $h$ have the same domain and range, and 
+    for every $x$ in the domain of $g$, we have $g(x)=h(x)$. Then $f$ and $h$ have the same domain and range. $\forall x$ in the domain of $f$, we have $f(x)=g(x)=h(x)$. Therefore, 
+    $f$ and $h$ are equal.
+
+    Substitution property: Since $g\circ f, \tilde{g}\circ \tilde{f}:X\to Z$, they have the same domain and range. And for every $x\in X$, we have $f(x)=\tilde{f}(x)$, since $g=\tilde{g}$, we also have
+    $g(f(x))=\tilde{g}(f(x))=\tilde{g}(\tilde{f}(x))$. Therefore, $g\circ f=\tilde{g}\circ\tilde{f}$.
+\end{proof}
+\subsubsection*{Exercise 3.3.2}
+Let $f:X\to Y$ and $g:Y\to Z$ be functions. Show that if $f$ and $g$ are both injective, then so is $g\circ f$; similarly, show that if $f$ and $g$ are both 
+surjective, then so is $g\circ f$.
+\begin{enumerate}
+    \item If if $f$ and $g$ are both injective, then so is $g\circ f$.
+    \begin{proof}
+        $f$ is injective: 
+        \begin{equation*}
+            x\in X, x'\in X, x\ne x'\implies f(x)\ne f(x').
+        \end{equation*}
+        $g$ is injective:
+        \begin{equation*}
+            f(x)\in Y, f(x')\in Y, f(x)\ne f(x')\implies g(f(x))\ne g(f(x')).
+        \end{equation*}
+        Therefore, $x\ne x'\implies (g\circ f)(x)\ne (g\circ f)(x')$. Thus, $g\circ f$ is injective.
+    \end{proof}
+    \item If $f$ and $g$ are both surjective, then so is $g\circ f$.
+    \begin{proof}
+        $f$ is surjective:
+        \begin{equation*}
+            \text{For every }y\in Y, \text{ there exists }x\in X\text{ such that }f(x)=y.
+        \end{equation*}
+        $g$ is surjective:
+        \begin{equation*}
+            \text{For every }z\in Z, \text{ there exists }y\in Y\text{ such that }g(y)=z.
+        \end{equation*}
+        Therefore, for every $z\in Z$, there exists $x\in X$ such that $(g\circ f)(x)=g(f(x))=g(y)=z$. Thus, $g\circ f$ is surjective.
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 3.3.3}
+When is the empty function injective? surjective? bijective?
+
+The empty function is of the form $f:\emptyset\to X$. It is always injective no matter what $X$ is. It is surjective if $X$ is $\emptyset$. It is 
+bijective if $X$ is $\emptyset$.
+\end{document}
