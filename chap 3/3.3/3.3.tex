@@ -113,4 +113,54 @@ When is the empty function injective? surjective? bijective?
 
 The empty function is of the form $f:\emptyset\to X$. It is always injective no matter what $X$ is. It is surjective if $X$ is $\emptyset$. It is 
 bijective if $X$ is $\emptyset$.
+\subsubsection*{Exercise 3.3.4}
+In this section we give some cancellation laws for composition. Let $f:X\to Y$, $\tilde{f}:X\to Y$, $g:Y\to Z$, and $\tilde{g}:Y\to Z$ be functions.
+Show that if $g\circ f=g\circ \tilde{f}$ and $g$ is injective, then $f=\tilde{f}$. Is the same statement true if $g$ is not injective?
+Show that if $g\circ f=\tilde{g}\circ f$ and $f$ is surjective, then $g=\tilde{g}$. Is the same statement true if $f$ is not surjective?
+\begin{enumerate}
+    \item 
+    \begin{proof}
+        Suppose $x$ is an arbitrary object in $X$, $y=f(x)\in Y$, $y'=\tilde{f}(x)\in Y$. Since $g\circ f=g\circ\tilde{f}$, $g(f(x))=g(\tilde{f}(x))$. Because $g$ is injective, 
+    $g(f(x))=g(\tilde{f}(x))\implies f(x)=\tilde{f}(x)$. And $f,\tilde{f}$ have the same domain and range. Thus, $f=\tilde{f}$.
+
+    This won't be true if $g$ is not injective. Counterexample: $g(1)=3, g(2)=3, f(1)=1, \tilde{f}(1)=2$. In this case, $g(f(1))=g(\tilde{f}(1))=3$, but $f\ne\tilde{f}$.
+    \end{proof}
+    \item 
+    \begin{proof}
+        Since $f$ is surjective, for every $y\in Y$, there exists $x\in X$ such that $y=f(x)$. Also for every $x\in X$, we have $g(f(x))=\tilde{g}(f(x))$ as $g\circ f=g\circ\tilde{f}$.
+    Therefore, for every $y\in Y$, there exists $x\in X$ such that $g(y)=g(f(x))=\tilde{g}(f(x))=\tilde{g}(y)$. As $g,\tilde{g}$ have the same domain and range,
+    $g=\tilde{g}$.
+
+    This won't be true if $f$ is not surjective. Counterexample: $f:\{0,1\}\to\{1,2,3\}$, $g:\{1,2,3\}\to\{4,5,6\}$, $\tilde{g}:\{1,2,3\}\to\{4,5,7\}$.
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 3.3.5}
+Let $f:X\to Y$ and $g:Y\to Z$ be functions. Show that if $g\circ f$ is injective, then $f$ must be injective. Is it true that $g$ must also be injective?
+Show that if $g\circ f$ is surjective, then $g$ must be surjective. Is it true that $f$ must also be surjective?
+\begin{enumerate}
+    \item 
+    \begin{proof}
+    $g\circ f$ is injective $\implies (x\ne x'\implies g(f(x))\ne g(f(x')))$. Suppose $f$ is not injective, that is, $\exists x,x'\in X$ such that $x\ne x'$ and $f(x)=f(x')$. Then by definition, $g(f(x))=g(f(x'))$ so  
+    $g\circ f$ is not injective. (contradiction) Therefore, $f$ must be injective.  However, $g$ does not have to be injective. Counterexample: $f:\{0,1\}\to\{1,2,3\}$, $g:\{1,2,3\}\to\{4,5,5\}$. ($f$ does not have to be surjective.)
+    \end{proof}    
+    \item
+    \begin{proof}
+        $g\circ f$ is surjective $\implies \forall z\in Z,\exists x\in X$ such that $g(f(x))=z$. 
+        Assume $g$ is not surjective. Then $\exists z\in Z$ such that $\forall y\in Y, g(y)\ne z$. So there does not exist $x\in X$ such that $g(y)=g(f(x))=z$. It implies $g\circ f$ is not surjective. (contradiction) Thus, $g$ must be surjective.
+        $f$ does not have to be surjective. Counterexample: $f:\{1\}\to\{2,3\},f(1):=2,g:\{2,3\}\to\{4\},g(2):=4,g(3):=4$. ($g$ does not have to be injective.)
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 3.3.6}
+Let $f:X\to Y$ be a bijective function, and let $f^{-1}:Y\to X$ be its inverse. Verify the cancellation laws $f^{-1}(f(x))=x$ for all $x\in X$ and $f(f^{-1}(y))=y$ for all $y\in Y$. Conclude that $f^{-1}$ is also invertible, and has $f$ as its inverse (thus $(f^{-1})^{-1}=f$).
+\begin{proof}
+    Since $f$ is surjective, for every $y\in Y$, there exists $x\in X$ such that $f(x)=y$. Suppose $\exists x,x'\in X$ such that $f^{-1}(f(x))=x'\ne x$. Then there exists $y\in Y$, such that $f(x)=y$ and $f^{-1}(y)=x' (f(x')=y)$. So $f$ is not injective. (contradiction) Thus, $f^{-1}(f(x))=x$ for all $x\in X$.
+    
+    Since $f$ is surjective, for every $y\in Y$, there exists $x\in X$ such that $f^{-1}(y)=x$. Suppose $f(x)=y$ and $\exists y'\in Y,y'\ne y, f(f^{-1}(y))=y'$. Then we have $f(f^{-1}(y))=f(x)=y'\ne y$ (contradiction). Thus, $f(f^{-1}(y))=y$. 
+
+    Since $f^{-1}(f(x))=x$ for all $x\in X$, $f^{-1}$ is surjective. Suppose there exists $y,y'\in Y$, $x\in X$, $y\ne y'$, $f^{-1}(y)=f^{-1}(y')=x$. By cancellation law, we have $f(x)=y$ and $f(x)=y'$ (contradiction). Therefore, $f^{-1}$ is injective. 
+    Thus, $f^{-1}$ is bijective. 
+
+    $(f^{-1})^{-1}$ has $X$ as its domain and $Y$ as its range, the inverse of $f^{-1}$. Then we need to show that for every $x\in X$, we have $f(x)=(f^{-1})^{-1}(x)$. Let $x$ be an arbitrary object in $X$, $y=f(x)$. By definition of inverse, $f^{-1}(y)=x$. 
+    Again by definition of inverse, $(f^{-1})^{-1}(x)=y$. Therefore, $f(x)=(f^{-1})^{-1}(x)$. Thus, $(f^{-1})^{-1}=f$.
+\end{proof}
 \end{document}
