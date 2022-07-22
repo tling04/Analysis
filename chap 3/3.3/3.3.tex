@@ -163,4 +163,52 @@ Let $f:X\to Y$ be a bijective function, and let $f^{-1}:Y\to X$ be its inverse. 
     $(f^{-1})^{-1}$ has $X$ as its domain and $Y$ as its range, the inverse of $f^{-1}$. Then we need to show that for every $x\in X$, we have $f(x)=(f^{-1})^{-1}(x)$. Let $x$ be an arbitrary object in $X$, $y=f(x)$. By definition of inverse, $f^{-1}(y)=x$. 
     Again by definition of inverse, $(f^{-1})^{-1}(x)=y$. Therefore, $f(x)=(f^{-1})^{-1}(x)$. Thus, $(f^{-1})^{-1}=f$.
 \end{proof}
+\subsubsection*{Exercise 3.3.7}
+Let $f:X\to Y$ and $g:Y\to Z$ be functions. Show that if $f$ and $g$ are bijective, then so is $g\circ f$, and we have $(g\circ f)^{-1}=f^{-1}\circ g^{-1}$.
+\begin{proof}
+    We have shown in 3.3.2, if $f$ and $g$ are both injective/surjective, $f\circ g$ is also injective/surjective. By symmetry, $g\circ f$ is also injective/surjective. As bijective $\iff$ injective and surjective, $f$ and $g$ are bijective $\iff$ $g\circ f$ is bijective. 
+
+    $g\circ f:X\to Z$, so $(g\circ f)^{-1}:Z\to X$. Since $f:X\to Y$ and $g:Y\to Z$, $g^{-1}:Z\to Y$, $f:Y\to X$, we have $f^{-1}\circ g^{-1}:Z\to X$. Therefore, $(g\circ f)^{-1}$ and $f^{-1}\circ g^{-1}$ have the same domain and range. Then consider an arbitrary obejct $z\in Z$. Since $g$ and $f$ are both bijective, there exist exactly one $x$ and one $y$ such that 
+    $g(y)=z$ and $f(x)=y$. So $(g\circ f)(x)=z$. And by definition of inverse, we have $(g\circ f)^{-1}(z)=x$. Again by definition, we have $g^{-1}(z)=y$, $f^{-1}(y)=x$. So $(f^{-1}\circ g^{-1})(z)=x$. Therefore, for every $z\in Z$, $(g\circ f)^{-1}(z)=(f^{-1}\circ g^{-1})(z)$. Thus, $(g\circ f)^{-1}=f^{-1}\circ g^{-1}$.
+\end{proof}
+\subsubsection*{Exercise 3.3.8}
+If $X$ is a subset of $Y$, let $\iota_{X\to Y}$ be the inclusion map from $X$ to $Y$, defined by mapping $x\mapsto x$ for all $x\in X$, i.e., $\iota_{X\to Y}(x):=x$ for all $x\in X$.
+The map $\iota_{X\to X}$ is in particular called the identity map on $X$.
+\begin{enumerate}
+    \item Show that if $X\subseteq Y\subseteq Z$ then $\iota_{Y\to Z}\circ\iota_{X\to Y}=\iota_{X\to Z}$.
+    \begin{proof}
+        Both $\iota_{Y\to Z}\circ\iota_{X\to Y}$ and $\iota_{X\to Z}$ have $X$ as domain and $Z$ as range. Consider an arbitrary object $x\in X$. $\iota_{X\to Z}(x)=x$. 
+        $\iota_{X\to Y}(x)=x$, $(\iota_{Y\to Z}\circ\iota_{X\to Y})(x)=\iota_{Y\to Z}(\iota_{X\to Y}(x))=\iota_{Y\to Z}(x)=x$. Therefore, for every $x\in X$, $(\iota_{Y\to Z}\circ\iota_{X\to Y})(x)=\iota_{X\to Z}(x)$.
+        Thus, $\iota_{Y\to Z}\circ\iota_{X\to Y}=\iota_{X\to Z}$.
+    \end{proof}
+    \item Show that if $f:A\to B$ is any function, then $f=f\circ\iota_{A\to A}=\iota_{B\to B}\circ f$.
+    \begin{proof}
+        Obviously, $f$, $f\circ\iota_{A\to A}$, and $\iota_{B\to B}\circ f$ all have the same domain and range. Consider an arbitrary $x\in A$. $(f\circ\iota_{A\to A})(x)=f(\iota_{A\to A}(x))=f(x)$. 
+        $(\iota_{B\to B}\circ f)(x)=\iota_{B\to B}(f(x))=f(x)$. Therefore, for every $x\in A$, $f(x)=(f\circ\iota_{A\to A})(x)=(\iota_{B\to B}\circ f)(x)$. Thus, $f=f\circ\iota_{A\to A}=\iota_{B\to B}\circ f$.
+    \end{proof}
+    \item Show that, if $f:A\to B$ is a bijective function, then $f\circ f^{-1}=\iota_{B\to B}$ and $f^{-1}\circ f=\iota_{A\to A}$.
+    \begin{enumerate}
+        \item $f\circ f^{-1}=\iota_{B\to B}$.
+        \begin{proof}
+            $f^{-1}:B\to A$, $f\circ f^{-1}:B\to B$. So $f\circ f^{-1}$ and $\iota_{B\to B}$ have the same domain and range. Consider an arbitrary $y\in B$. $\iota_{B\to B}(y)=y$. Since $f$ is bijective, there exists exactly one $x\in A$ such that $f(x)=y$. 
+            Then $(f\circ f^{-1})(y)=f(f^{-1}(y))=f(x)=y=\iota_{B\to B}(y)$. Thus, $f\circ f^{-1}=\iota_{B\to B}$.
+        \end{proof}
+        \item $f^{-1}\circ f=\iota_{A\to A}$.
+        
+        \begin{proof}
+            $f:A\to B$, $f^{-1}\circ f: B\to A$. So $f^{-1}\circ f$ and $\iota_{A\to A}$ have the same domain and range. Consider an arbitrary $x\in A$. $\iota_{A\to A}(x)=x$. Let $f(x)=y$. By definition of inverse, $f^{-1}(y)=x$. So $(f^{-1}\circ f)(x)=f^{-1}(f(x))=f^{-1}(y)=x=\iota_{A\to A}(x)$. Thus, 
+            $f^{-1}\circ f=\iota_{A\to A}$.
+        \end{proof}
+    \end{enumerate}
+    \item Show that if $X$ and $Y$ are disjoint sets, and $f:X\to Z$ and $g:Y\to Z$ are functions, then there is a unique function $h:X\cup Y\to Z$ such that 
+    $h\circ\iota_{X\to X\cup Y}=f$ and $h\circ\iota_{Y\to X\cup Y}=g$.
+    \begin{proof}
+        The existence of $h$: $\forall x\in X\cup Y$, if $x\in X$, $h(x):=f(x)$, if $x\in Y$, $h(x):=g(x)$. 
+        Then we can know that $h\circ\iota_{X\to X\cup Y}$ and $f$ both have domain $X$ and range $Z$. For an arbitrary $x\in X$, 
+        $(h\circ\iota_{X\to X\cup Y})(x)=h(\iota_{X\to X\cup Y}(x))=f(x)$. Thus, $h\circ\iota_{X\to X\cup Y}=f$. Similarly, we can show that 
+        $h\circ\iota_{Y\to X\cup Y}=g$. To check the uniqueness of $h$, we need to show that if there exists another function $h'$ with the same domain, range and properties as $h$, then $h'=h$. 
+        Consider an arbitrary $x\in X$. $(h'\circ\iota_{X\to X\cup Y})(x)=h'(\iota_{X\to X\cup Y}(x))=h'(x)$. Since $h'\circ\iota_{X\to X\cup Y}=f$, we must have $(h'\circ\iota_{X\to X\cup Y})(x)=f(x)=(h\circ\iota_{X\to X\cup Y})(x)$. 
+        Similarly, we can show that for every $y\in Y$, we have $(h'\circ\iota_{Y\to X\cup Y})(y)=g(y)=(h\circ\iota_{Y\to X\cup Y})(y)$. Since $h'$ and $h$ have the same domain and range, we can conclude that $h=h'$. Thus, $h$ is unique.
+    \end{proof}
+\end{enumerate}
 \end{document}
