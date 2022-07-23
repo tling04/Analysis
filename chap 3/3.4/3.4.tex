@@ -1,0 +1,98 @@
+\documentclass[12pt, letter]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{bm}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}
+\usepackage{setspace}
+
+\setstretch{1.25}
+\begin{document}
+\section*{3.4 Images and inverse images}
+\subsubsection*{Definition 3.4.1 (Images of sets).}
+If $f:X\to Y$ is a function from $X$ to $Y$, and $S$ is a set in $X$, we define $f(S)$ to be the set
+\begin{equation*}
+    f(S):=\{f(x):x\in S\};
+\end{equation*}
+this set is a subset of $Y$, and is sometimes called the image of $S$ under the map $f$. We sometimes call $f(S)$ the forward image of $S$
+to distinguish it from the concept of the inverse image $f^{-1}(S)$ of $S$, which is defined below.
+
+\subsubsection*{Definition 3.4.5 (Inverse images).}
+If $U$ is a subset of $Y$, we define the set $f^{-1}(U)$ to be the set 
+\begin{equation*}
+    f^{-1}(U):=\{x\in X:f(x)\in U\}.
+\end{equation*}
+In other words, $f^{-1}(U)$ consists of all the elements of $X$ which map into $U$:
+\begin{equation*}
+    f(x)\in U\iff x\in f^{-1}(U).
+\end{equation*}
+We feel $f^{-1}(U)$ the inverse image of $U$. 
+\subsubsection*{Axiom 3.11 (Power set axiom).}
+Let $X$ and $Y$ be sets. Then there exists a set, denoted $Y^X$, which consists of all the functions from $X$ to $Y$, thus
+\begin{equation*}
+    f\in Y^X\iff (f\text{ is a function with domain }X\text{ and range }Y).
+\end{equation*}
+\subsubsection*{Lemma 3.4.10}
+Let $X$ be a set. Then the set 
+\begin{equation*}
+    \{Y:Y\text{ is a subset of }X\}
+\end{equation*}
+is a set.
+\subsubsection*{Axiom 3.12 (Union).}
+Let $A$ be a set, all of whose elements are themselves sets. Then there exists a set $\bigcup A$ whose elements are precisely those objects
+which are elements of the elements of $A$, thus for all objects $x$
+\begin{equation*}
+    x\in\bigcup A\iff (x\in S\text{ for some }S\in A).
+\end{equation*}
+\subsection*{Exercises}
+\subsubsection*{Exercise 3.4.1}
+Let $f:X\to Y$ be a bijective function, and let $f^{-1}:Y\to X$ be its inverse. Let $V$ be any subset of $Y$.
+Prove that the forward image of $V$ under $f^{-1}$ is the same set as the inverse image of $V$ under $f$; thus the fact that 
+both sets are denoted by $f^{-1}(V)$ will not lead to any inconsistency.
+\begin{proof}
+    Let $U$ be the forward image of $V$ under $f^{-1}$,
+    \begin{equation*}
+        U=\{f^{-1}(y):y\in V\}.
+    \end{equation*}
+    And let $W$ be the inverse image of $V$ under $f$,
+    \begin{equation*}
+        W=\{x\in X: f(x)\in V\}.
+    \end{equation*}
+    We need to show that $U=W$ which can be done by proving $x\in U\iff x\in W$. 
+
+    First, consider an arbitrary $x\in U$. Since the range of $f^{-1}$ is $X$, $x\in X$. And there exists exactly one $y\in V$ such that $x=f^{-1}(y)$. 
+    By definition of inverse, we have $f(x)=y\in V$. Therefore, $x\in W$.
+
+    Then, consider an arbitrary $x\in W$. Denote $y=f(x)$. Then we have $x\in X$ and $y=f(x)\in Y$. By definition, $x=f^{-1}(y)$. Therefore, $x\in U$.
+    
+    Thus, $x\in V\iff x\in U$. The statement has been proved. 
+\end{proof}
+\subsubsection*{Exercise 3.4.2}
+Let $f:X\to Y$ be a function from one set $X$ to another set $Y$, let $S$ be a subset of $X$, and let $U$ be a subset of $Y$.
+What, in general, can one say about $f^{-1}(f(S))$ and $S$? What about $f(f^{-1}(U))$ and $U$?
+\begin{enumerate}
+    \item $S\subseteq f^{-1}(f(S))$.
+    \begin{proof}
+        We need to show that $x\in S\implies x\in f^{-1}(f(S))$. Consider an arbitrary $x\in S$. Then $f(x)\in f(S)$. So $x=f^{-1}(f(x))\in f^{-1}(f(S))$. 
+        $f^{-1}(f(S))\subseteq S$ does not stand, see p.58 for a counterexample. Thus, in general, we have $S\subseteq f^{-1}(f(S))$.
+    \end{proof}
+    \item $f(f^{-1}(U))\subseteq U$.
+    \begin{proof}
+        We need to show that $y\in f(f^{-1}(U))\implies y\in U$. Consider an arbitrary $y\in f(f^{-1}(U))$. Then there exists $x\in f^{-1}(U)$ such that $f(x)=y$. 
+        Since $x\in f^{-1}(U)$, by definition of inverse images, $f(x)=y\in U$. $U\subseteq f(f^{-1}(U))$ is not true, see p.58 for a counterexample. Thus, in general, we have
+        $f(f^{-1}(U))\subseteq U$.
+    \end{proof}
+\end{enumerate}
+If $f$ is bijective, we have $S=f^{-1}(f(S))$ and $f(f^{-1}(U))=U$.
+\end{document}
