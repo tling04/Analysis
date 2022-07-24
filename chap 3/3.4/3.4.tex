@@ -95,4 +95,99 @@ What, in general, can one say about $f^{-1}(f(S))$ and $S$? What about $f(f^{-1}
     \end{proof}
 \end{enumerate}
 If $f$ is bijective, we have $S=f^{-1}(f(S))$ and $f(f^{-1}(U))=U$.
+\subsubsection*{Exercise 3.4.3}
+Let $A,B$ be two subsets of a set $X$, and let $f:X\to Y$ be a function. Show that $f(A\cap B)\subseteq f(A)\cap f(B)$, that $f(A)\backslash f(B)\subseteq f(A\backslash B)$, $f(A\cup B)=f(A)\cup f(B)$. For the first two statements, is it true 
+that the $\subseteq$ relation can be improved to $=$?
+\begin{enumerate}
+    \item $f(A\cap B)\subseteq f(A)\cap f(B)$.
+    \begin{proof}
+        We need to show that $y\in f(A\cap B)\implies y\in f(A)\cap f(B)$. Assume $y\in f(A\cap B)$, then there exists $x\in A\cap B$ such that $y=f(x)$. $x\in A\cap B\iff (x\in A)\land(x\in B)$. $x\in A\implies y=f(x)\in f(A)$, $x\in B\implies y=f(x)\in f(B)$. 
+        So $(y\in f(A))\land(y\in f(B))$. Therefore, $y\in f(A)\cap f(B)$.
+
+        The $\subseteq$ relation cannot be improved to $=$. A counterexample: $A:\{0,1\}$, $B:\{1,2\}$, $f(0)=2$, $f(1)=1$, $f(2)=2$.
+    \end{proof}
+    \item $f(A)\backslash f(B)\subseteq f(A\backslash B)$.
+    \begin{proof}
+        We need to show that $y\in f(A)\backslash f(B)\implies y\in f(A\backslash B)$. Assume $y\in f(A)\backslash f(B)$ which means $y\in f(A)\land y\notin f(B)$. Since $y\in f(A)$, there exists $x\in A$ such that $f(x)=y$. 
+        On the other hand, $y\notin f(B)$ so $x\notin B$ (otherwise we will have $y=f(x)\in B$). So there exists $(x\in A)\land (x\notin B) \iff x\in (A\backslash B)$ such that $y=f(x)$. Thus, $y\in A\backslash B$.
+
+        The $\subseteq$ relation cannot be improved to $=$. A counterexample: $A:\{1,2\}$, $B:\{2\}$, $f(1)=1$, $f(2)=1$.
+    \end{proof}
+    \item $f(A\cup B)=f(A)\cup f(B)$.
+    \begin{proof}
+        We need to show that $y\in f(A\cup B)\iff y\in f(A)\cup f(B)$. 
+        
+        First, suppose $y\in f(A\cup B)$. Then there exists $x\in A\cup B$ such that $y=f(x)$. $x\in A\cup B\implies (x\in A)\lor (x\in B)$. If $x\in A$, since $y=f(x)$, $y\in f(A)$. If $x\in B$, since $y=f(x)$, $y\in f(B)$.
+        So $y\in f(A)$ or $y\in f(B)$. Thus, $y\in f(A)\cup f(B)$. 
+
+        Then, suppose $y\in f(A)\cup f(B)$. If $y\in f(A)$, $\exists x\in A$ such that $y=f(x)$. $x\in A\implies x\in A\cup B$. So $y\in f(A\cup B)$. Similarly, if $y\in f(B)$, we also conclude that $y\in f(A\cup B)$. Therefore, in both cases, we have $y\in f(A\cup B)$.
+        Thus, $f(A\cup B)=f(A)\cup f(B)$.
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 3.4.4}
+Let $f:X\to Y$ be a function from one set $X$ to another set $Y$, and let $U,V$ be subsets of $Y$. Show that $f^{-1}(U\cup V)=f^{-1}(U)\cup f^{-1}(V)$, that $f^{-1}(U\cap V)=f^{-1}(U)\cap f^{-1}(V)$, and that $f^{-1}(U\backslash V)=f^{-1}(U)\backslash f^{-1}(V)$.
+\begin{enumerate}
+    \item $f^{-1}(U\cup V)=f^{-1}(U)\cup f^{-1}(V)$.
+    \begin{proof}
+        We need to show that $x\in f^{-1}(U\cup V)\iff x\in f^{-1}(U)\cup f^{-1}(V)$. 
+
+        First, suppose $x\in f^{-1}(U\cup V)$. Then there exists $y\in U\cup V$ such that $f(x)=y$. If $y\in U$, $x\in f^{-1}(U)$. If $y\in V$, $x\in f^{-1}(V)$. So $x\in f^{-1}(U)$ or $x\in f^{-1}(V)$. Thus, $x\in f^{-1}(U)\cup f^{-1}(V)$.
+
+        Then, suppose $x\in f^{-1}(U)\cup f^{-1}(V)$ which means $x\in f^{-1}(U)$ or $x\in f^{-1}(V)$. If $x\in f^{-1}(U)$, then $\exists y\in U$ such that $y=f(x)$. If $x\in f^{-1}(V)$, then $\exists y\in V$ such that $y=f(x)$. So $y=f(x)\in U$ or $y=f(x)\in V$. So $y=f(x)\in U\cup V$.
+        Thus, $x\in f^{-1}(U\cup V)$. 
+        
+        Thus, we have shown that $f^{-1}(U\cup V)=f^{-1}(U)\cup f^{-1}(V)$.
+    \end{proof}
+    \item $f^{-1}(U\cap V)=f^{-1}(U)\cap f^{-1}(V)$.
+    \begin{proof}
+        We need to show that $x\in f^{-1}(U\cap V)\iff x\in f^{-1}(U)\cap f^{-1}(V)$. 
+
+        First, suppose $x\in f^{-1}(U\cup V)$. Then $\exists y\in U\cap V$ such that $y=f(x)$. Since $y\in U$, $x\in f^{-1}(U)$. Since $y\in V$, $x\in f^{-1}(V)$. And because $x\in f^{-1}(U)$ and $x\in f^{-1}(V)$, $x\in f^{-1}(U)\cap f^{-1}(V)$.
+
+        Then, suppose $x\in f^{-1}(U)\cap f^{-1}(V)$. Then there exists $y=f(x)$ such that $y=f(x)$, $y\in U$ and $y\in V$. So $y=f(x)\in U\cap V$. Thus, $x\in f^{-1}(U\cap V)$.
+
+        Thus, $f^{-1}(U\cap V)=f^{-1}(U)\cap f^{-1}(V)$.
+    \end{proof}
+    \item $f^{-1}(U\backslash V)=f^{-1}(U)\backslash f^{-1}(V)$.
+    \begin{proof}
+        We need to show that $x\in f^{-1}(U\backslash V)\iff x\in f^{-1}(U)\backslash f^{-1}(V)$. 
+        First, suppose $x\in f^{-1}(U\backslash V)$. Then there exists $(y\in U)\land y\notin V$ such that $f(x)=y$. $y\in U\implies x\in f^{-1}(U)$. On the other hand, $x\notin f^{-1}(V)$ (otherwise $y=f(x)\in V$). 
+        So $(x\in f^{-1}(U)) \land (x\notin f^{-1}(V))$. Hence, $x\in f^{-1}(U)\backslash f^{-1}(V)$.
+
+        Then, suppose $x\in f^{-1}(U)\backslash f^{-1}(V)$ which means $x\in f^{-1}(U) \land x\notin f^{-1}(V)$. Since $x\in f^{-1}(U)$, there exists $y\in U$ such that $y=f(x)$. And since $x\notin f^{-1}(V)$, we must have $y\notin V$.
+        So there exists $y\in U \land y\notin V \iff y\in U\backslash V$ such that $f(x)=y$. Hence, $x\in f^{-1}(U\backslash V)$.
+
+        Thus, $f^{-1}(U\backslash V)=f^{-1}(U)\backslash f^{-1}(V)$.
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 3.4.5}
+Let $f:X\to Y$ be a function from one set $X$ to another set $Y$. Show that $f(f^{-1}(S))=S$ for every $S\subseteq Y$ if and only if $f$ is surjective. 
+Show that $f^{-1}(f(S))=S$ for every $S\subseteq X$ if and only if $f$ is injective.
+\begin{enumerate}
+    \item $f(f^{-1}(S))=S$ for every $S\subseteq Y$ if and only if $f$ is surjective. 
+    \begin{proof}
+        We need to show that $y\in f(f^{-1}(S))=S\iff f$ is surjective. And for the LHS, we have proved in 3.4.2 that $f(f^{-1}(S))\subseteq S$ not matter what kind of function $f$ is. So it would be sufficient to show that $S\subseteq f(f^{-1}(S))$. 
+        
+        First, suppose $f$ is surjective. We want to show that $y\in S\implies y\in f(f^{-1}(S))$. Since $f$ is surjective and $S\in Y$, there must exist $x\in X$ such that $f(x)=y$. Because $y=f(x)$ and $y\in S$, $x\in f^{-1}(S)$. Since $x\in f^{-1}(S)$ 
+        and $y=f(x)$, $y\in f(f^{-1}(S))$. 
+
+        Then, suppose $y\in S\implies y\in f(f^{-1}(S))$. We want to show that $f$ is surjective. Assume $f$ is not surjective. Then there exists $y$ and $S\subseteq Y$, such that $y\in S$ and $\forall x\in X$, $f(x)\ne y$. Since $f^{-1}(S)$ is a subset of $X$, 
+        for all objects $x\in f^{-1}(S)$, $f(x)\ne y$. Thus, $y\notin f(f^{-1}(S))$, contradiction. Thus, $f$ is surjective.
+        
+        Thus, $f(f^{-1}(S))=S$ for every $S\subseteq Y$ if and only if $f$ is surjective. 
+    \end{proof}
+    \item $f^{-1}(f(S))=S$ for every $S\subseteq X$ if and only if $f$ is injective.
+    \begin{proof}
+        We need to show that $f^{-1}(f(S))=S\iff f$ is injective. For the LHS, it is not necessary to show that $S\subseteq f^{-1}(f(S))$ since we have proved in 3.4.2 that it stands generally. 
+        So we only need to show $f^{-1}(f(S))\subseteq S$ for every $S\subseteq X\iff f$ is injective.
+        
+        First, suppose $f$ is injective. Assume $x\in f^{-1}(f(S))$. Then there exists $y\in f(S)$ such that $y=f(x)$. Since $y\in f(S)$, there exists $x'\in S$ such that $y=f(x')$. 
+        And because $f$ is injective, $x=x'$. Therefore, $x\in S$.
+
+        Next, suppose $x\in f^{-1}(f(S))\implies x\in S$. Assume $f$ is not injective. Then $\exists x,x'\in X, x\ne x'$ and $f(x)=f(x')=y$. 
+        Let $S$ be $\{x'\}$. In this case, $y\in f(S)$ and $x\in f^{-1}(f(S))$. But $x\notin S$, contradiction. Hence, $f$ is injective.
+
+        Thus, $f^{-1}(f(S))=S$ for every $S\subseteq X$ if and only if $f$ is injective.
+    \end{proof}
+\end{enumerate}
 \end{document}
