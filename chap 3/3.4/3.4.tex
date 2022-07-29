@@ -187,7 +187,39 @@ Show that $f^{-1}(f(S))=S$ for every $S\subseteq X$ if and only if $f$ is inject
         Next, suppose $x\in f^{-1}(f(S))\implies x\in S$. Assume $f$ is not injective. Then $\exists x,x'\in X, x\ne x'$ and $f(x)=f(x')=y$. 
         Let $S$ be $\{x'\}$. In this case, $y\in f(S)$ and $x\in f^{-1}(f(S))$. But $x\notin S$, contradiction. Hence, $f$ is injective.
 
-        Thus, $f^{-1}(f(S))=S$ for every $S\subseteq X$ if and only if $f$ is injective.
+        Thus, $f^{-1}(f(S))=S$ for every $S\subseteq X$ if and only if $f$ is injective. 
     \end{proof}
 \end{enumerate}
+\subsubsection*{Exercise 3.4.6}
+Prove Lemma 3.4.10. (Hint: start with the set ${\{0,1\}}^X$ and apply the replacement axiom, replacing each function $f$ with the object $f^{-1}(\{1\})$.)
+\begin{proof}
+    Consider the set ${\{0,1\}}^X$ which is set of all functions that map from $X$ to $\{0,1\}$. Denote ${\{0,1\}}^X$ as $\mathcal{P}(X)$. 
+    Let statement $P(f,Y)$ be $Y=f^{-1}(\{1\})$ is a subset of $X$. For any $f$, there exists at most $Y$ for which $P(f, Y)$ is true. 
+    Then, by axiom of replacement, there exists a set $\{Y:P(Y)\text{ is true for some }f\in \mathcal{P}(X)\}$, such that for any object $z$,
+    \begin{equation*}
+        z\in \{Y:P(Y)\text{ is true for some }f\in \mathcal{P}(X)\}\iff P(x,z)\text{ is true for some }f\in\mathcal{P}(X).
+    \end{equation*}
+    So such a set $Y$ exists and this is exactly the set of all the subsets of $X$. Thus, all the subsets of $X$ is a set.
+\end{proof}
+\subsubsection*{Exercise 3.4.7}
+Let $X,Y$ be sets. Define a partial function from $X$ to $Y$ to be any function $f:X'\to Y'$ whose domain $X'$ is a subset of $X$, and whose range $Y'$ is a subset of $Y$.
+Show that the collection of all partial functions from $X$ to $Y$ is itself a set. 
+\begin{proof}
+    ${\{0,1\}}^X$ is the set of all subsets of $X$, $X'\in {\{0,1\}}^X$. Similarly, $Y'\in {\{0,1\}}^Y$. $Y'^{X'}$ for some $X'\in {\{0,1\}}^X$, $Y'\in {\{0,1\}}^Y$ is the set of 
+    all partial functions from $X'$ to $Y'$. Using the union axiom to iterate over all $X'\in{\{0,1\}}^X$ and $Y'\in{\{0,1\}}^Y$ and obtain the set all partial functions.
+
+    Consider an arbitrary $Y_0 \in {\{0,1\}}^Y$. Let ${Y_0}^{X'}$ be the set consists of all the set in the form of ${Y_0}^{X'}$ where $X'\in {\{0,1\}}^X$. (For example, if $X=\{0,1\}$, ${Y_0}^{X'}$ would be $\{{Y_0}^{\{0\}}\},
+    {Y_0}^{\{1\}},{Y_0}^{\{0,1\}},\emptyset$.) So every element of ${Y_0}^{X'}$ is a set itself. Apply the union axiom, there exists $\bigcup {Y_0}^{X'}$ whose elements are the elements of the elements of ${Y_0}^{X'}$, 
+    \begin{equation*}
+        f\in \bigcup {Y_0}^{X'}\iff (f\in S\text{ for some }S\in {Y_0}^{X'}).
+    \end{equation*}
+    Every $f$ in $\bigcup {Y_0}^{X'}$ is a partial function from $Y_0$ to some $X'$ where $X'\in {\{0,1\}}^X$.
+
+    Then, generalize $Y_0$. Let ${Y'}^{X'}$ be the set of all the sets in the form of $\bigcup {Y'}^{X'}$ where $Y'\in{\{0,1\}}^{Y}$. Every element of ${Y'}^{X'}$ is a set. By the union axiom,
+    there exists $\bigcup {Y'}^{X'}$ whose elements are the elements of the elements of ${Y'}^{X'}$, 
+    \begin{equation*}
+        f\in \bigcup {Y'}^{X'}\iff (f\in S\text{ for some }S\in {Y'}^{X'}).
+    \end{equation*}
+    Therefore, every $f$ is a partial function from some $Y'\in {\{0,1\}}^Y$ and $X'\in {\{0,1\}}^X$. Thus, $\bigcup {Y'}^{X'}$ is a set, and it is the collection of all partial functions from $X$ to $Y$.
+\end{proof}
 \end{document}
