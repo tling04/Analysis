@@ -222,4 +222,100 @@ Show that the collection of all partial functions from $X$ to $Y$ is itself a se
     \end{equation*}
     Therefore, every $f$ is a partial function from some $Y'\in {\{0,1\}}^Y$ and $X'\in {\{0,1\}}^X$. Thus, $\bigcup {Y'}^{X'}$ is a set, and it is the collection of all partial functions from $X$ to $Y$.
 \end{proof}
-\end{document}
+\subsubsection*{Exercise 3.4.8}
+Show that Axiom 3.5 can be deduced from Axiom 3.1, Axiom 3.4 and Axiom 3.12.
+\begin{proof}
+    Consider the set consists of $A$ and $B$, $\{A, B\}$. This set is a set of sets, by the union axiom, we have 
+    \begin{equation*}
+        x\in \bigcup\{A,B\}\iff x\in S\text{ for some }S\in\{A,B\}.
+    \end{equation*}
+    Define $A\cup B$ as $\bigcup\{A,B\}$. Check if $x\in A\cup B\iff x\in A\text{ or }x\in B$ stands.
+
+    Suppose $x\in A\cup B$. Then $x\in S$ for some $S\in \{A,B\}$. By Axiom 3.4, $S=A$ or $S=B$. If $S=A$, $x\in A$. Otherwise, $x\in B$.
+    So $x\in A$ or $x\in B$ as desired.
+
+    Suppose $x\in A$ or $x\in B$. Assume $x\in A$. Since $A\in\{A,B\}$, we have $x\in \bigcup\{A,B\}=A\cup B$. Similarly, if $x\in B$ we could also have $x\in \bigcup\{A,B\}=A\cup B$.
+
+    Thus, Axiom 3.5 has been deduced.
+\end{proof}
+\subsubsection*{Exercise 3.4.9}
+Show that if $\beta$ and $\beta'$ are two elements of a set $I$, and to each $\alpha\in I$ we assign a set $A_{\alpha}$, then 
+\begin{equation*}
+    \{x\in A_{\beta}:x\in A_{\alpha}\text{ for all }\alpha\in I\}=\{x\in A_{\beta'}: x\in A_{\alpha} \text{ for all }\alpha\in I\},
+\end{equation*}
+and so the definition of $\bigcap_{\alpha\in I}A_{\alpha}$ defined in (3.3) does not depend on $\beta$.
+\begin{proof}
+    Denote $\{x\in A_{\beta}:x\in A_{\alpha}\text{ for all }\alpha\in I\}$ as $A$ and $\{x\in A_{\beta'}: x\in A_{\alpha} \text{ for all }\alpha\in I\}$ as $A'$. 
+    We need to show that $A=A'$ by showing $x\in A\iff x\in A'$. 
+
+    Suppose $x\in A$. Then $x\in A_{\beta}$ and $x\in A_{\alpha}$ for all $\alpha\in I$. Since $\beta'\in I$, $x\in A_{\beta'}$. So $x\in A'$.
+    Similarly, we can show that if $x\in A'$, then $x\in A$. Thus, $A=A'$. The definition of $\bigcap_{\alpha\in I}A_{\alpha}$ defined in (3.3) does not depend on $\beta$.
+\end{proof} 
+\subsubsection*{Exercise 3.4.10}
+Suppose that $I$ and $J$ are two sets, and for all $\alpha\in I\cup J$ let $A_{\alpha}$ be a set. Show that $(\bigcup_{\alpha\in I}A_{\alpha})\cup(\bigcup_{\alpha\in J}A_{\alpha})=\bigcup_{\alpha\in I\cup J}A_\alpha$. 
+If $I$ and $J$ are non-empty, show that $(\bigcap_{\alpha\in I}A_{\alpha})\cap(\bigcap_{\alpha\in J}A_{\alpha})=\bigcap_{\alpha\in I\cup J}A_{\alpha}$.
+\begin{enumerate}
+    \item $(\bigcup_{\alpha\in I}A_{\alpha})\cup(\bigcup_{\alpha\in J}A_{\alpha})=\bigcup_{\alpha\in I\cup J}A_\alpha$.
+    \begin{proof}
+        Show that $x\in(\bigcup_{\alpha\in I}A_{\alpha})\cup(\bigcup_{\alpha\in J}A_{\alpha})\iff x\in\bigcup_{\alpha\in I\cup J}A_\alpha$.
+
+        Suppose $x\in(\bigcup_{\alpha\in I}A_{\alpha})\cup(\bigcup_{\alpha\in J}A_{\alpha})$. Then $x\in \bigcup_{\alpha\in I}A_{\alpha}$ or $x\in\bigcup_{\alpha\in J}A_{\alpha}$. If $x\in \bigcup_{\alpha\in I}A_{\alpha}$, then 
+        $x\in A_\alpha$ for some $\alpha_I$. If $x\in\bigcup_{\alpha\in J}A_{\alpha}$, then $x\in A_{\alpha}$ for some $\alpha\in J$. So $x\in A_{\alpha}$ for some $\alpha\in I$ or $\alpha\in J$. In other words, 
+        $x\in A_\alpha$ for some $\alpha\in I\cup J$. Therefore, $x\in\bigcup_{\alpha\in I\cup J}A_\alpha$.
+
+        Suppose $x\in\bigcup_{\alpha\in I\cup J}A_\alpha$. Then, $x\in A_\alpha$ for some $\alpha\in I\cup J$, which is equivalent to $x\in A_\alpha$ for some $\alpha\in I$ or some $\alpha\in J$.
+        If $x\in A_\alpha$ for some $\alpha\in I$, we have $x\in \bigcup_{\alpha\in I}A_\alpha$. If $x\in A_\alpha$ for some $\alpha\in J$, we have $x\in\bigcup_{\alpha\in J}A_\alpha$. So $x\in \bigcup_{\alpha\in I}A_\alpha$
+        or $x\in\bigcup_{\alpha\in J}A_\alpha$. Hence, $x\in(\bigcup_{\alpha\in I}A_{\alpha})\cup(\bigcup_{\alpha\in J}A_{\alpha})$.
+
+        Thus, $(\bigcup_{\alpha\in I}A_{\alpha})\cup(\bigcup_{\alpha\in J}A_{\alpha})=\bigcup_{\alpha\in I\cup J}A_\alpha$.
+    \end{proof}
+    \item If $I$ and $J$ are non-empty, show that $(\bigcap_{\alpha\in I}A_{\alpha})\cap(\bigcap_{\alpha\in J}A_{\alpha})=\bigcap_{\alpha\in I\cup J}A_{\alpha}$.
+    \begin{proof}
+        Show that $x\in (\bigcap_{\alpha\in I}A_{\alpha})\cap(\bigcap_{\alpha\in J}A_{\alpha})\iff x\in\bigcap_{\alpha\in I\cup J}A_{\alpha}$.
+
+        Suppose $x\in (\bigcap_{\alpha\in I}A_{\alpha})\cap(\bigcap_{\alpha\in J}A_{\alpha})$. Then we have $x\in A_\alpha$ for all the $\alpha\in I$ and $x\in A_\alpha$ for all the $\alpha\in J$. So $x\in A_\alpha$ for all the $\alpha\in I\cup J$. Therefore, $x\in\bigcap_{\alpha\in I\cup J}A_{\alpha}$. 
+
+        Suppose $x\in \bigcap_{\alpha\in I\cup J}A_{\alpha}$. Then we have $x\in A_\alpha$ for all the $\alpha\in I\cup J$. So there must be $x\in A_\alpha$ for all the $\alpha\in I$ and $x\in A_\alpha$ for all the $\alpha\in J$. Therefore, $x\in(\bigcap_{\alpha\in I}A_{\alpha})\cap(\bigcap_{\alpha\in J}A_{\alpha})$.
+
+        Thus, if $I$ and $J$ are non-empty, show that $(\bigcap_{\alpha\in I}A_{\alpha})\cap(\bigcap_{\alpha\in J}A_{\alpha})=\bigcap_{\alpha\in I\cup J}A_{\alpha}$.
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 3.4.11}
+Let $X$ be a set, let $I$ be a non-empty set, and for all $\alpha\in I$ let $A_\alpha$ be a subset of $X$. Show that 
+\begin{equation*}
+    X\backslash \bigcup_{\alpha\in I}A_\alpha=\bigcap_{\alpha\in I}(X\backslash A_\alpha)
+\end{equation*}
+and 
+\begin{equation*}
+    X\backslash \bigcap_{\alpha\in I}A_\alpha=\bigcup_{\alpha\in I}(X\backslash A_\alpha).
+\end{equation*}
+This should be compared with de Morgan's laws in Propostition 3.1.27 (although one cannot derive the above identities directly from de Morgan's laws, as $I$ could be infinite).
+\begin{enumerate}
+    \item $X\backslash \bigcup_{\alpha\in I}A_\alpha=\bigcap_{\alpha\in I}(X\backslash A_\alpha)$.
+    \begin{proof}
+        We need to show that $x\in X\backslash \bigcup_{\alpha\in I}A_\alpha \iff x\in\bigcup_{\alpha\in I}(X\backslash A_\alpha)$. 
+
+        Suppose $x\in X\backslash \bigcup_{\alpha\in I}A_\alpha$. Then $x\in X$, and $x\notin A_\alpha$ for all the $\alpha\in A$. $x\in X$ is a universal statement so we can rewrite it as
+         $x\in X$ for all $\alpha\in A$. So for all $\alpha\in A$, we have $x\in X$ and $x\notin A_\alpha$. Hence, $x\in\bigcap_{\alpha\in I}(X\backslash A_\alpha)$.
+    
+        Suppose $x\in\bigcap_{\alpha\in I}(X\backslash A_\alpha)$. Then for all $\alpha\in A$ we have $x\in X$ and $x\notin A_\alpha$. Hence, $x\notin \bigcup_{\alpha\in I}A_\alpha$, otherwise there would exist some $\alpha\in I$
+        such that $x\in A_\alpha$ (contradiction). Therefore, $x\in X\backslash \bigcup_{\alpha\in I}A_\alpha$.
+
+        Thus, $X\backslash \bigcup_{\alpha\in I}A_\alpha=\bigcap_{\alpha\in I}(X\backslash A_\alpha)$.
+        \end{proof}
+    \item $X\backslash \bigcap_{\alpha\in I}A_\alpha=\bigcup_{\alpha\in I}(X\backslash A_\alpha)$.
+    \begin{proof}
+        We need to show that $x\in X\backslash \bigcap_{\alpha\in I}A_\alpha\iff x\in\bigcup_{\alpha\in I}(X\backslash A_\alpha)$.
+
+        Suppose $x\in X\backslash \bigcap_{\alpha\in I}A_\alpha$. Then we have $x\in X$ and $x\notin \bigcap_{\alpha\in I}A_\alpha$. This statement has two parts: for all $\alpha\in A$, $x\in X$, 
+        and for some $\alpha\in A$, $x\notin A_\alpha$. We could weaken the first part: for some $\alpha\in A$, $x\in X$. Hence, $x\in X$ and $x\notin A_\alpha$ for some $\alpha\in A$. Therefore,
+        $x\in\bigcup_{\alpha\in I}(X\backslash A_\alpha)$.
+
+        Suppose $x\in \bigcup_{\alpha\in I}(X\backslash A_\alpha)$. Then $x\in X$ and $x\notin A_\alpha$ for some $\alpha\in A$. $x\in X$ does not depend on $\alpha$, so if it is true for 
+        some $\alpha\in A$, it is true for all $\alpha\in A$. Assume $x\in \bigcap_{\alpha\in I}A_\alpha$. Then $x\in A_\alpha$ for all $\alpha\in A$. On the other hand, $x\notin A_\alpha$ for some $\alpha\in A$, 
+        there exists $\alpha\in A$. Contradiction. So $x\notin \bigcap_{\alpha\in I}A_\alpha$. Hence, $x\in X\backslash \bigcap_{\alpha\in I}A_\alpha$.
+
+        Thus, $X\backslash \bigcap_{\alpha\in I}A_\alpha=\bigcup_{\alpha\in I}(X\backslash A_\alpha)$.
+    \end{proof}
+\end{enumerate}
+\end{document} 
