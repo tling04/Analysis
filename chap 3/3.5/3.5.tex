@@ -245,6 +245,44 @@ What happens if the hypotheses that the $A,B,C,D$ are all non-empty are removed?
         Thus, $A\times B=C\times D\iff A=C$ and $B=D$.
     \end{proof}
 \end{enumerate}
-If the hypothese that the $A,B,C,D$ are all non-empty are removed, the equalities will not hold any more. A counterexample would be $A$ is non-empty, $B=\emptyset$, $C=\emptyset$, and $D$ is non-empty. 
+If the hypotheses that the $A,B,C,D$ are all non-empty are removed, the equalities will not hold any more. A counterexample would be $A$ is non-empty, $B=\emptyset$, $C=\emptyset$, and $D$ is non-empty. 
 $A\times B\subseteq C\times D$ but $A$ is not a subset of $C$. $A\times B=C\times D$ but $A\ne C$.
+\subsubsection*{Exercise 3.5.7}
+Let $X,Y$ be sets, and let $\pi_{X\times Y\to X}:X\times Y\to X$ and $\pi_{X\times Y\to Y}:X\times Y\to Y$ be the maps $\pi_{X\times Y\to X}(x,y):=x$ and
+$\pi_{X\times Y\to Y}(x,y):=y$; these maps are known as the co-ordinate functions on $X\times Y$. Show that for any functions $f:Z\times X$ and $g:Z\times Y$, there exists a unique
+function $h:Z\to X\times Y$ such $\pi_{X\times Y\to X}\circ h=f$ and $\pi_{X\times Y\to Y}\circ h=g$. This fuctions $h$ is known as the direct sum of $f$ and $g$ and is denoted $h=f\oplus g$.
+\begin{proof}
+    Fisrt, prove the existence of $h$. Let $h$ be $h(z):=(f(z),g(z))$. Then $f$ and $\pi_{X\times Y\to X}\circ h$ both have domain $Z$ and range $X$. And $g$ and $\pi_{X\times Y\to Y}\circ h$
+    both have domain $Z$ and range $Y$. Consider an arbitrary $z\in Z$. $(\pi_{X\times Y\to X}\circ h)(z)=\pi_{X\times Y\to X}(h(z))=\pi_{X\times Y\to X}(f(z),g(z))=f(z)$,
+    $(\pi_{X\times Y\to Y}\circ h)(z)=\pi_{X\times Y\to Y}(h(z))=\pi_{X\times Y\to Y}(f(z),g(z))=g(z)$. Thus, there exists a function $h:Z\to X\times Y$ such that 
+    $\pi_{X\times Y\to X}\circ h=f$ and $\pi_{X\times Y\to Y}\circ h=g$. Then, prove the uniqueness of $h$. Suppose there exists $h':Z\to X\times Y$ such that $\pi_{X\times Y\to X}\circ h'=f$ and $\pi_{X\times Y\to Y}\circ h'=g$. 
+    Assume $h'(z)=(f'(z),g'(z))$ where $f':Z\to X$ and $g':Z\to Y$. Then $h$ and $h'$ both have domain $Z$ and range $X\times Y$. Consider an arbitrary $z\in Z$, we have $\pi_{X\times Y\to X}(h'(z))=f'(z)=f(z)$
+    and $\pi_{X\times Y\to Y}(h'(z))=g'(z)=g(z)$. Therefore, $f'=f$ and $g'=g$. So $h'=h$. Hence, there exists a unique function $h:Z\to X\times Y$ such $\pi_{X\times Y\to X}\circ h=f$ and $\pi_{X\times Y\to Y}\circ h=g$.
+\end{proof}
+\subsubsection*{Exercise 3.5.8}
+Let $X_1,\dotsc,X_n$ be sets. Show that the Cartesian product $\prod_{i=1}^n X_i$ is empty if and only if at least one of the $X_i$ is empty.
+\begin{proof}
+    We need to show that $\prod_{i=1}^n X_i$ is empty $\iff$ at least one of the $X_i$ is empty.
+
+    Suppose $\prod_{i=1}^n X_i$ is empty and assume each of $X_i$ is non-empty. Then we can find an object $x_i\in X_i$ for all $1\leq i\leq n$. Therefore, there exists $(x_i)_{1\leq i\leq n}\in \prod_{i=1}^n X_i$. Thus,
+    $\prod_{i=1}^n$ is non-empty. Contradiction. Hence, at least one of the $X_i$ is empty.
+
+    Suppose at least one of the $X_i$ is empty. Assume $X_i$ is empty for some $1\leq i\leq n$. Then there does not exist an object $x_i$ such that $x_i\in X_i$. By definition of the Cartesian product,
+    being an obejct of $\prod_{i=1}^n$ requires $x_i\in X_i$ for all $1\leq i\leq n$. Thus, such a set of $X_i$ can not fulfill the requirement. Hence, $\prod_{i=1}^n$ is empty.
+    
+    Thus, $\prod_{i=1}^n X_i$ is empty $\iff$ at least one of the $X_i$ is empty.
+\end{proof} 
+\subsubsection*{Exercise 3.5.9}
+Suppose that $I$ and $J$ are two sets, and for all $\alpha\in I$ let $A_{\alpha}$ be a set, and for all $\beta\in J$ let $B_\beta$ be a set. Show that $(\bigcup_{\alpha\in I}A_{\alpha})\cap (\bigcup_{\beta\in J}B_\beta)=\bigcup_{(\alpha,\beta)\in I\times J}(A_{\alpha}\cap B_\beta)$.
+\begin{proof}
+    We need to show that $x\in (\bigcup_{\alpha\in I}A_{\alpha})\cap (\bigcup_{\beta\in J}B_\beta)\iff x\in \bigcup_{(\alpha,\beta)\in I\times J}(A_{\alpha}\cap B_\beta)$.
+
+    Suppose $x\in (\bigcup_{\alpha\in I}A_{\alpha})\cap (\bigcup_{\beta\in J}B_\beta)$. Then for some $\alpha\in I$, $x\in A_\alpha$, and for some $\beta\in J$, $x\in B_\beta$. By the definition of ordered pair,
+    we have for some $(\alpha, \beta)\in I\times J$, $x\in A_\alpha\cap B_\beta$. Hence, $x\in \bigcup_{(\alpha,\beta)\in I\times J}(A_{\alpha}\cap B_\beta)$.
+
+    Suppose $x\in\bigcup_{(\alpha,\beta)\in I\times J}(A_{\alpha}\cap B_\beta)$. Then for some $(\alpha,\beta)\in I\times J$, $x\in A_\alpha\cap B_\beta$. By the definition of ordered pair, there exists some $\alpha\in I$ such that $x\in A_\alpha$ and 
+    some $\beta\in J$ such that $x\in B_\beta$. Therefore, $x\in (\bigcup_{\alpha\in I}A_{\alpha})\cap (\bigcup_{\beta\in J}B_\beta)$.
+
+    Thus, $x\in (\bigcup_{\alpha\in I}A_{\alpha})\cap (\bigcup_{\beta\in J}B_\beta)\iff x\in \bigcup_{(\alpha,\beta)\in I\times J}(A_{\alpha}\cap B_\beta)$.
+\end{proof}
 \end{document}
