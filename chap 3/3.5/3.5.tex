@@ -1,0 +1,250 @@
+\documentclass[12pt, letter]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{bm}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}
+\usepackage{setspace}
+
+\setstretch{1.25}
+\begin{document}
+\section*{3.5 Cartesian products}
+\subsubsection*{Definition 3.5.1 (Ordered pair).}
+If $x$ and $y$ are any objects (possibly equal), we define the ordered pair $(x,y)$ to be a new object, consisting of $x$
+as its first component and $y$ as its second component. Two ordered pairs $(x,y)$ and $(x',y')$ are considered equal if and only if 
+both their components match, i.e.
+\begin{equation*}
+    (x,y)=(x',y')\iff (x=x'\text{ and }y=y').
+\end{equation*}
+\subsubsection*{Definition 3.5.4 (Cartesian product).}
+If $X$ and $Y$ are sets, then we define the Cartesian product $X\times Y$ to be the collection of ordered pairs, whose first component
+lies in $X$ and second component lies if $Y$, thus
+\begin{equation*}
+    X\times Y=\{(x,y):x\in X, y\in Y\}
+\end{equation*}
+or equivalently
+\begin{equation*}
+    a\in (X\times Y)\iff (a=(x,y) \text{ for some } x\in X and y\in Y).
+\end{equation*}
+\subsubsection*{Definition 3.5.7 (Ordered $n$-tuple and $n$-fold Cartesian product).}
+Let $n$ be a natural number. An ordered $n$-tuple $(x_i)_{1\leq i\leq n}$ (also denoted $(x_1,\cdots, x_n)$) is a collection of objects $x_i$,
+one for every natural number $i$ between $1$ and $n$; we refer to $x_i$ as the $i^{th}$ component of the ordered $n$-tuple. Two 
+ordered $n$-tuples $(x_i)_{1\leq i\leq n}$ and $(y_i)_{1\leq i\leq n}$ are said to be equal iff $x_i=y_i$ for all $1\leq i\leq n$. 
+If $(X_i)_{1\leq i\leq n}$ is an ordered $n$-tuple of sets, we define their Cartesian product $\prod_{1\leq i\leq n}X_i$ (also denoted 
+$\prod_{i=1}^{n}X_i$ or $X_1\times \cdots \times X_n$) by
+\begin{equation*}
+    \prod_{i\leq i\leq n}X_i:=\{(x_i)_{1\leq i\leq n}:x_i\in X_i\text{ for all }1\leq i\leq n\}.
+\end{equation*}
+\subsubsection*{Lemma 3.5.12 (Finite choice).}
+Let $n\geq 1$ be a natural number, and for each natural number $1\leq i\leq n$, let $X_i$ be a non-empty set. Then there exists an $n$-tuple $(x_i)_{1\leq i\leq n}$
+such that $x_i\in X_i$ for all $1\leq i\leq n$. In other words, if each $X_i$ is non-empty, then the set $\prod_{1\leq i\leq n}X_i$
+is also non-empty.
+\subsection*{Exercises}
+\subsubsection*{Exercise 3.5.1}
+Suppose we define the ordered pair $(x,y)$ for any objects $x$ and $y$ by the formula $(x,y):=\{\{x\},\{x,y\}\}$ (thus using several applications of Axiom 3.4).
+Thus for instance $(1,2)$ is the set $\{\{1\},\{1,2\}\}$, $(2,1)$ is the set $\{\{2\},\{2,1\}\}$, and $(1,1)$ is the set $\{1\}$.
+Show that such a definition indeed obeys the property $(3.5)$, and also whenever $X$ and $Y$ are sets, the Cartesian product $X\times Y$ is also a set. 
+Thus this definition can be validly used as a definition of an ordered pair. For an additional challenge, show that the alternate definition $(x,y):=\{x,\{x,y\}\}
+$ also verifies $(3.5)$ and is thus also an acceptable definition of ordered pair.
+\begin{enumerate}
+    \item Show that $(x,y):=\{\{x\},\{x,y\}\}$ is a valid definition of an ordered pair.
+    \begin{proof}
+        First, we need to show that 
+        \begin{equation*}
+            (x,y)=(x',y')\iff (x=x'\text{ and }y=y').
+        \end{equation*} 
+
+        Suppose $(x,y)=(x',y')$. Then by definition, $\{\{x\},\{x,y\}\}=\{\{x'\},\{x',y'\}\}$. If $x=y$, $\{\{x\},\{x,y\}\}=\{\{x\},\{x\}\}=\{\{x\}\}$. 
+        Then $\{\{x'\},\{x',y'\}\}$ must also only contain one element. Thus, $\{x'\}=\{x',y'\}$. So $x'=y'$. Lastly, we have $\{\{x\}\}=\{\{x'\}\}$. So $x=x'$. 
+        Thus, $x=x'=y=y'$. It is the same thing if we assume $x'=y'$ at first. Now consider the case $x\ne y$. Then 
+        $\{x\}$ has one element and $\{x,y\}$ has two elements. And since $\{x'\}$ could only contain one element, we have the following relations:
+        \begin{equation*}
+            \begin{cases}
+                \{x\}=\{x'\}\implies x=x'\\
+                \{x,y\}=\{x',y'\}\text{ and }x=x' \implies y=y'.
+            \end{cases}
+        \end{equation*}
+        It would be the same if we assume $x'\ne y'$. Thus, $(x,y)=(x',y')\implies (x=x'\text{ and }y=y')$
+
+        Suppose $x=x'$ and $y=y'$. Then we must have $\{x\}=\{x'\}$ and $\{x,y\}=\{x',y'\}$. Hence, $\{\{x\},\{x,y\}\}=\{\{x'\},\{x',y'\}\}$. 
+        Thus, $(x=x'\text{ and }y=y')\implies (x,y)=(x',y')$.
+
+        Therefore, $(x,y)=(x',y')\iff (x=x'\text{ and }y=y')$. This definition verifies $(3.5)$. 
+    
+        Then, we need to show that whenever $X$ and $Y$ are sets, the Cartesian product $X\times Y$ is a set.
+        Use the definition above: $(x,y)=\{\{x\},\{x,y\}\}$. The powerset of $X\cup Y$ is $\{0,\{x\},\{y\},\{x,y\}\}$ which contains the elements in 
+        $(x,y)$. Then the powerset of the powerset of $X\cup Y$ contains $(x,y)$. The elements in $\mathcal{P}(\mathcal{P}(X\cup Y))$ is a set, thus, the Cartesian 
+        product is a set. More specifically, 
+        \begin{equation*}
+            X\times Y=\{z\in \mathcal{P}(\mathcal{P}(X\cup Y)):z \text{ contains exactly one singleton set and one pair set}\}.
+        \end{equation*}
+    \end{proof}
+    \item Show that $(x,y)=\{x,\{x,y\}\}$ is also a valid definition of an ordered pair.
+    \begin{proof}
+        We need to show that 
+    \begin{equation*}
+        \{x,\{x,y\}\}=\{x',\{x',y'\}\}\iff x=x'\text{ and }y=y'.    
+    \end{equation*}
+    Suppose $\{x,\{x,y\}\}=\{x',\{x',y'\}\}$. Denote $A=\{x,y\}$, $B=\{x',y'\}$. Then $\{x,A\}=\{x',B\}$. Since sets are objects, $\{x,A\}$ and 
+   $\{x',B\}$ are both pair sets. Since $x\in \{x,\{x,y\}\}$ and $x\in\{x,\{x,y\}\}\implies x\in\{x',\{x',y'\}\}$. So either $x=x'$ or $x=\{x',y'\}$.
+   Assume $x=\{x',y'\}$. Then the only option left is $x'=\{x,y\}$. As $x$ and $x'$ are both sets, having $x\in x'$ and $x'\in x$ at the same time violates
+   the statements in Exercise 3.2.2. Therefore, $x=x'$ and $\{x,y\}=\{x',y'\}=\{x,y'\}$. Thus, $y=y'$. 
+   
+   Suppose $x=x'$ and $y=y'$. Then clearly we have $\{x,y\}=\{x',y'\}$. So $\{x,\{x,y\}\}=\{x',\{x',y'\}\}$. 
+
+   Thus, $(x,y):=\{x,\{x,y\}\}$ verifies $(3.5)$.
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 3.5.2}
+Suppose we define an ordered $n$-tuple to be a surjective function $x:\{i\in \mathbb{N}:1\leq i\leq n= n\}\to X$ whose range is some arbitrary set $X$
+(so different ordered $n$-tuples are allowed to have different ranges); we then write $x_i$ for $x(i)$, and also write $x$ as $(x_i)_{1\leq i\leq n}$.
+Using this definition, verify that we have $(x_i)_{1\leq i\leq n}=(y_i)_{1\leq i\leq n}$ if and only if $x_i=y_i$ for all $1\leq i\leq n$. Also,
+show that if $(X_i)_{1\leq i\leq n}$ is an ordered $n$-tuple of sets, then the Cartesian product, as defined in Definition 3.5.7, is indeed a set.
+\begin{enumerate}
+    \item $(x_i)_{1\leq i\leq n}=(y_i)_{1\leq i\leq n}\iff x_i=y_i$ for all $1\leq i\leq n$.
+    \begin{proof}
+        Apparently, $x$ and $y$ have the same domain $\{i\in\mathbb{N}:1\leq i\leq n\}$. Suppose $y:\{i\in \mathbb{N}:1\leq i\leq n\}\to Y$. 
+
+        Suppose $(x_i)_{1\leq i\leq n}=(y_i)_{1\leq i\leq n}$. Since $x$ and $y$ are two functions, we must have $X$=$Y$ so that they have the same range.
+        And by Definition 3.3.7, we have $x(i)=y(i)$ for all $1\leq i\leq n$. Therefore, $(x_i)_{1\leq i\leq n}=(y_i)_{1\leq i\leq n}\implies x_i=y_i$ for all $1\leq i\leq n$..
+    
+        Suppose $x_i=y_i$ for all $1\leq i\leq n$. Since $x$ and $y$ are both surjective and $\{x_1,\cdots, x_n\}=\{y_1,\cdots, y_n\}$, $X=Y=\{x_1,\cdots, x_n\}=\{y_1,\cdots, y_n\}$. 
+        Thus, $x$ and $y$ have the same range. And because they also have the same domain and $x_i=y_i$ for all $1\leq i\leq n$, $x=y$. Therefore, we have proved $x_i=y_i$ for all $1\leq i\leq n
+        \implies x=y$. 
+        
+        Thus, $(x_i)_{1\leq i\leq n}=(y_i)_{1\leq i\leq n}\iff x_i=y_i$ for all $1\leq i\leq n$.
+    \end{proof} 
+    \item If $(X_i)_{1\leq i\leq n}$ is an ordered $n$-tuple of sets, then the Cartesian product is a set.
+    \begin{proof}
+        Denote $A=\{X_1, X_2,\cdots, X_n\}$, so every element of $A$ is a set itself and by the union axiom we have $\bigcup A$ being the set consists of all the elements of the elements of $A$. 
+        Denote $I=\{i\in \mathbb{N}: 1\leq i\leq n\}$. Then, the mapping function $x$ would be partial functions with domain $I$ which is also a subset of $I$ and range being a subset of $\bigcup A$. Denote it as $X$. 
+        Thus, by Exercise 3.4.7, the collection of all these partial functions is a set. By Definition 3.5.7, the Cartesian product would be a subset of the set of all these partial functions.
+        Let $P(x)$ be $x_i\in X_i$ for all $1\leq i\leq n$. By Axiom of specification, there exists a set $\{x\in X: P(x)\text{ is true}\}$ which is the same 
+        as the Cartesian product. Therefore, the Cartesian product is indeed a set.
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 3.5.3}
+Show that the definitions of equality for ordered pair and ordered $n$-tuple obey the reflexivity, symmetry, and transitivity axioms.
+\begin{itemize}
+    \item reflexivity
+    \begin{proof}
+        For the ordered pair $(x,y)$, since $x=x$ and $y=y$, we have $(x,y)=(x,y)$. 
+        For the ordered $n$-tuple $(x_i)_{1\leq i\leq n}$, since $x_i=x_i$ for $1\leq i\leq n$, by definition, we have $(x_i)_{1\leq i\leq n}$.     
+    \end{proof}  
+    \item symmetry
+    \begin{proof}
+        We want to show $(x,y)=(x',y')\iff (x',y')=(x,y)$. Assume $(x,y)=(x',y')$. Then $x=x'$ and $y=y'$. By symmetry property of equality, we have 
+        $x'=x$ and $y'=y$. By definition, we have $(x',y')=(x,y)$. Similarly, we can show that $(x',y')=(x,y)\implies (x,y)=(x',y')$.
+        Thus, $(x,y)=(x',y')\iff (x',y')=(x,y)$.
+
+        For ordered $n$-tuple, we want to show that $(x_i)_{1\leq i\leq n}=(y_i)_{1\leq i\leq n}\iff(y_i)_{1\leq i\leq n}= (x_i)_{1\leq i\leq n}$.
+        Assume $(x_i)_{1\leq i\leq n}=(y_i)_{1\leq i\leq n}$. Then $x_i=y_i$ for every $1\leq i\leq n$. By the symmetry property of equality, we have 
+        $y_i=x_i$ for every $1\leq i\leq n$. Therefore, by definition of ordered $n$-tuple, we have $(y_i)_{1\leq i\leq n}= (x_i)_{1\leq i\leq n}$. 
+        The approach is the same for the other way around. Thus, $(x_i)_{1\leq i\leq n}=(y_i)_{1\leq i\leq n}\iff(y_i)_{1\leq i\leq n}= (x_i)_{1\leq i\leq n}$.
+    \end{proof}  
+    \item transitivity 
+    \begin{proof}
+        The proof for ordered pair is omitted since it is only a special case of ordered $n-$tuple. 
+        We need to show that $(x_i)_{1\leq i\leq n}=(y_i)_{1\leq i\leq n}\text{ and } (y_i)_{1\leq i\leq n}=(z_i)_{1\leq i\leq n} \implies 
+        (x_i)_{1\leq i\leq n}=(z_i)_{1\leq i\leq n}$. Since $(x_i)_{1\leq i\leq n}=(y_i)_{1\leq i\leq n}$, we have $x_i=y_i$ for $1\leq i\leq n$. 
+        Since $(y_i)_{1\leq i\leq n}=(z_i)_{1\leq i\leq n}$, we have $y_i=z_i$ for $1\leq i\leq n$. By transitivity property of equality, we have $x_i=z_i$. 
+        By definition of ordered $n$-tuple, $(x_i)_{1\leq i\leq n}=(z_i)_{1\leq i\leq n}$. 
+    \end{proof}
+\end{itemize}
+\subsubsection*{Exercise 3.5.4}
+Let $A$, $B$, $C$ be sets. Show that $A\times (B\cup C)=(A\times B)\cup (A\times C)$, that $A\times (B\cap C)=(A\times B)\cap (A\times C)$, and 
+that $A\times (B\backslash C)=(A\times B)\backslash(A\times C)$.
+\begin{enumerate}
+    \item $A\times (B\cup C)=(A\times B)\cup (A\times C)$.
+    \begin{proof}
+        We need to show that $(x,y)\in A\times (B\cup C)\iff (x,y)\in (A\times B)\cup (A\times C)$.
+
+        Suppose $(x,y)\in A\times (B\cup C)$. By definition, we have $x\in A$ and $y\in (B\cup C)$. $y\in B\cup C\iff y\in B\text{ or }y\in C$. 
+        Therefore, $(x,y)\in (A\times B)$ or $(x,y)\in (A\times C)$. Hence, $(x,y)\in (A\times B)\cup (A\times C)$. 
+
+        Suppose $(x,y)\in (A\times B)\cup (A\times C)$. Then we have either $(x,y)\in A\times B$ or $(x,y)\in A\times C$. 
+        $(x,y)\in A\times B\implies x\in A\text{ and }y\in B$. $(x,y)\in A\times C\implies x\in A\text{ and }y\in C$. Therefore, we have $x\in A$ and $y\in B\cup C$. 
+        Hence, $(x,y)\in A\times (B\cup C)$. 
+
+        Thus, $A\times (B\cup C)=(A\times B)\cup (A\times C)$.
+    \end{proof}
+    \item $A\times (B\cap C)=(A\times B)\cap (A\times C)$.
+    \begin{proof}
+        We need to show that $(x,y)\in A\times (B\cap C)\iff (x,y)\in (A\times B)\cap (A\times C)$.
+
+        Suppose $(x,y)\in A\times (B\cap C)$. Then $x\in A$ and $y\in B\cap C$. $y\in B\cap C\iff y\in B\text{ and }y\in C$. Then we have $(x,y)\in A\times B$ and 
+        $(x,y)\in A\times C$. Hence, $(x,y)\in (A\times B)\cap (A\times C)$. 
+
+        Suppose $(x,y)\in (A\times B)\cap (A\times C)$. Then $(x,y)\in A\times B$ and $(x,y)\in A\times C$. $(x,y)\in A\times B\implies x\in A$ and $y\in B$. 
+        $(x,y)\in A\times C\implies x\in A$ and $y\in C$. Overall, we have $x\in A$ and $y\in B\cap C$. Hence, $(x,y)\in A\times (B\cap C)$.
+        
+        Thus, $A\times (B\cap C)=(A\times B)\cap (A\times C)$.
+    \end{proof}
+    \item $A\times (B\backslash C)=(A\times B)\backslash (A\times C)$.
+    \begin{proof}
+        We need to show that $(x,y)\in A\times (B\backslash C)\iff (x,y)\in (A\times B)\backslash (A\times C)$.
+
+        Suppose $(x,y)\in A\times (B\backslash C)$. Then $x\in A$ and $y\in B$ and $y\notin C$. $x\in A$ and $y\in B\implies (x,y)\in A\times B$.
+        $y\notin C\implies (x,y)\notin A\times C$. Therefore, $(x,y)\in (A\times B)\backslash (A\times C)$.
+
+        Suppose $(x,y)\in (A\times B)\backslash (A\times C)$. Then $(x,y)\in A\times B$ and $(x,y)\notin A\times C$. $(x,y)\in A\times B\implies x\in A$ and $y\in B$. 
+        $(x,y)\notin A\times C$ and $x\in A\implies y\notin C$. Therefore, we have $x\in A$ and $y\in B$ and $y\notin C$. Hence, $(x,y)\in A\times (B\backslash C)$.
+
+        Thus, $A\times (B\backslash C)=(A\times B)\backslash (A\times C)$.
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 3.5.5}
+Let $A$, $B$, $C$, $D$ be sets. Show that $(A\times B)\cap (C\times D)=(A\cap C)\times (B\cap D)$. Is it true that $(A\times B)\cup (C\times D)=(A\cup C)\times (B\cup D)$?
+Is it true that $(A\times B)\backslash (C\times D)=(A\backslash C)\times (B\backslash D)$?
+\begin{proof}
+    $(A\times B)\cap (C\times D)=(A\cap C)\times (B\cap D)\iff ((x,y)\in(A\times B)\cap (C\times D)\iff (x,y)\in (A\cap C)\times (B\cap D))$.
+    Suppose $x\in (A\times B)\cap (C\times D)$. $(x,y)\in A\times B\implies x\in A$ and $y\in B$. $(x,y)\in C\times D\implies x\in C$ and $y\in D$. Therefore, we have
+    $x\in A\cap C$ and $y\in B\times D$. Thus, $(x,y)\in (A\cap C)\times (B\cap D)$.
+    Suppose $(x,y)\in (A\cap C)\times (B\cap D)$. Then $x\in A\cap C$ and $y\in B\cap D$. $x\in A\cap C\implies x\in A$ and $x\in C$. $y\in B\cap D\implies y\in B$ and $y\in D$.
+    $x\in A$ and $y\in B\implies (x,y)\in A\times B$. $x\in C$ and $y\in D\implies (x,y)\in C\times D$. Hence, $(x,y)\in (A\times B)\cap (C\times D)$. 
+    Thus, $(A\times B)\cap (C\times D)=(A\cap C)\times (B\cap D)$. 
+
+    $(A\times B)\cup (C\times D)=(A\cup C)\times (B\cup D)$ is not true. Assume $(x,y)\in (A\cup C)\times (B\cup D)$. And suppose $x\in A$ and $y\in D$.
+    Then $(x,y)\in A\times D$ and $(x,y)\notin A\times B$ and $(x,y)\notin C\times D$. Hence, $x\notin (A\times B)\cup (C\times D)$. Thus, $(A\times B)\cup (C\times D)=(A\cup C)\times (B\cup D)$ is not true.
+
+    $(A\times B)\backslash (C\times D)=(A\backslash C)\times (B\backslash D)$ is not true. A counterexample: $x\in A\cap C$ and $y\in B\backslash D$. Then 
+    $(x,y)\in(A\times B)\backslash (C\times D)$ but $(x,y)\notin (A\backslash C)\times (B\backslash D)$. Thus, $(A\times B)\backslash (C\times D)=(A\backslash C)\times (B\backslash D)$ is not true.
+\end{proof}
+\subsubsection*{Exercise 3.5.6}
+Let $A,B,C,D$ be non-empty sets. Show that $A\times B\subseteq C\times D$ if and only if $A\subseteq C$ and $B\subseteq D$, and that $A\times B=C\times D$ if and only if $A=C$ and $B=D$. 
+What happens if the hypotheses that the $A,B,C,D$ are all non-empty are removed?
+\begin{enumerate}
+    \item $A\times B\subseteq C\times D\iff A\subseteq C$ and $B\subseteq D$.
+    \begin{proof}
+        Suppose $A\times B\subseteq C\times D$, that is $(x,y)\in A\times B\implies (x,y)\in C\times D$. Since $A,B,C,D$ are non-empty, we have two conditions: $x\in A\implies x\in C$ and
+        $y\in B\implies y\in D$. Thus, $A\subseteq C$ and $B\subseteq D$.
+
+        Suppose $A\subseteq C$ and $B\subseteq D$. Then we have $x\in A\implies x\in C$ and $y\in B\implies y\in D$. Combining these two conditions, $(x,y)\in A\times B\implies (x,y)\in C\times D$.
+        Hnece, $A\times B\subseteq C\times D$.
+
+        Thus, $A\times B\subseteq C\times D\iff A\subseteq C$ and $B\subseteq D$.
+    \end{proof}
+    \item $A\times B=C\times D\iff A=C$ and $B=D$.
+    \begin{proof}
+        Suppose $A\times B=C\times D$. Then $(x,y)\in A\times B\iff (x,y)\in C\times D$. Since $A,B,C,D$ are non-empty, we have $x\in A\iff x\in C$ and 
+        $y\in B\iff y\in D$. Therefore, $A=C$ and $B=D$.
+
+        Suppose $A=C$ and $B=D$. Then $x\in A\iff x\in C$ and $y\in B\iff y\in D$. Therefore, $(x,y)\in A\times B\iff (x,y)\in C\times D$. Hence, $A\times B=C\times D$.
+
+        Thus, $A\times B=C\times D\iff A=C$ and $B=D$.
+    \end{proof}
+\end{enumerate}
+If the hypothese that the $A,B,C,D$ are all non-empty are removed, the equalities will not hold any more. A counterexample would be $A$ is non-empty, $B=\emptyset$, $C=\emptyset$, and $D$ is non-empty. 
+$A\times B\subseteq C\times D$ but $A$ is not a subset of $C$. $A\times B=C\times D$ but $A\ne C$.
+\end{document}
