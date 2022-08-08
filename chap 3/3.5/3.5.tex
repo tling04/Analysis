@@ -285,4 +285,87 @@ Suppose that $I$ and $J$ are two sets, and for all $\alpha\in I$ let $A_{\alpha}
 
     Thus, $x\in (\bigcup_{\alpha\in I}A_{\alpha})\cap (\bigcup_{\beta\in J}B_\beta)\iff x\in \bigcup_{(\alpha,\beta)\in I\times J}(A_{\alpha}\cap B_\beta)$.
 \end{proof}
+\subsubsection*{Exercise 3.5.10}
+If $f:X\to Y$ is a function, define the graph of $f$ to be the subset of $X\times Y$ defined by $\{(x,f(x)):x\in X\}$. Show that two functions $f:X\to Y$ and $\tilde{f}:X\to Y$ are equal if and only if they have the same graph. Conversely, if $G$ is any subset of $X\times Y$
+with the property that for each $x\in X$, the set $\{y\in Y:(x,y)\in G\}$ has exactly one element (or in other words, $G$ obeys the vertical line test), show that there is exactly one function $f:X\to Y$ whose graph is equal to $G$.
+\begin{proof}
+    We want to show that $f=\tilde{f}\iff\{(x,f(x)):x\in X\}=\{(x,\tilde{f}(x)):x\in X\}$.
+
+    Suppose $f=\tilde{f}$. Then for every $x\in X$, we have $f(x)=\tilde{f}(x)$. Consider an arbitrary $x\in X$, since $f(x)=\tilde{f}(x)$, we have $(x,f(x))=(x,\tilde{f}(x))$. So for every $x\in X$, $(x,\tilde{f}(x))\in\{(x,f(x)):x\in X\}$ and 
+    $(x,f(x))\in\{(x,\tilde{f}(x)):x\in X\}$. Hence, $\{(x,f(x)):x\in X\}=\{(x,\tilde{f}(x)):x\in X\}$.
+
+    Suppose $\{(x,f(x)):x\in X\}=\{(x,\tilde{f}(x)):x\in X\}$. Then for an arbitrary $x\in X$, $(x,f(x))\in\{(x,\tilde{f}(x)):x\in X\}$. And for this specific $x\in X$, we have $(x,\tilde{f}(x))\in\{(x,\tilde{f}(x)):x\in X\}$. 
+    By the definition of function, for every $x\in X$, there exists exactly one $y\in Y$ such that $\tilde{f}(x)=y$. Hence, $f(x)=\tilde{f}(x)$. As $f$ and $\tilde{f}$ have the same domain and range, $f$ = $\tilde{f}$.
+
+    Thus, $f:X\to Y$ and $\tilde{f}:X\to Y$ are equal if and only if they have the same graph.
+
+    Let $P(x,y)$ be $(x,y)\in G$. Then for every $x\in X$, there exists exactly one $y\in Y$ such that $P(x,y)$ is true. The vertical line test for $G$ reflects that there exists a function $f$ such that for every $x\in X, f(x)\in\{y\in Y:(x,y)\in G\}$.
+    The next step is to show that the graph of $f$ is equal to $G$. Since for every $x\in X$, the set $\{y\in Y:(x,y)\in G\}$ has exactly one element and this element, by definition, is $f(x)$, we then can replace $y$ with $f(x)$. Then for every $x\in X$, 
+    there exist exactly one $y\in Y$ such that $(x,y)=(x,f(x))\in G$. Therefore, $G$ is the collection of $(x,f(x))$ for all $x\in X$ which can be written as $\{(x,f(x)):x\in X\}$. Thus, the graph of $f$ is equal to $G$.
+    Then, we need to show the uniqueness of $f$. Assume there is another function $f':X\to Y$ whose graph is $G$. For an arbitrary $x$, by definition, $(x,f'(x))\in G$. And the graph of $f$ is also $G$, $(x,f(x))\in G$. Since for each $x\in X$, the set 
+    $\{y\in Y:(x,y)\in G\}$ has only one element, we must have $f(x)=f'(x)$. Hence, $f=f'$. Thus, there is exactly one function $f:X\to Y$ whose graph is equal to $G$.
+\end{proof} 
+\subsubsection*{Exercise 3.5.11}
+Show that Axiom 3.11 can in fact be deduced from Lemma 3.4.10 and the other axioms of set theory, and thus Lemma 3.4.10 can be used as an 
+alternate formulation of the power set axiom. 
+\begin{proof}
+    First, we need to construct a set of all subsets of $X\times Y$ which obey the vertical line test. By lemma 3.4.10, we know that there exists a set $Z$ consists of all the subsets of $X\times Y$. Let $P(z)$ be $z$ obeys the vertical line test. Then 
+    by Axiom of specification, there exists a set
+    \begin{equation*}
+        G=\{z\in Z: P(z) \text{ is true}\}.
+    \end{equation*}
+    So this set is the set of all subsets of $X\times Y$ which obey the vertical line test, denote it as $G$. Let $P(f,g)$ be $f$ is exactly the function $f:X\to Y$ whose graph is equal to $g$. By Axiom of replacement, there exists a set 
+    \begin{equation*}
+        F=\{f:P(f,g)\text{ is true for some }g\in G\}.
+    \end{equation*}
+    This set should be the set consists of all the functions from $X$ to $Y$. The last step is to justify that this set indeed contains all the functions from $X$ to $Y$. The graph of any function $f: X\to Y$ is a subset of $X\times Y$: 
+    as stated in 3.5.10, if $f:X\to Y$, the graph of $f$ is defined to be the subset of $X\to Y$ that is $\{(x,f(x)):x\in X\}$. So set $G$ contains the graphs of all $f:X\to Y$. Then we need to show that the inverse map does not lose any information, in other words,
+    $F$ contains all the functions $f:X\to Y$. Since for every $g\in G$ there exists exactly one function whose graph is equal to $g$ and $f:X\to Y$, $\tilde{f}:X\to Y$ are equal if and only if they have the same graph, it is not possible to have two different graphs mapped 
+    to a same function $f$. Thus, $G$ contains all the graphs is equivalent to $f$ contains all the functions from $X$ to $Y$. Hence, Axiom 3.11 is deduced from Lemma 3.4.10 and other axioms of set theory. 
+\end{proof}
+\subsubsection*{Exercise 3.5.12}
+This exercise will establish a rigorous version of Proposition 2.1.16. Let $f:\mathbb{N}\times \mathbb{N}\to \mathbb{N}$ be a function, and let $c$ be a natural number. Show that there exists a function $a:\mathbb{N}\to \mathbb{N}$ such that 
+\begin{equation*}
+    a(0)=c
+\end{equation*}
+and 
+\begin{equation*}
+    a(n++)=f(n,a(n))\text{ for all }n\in \mathbb{N},
+\end{equation*}
+and furthermore that this function is unique.
+\begin{proof}
+    First show inductively that for every $n\in\mathbb{N}$, there exists a unique function $a_N:\{n\in\mathbb{N}:n\leq N\}\to \mathbb{N}$ such that $a_N(0)=c$ and $a_N(n++)=f(n,a_N(n))$ - let this statement be $P(N)$. Assume $P(N)$ is true, we need to show that 
+    $P(N++)$ is also true. Define $a_{N++}$ as follows: 
+    \begin{equation*}
+        \begin{gathered}
+            \text{ if }n < N++, a_{N++}(n)=a_N(n),\\
+            \text{ if }n = N++, a_{N++}(n)=f(N,a_N(N)).
+        \end{gathered}
+    \end{equation*}
+    Then for the base case of $P(N++)$, $a_{N++}(0)=a_N(0)=c$ which satisfies the requirement. Now consider $a_{N++}(n++)$. Suppose $n<N++$. Then we have either $n++<N++$ or $n++=N++$. If $n++<N++$, by definition, we have $a_{N++}(n++)=a_N(n++)=f(n,a_N(n))$. Since $n<N++$,
+    $a_{N++}(n)=a_N(n)$. Therefore, $a_{N++}(n++)=f(n,a_N(n))=f(n,a_{N++}(n))$. If $n++=N++$, $a_{N++}(n++)=a_{N++}(N++)=f(N,a_N(N))$. Since $n++=N++\iff n=N$, $a_{N++}=f(n,a_N(n))$. Since $n<N++$, $a_N(n)=a_{N++}(n)$. Therefore, $a_{N++}=f(n,a_{N++}(n))$. 
+    Thus, $a_{N++}$ exists. 
+    
+    Define $a(n)=a_N(n), N=n$. Thus, $a(0)=a_0(0)=c$ and $a(n++)=a_{N++}(n++)=f(n,a_{N++}(n))=f(n,a_N(n))=f(n,a(n))$. Hence, there exists such a function $a$.
+
+    Lastly, we want to show the uniqueness of $a$. Assume there exists another function $g$ such that $g(0)=c$ and $g(n++)=g(n,f(n))$ for all $n\in \mathbb{N}$. Then $g(0)=a(0)=c$. Assume $a(n)=g(n)$, $g(n++)=f(n,g(n))=f(n,a(n))=a(n++)$. Therefore, $a(n)=g(n)$ for all $n\in \mathbb{N}$. 
+    Hence, $g=a$ and $a$ is unique.
+\end{proof}
+\subsubsection*{Exercise 3.5.13}
+The purpose of this exercise is to show that there is essentially only one version of the natural number system in set theory. Suppose we have a set $\mathbb{N}'$ of ``alternative natural numbers'', an ``alternative zero'' 0', and 
+an ``alternative increment operation'' which takes any alternative natural number $n'\in\mathbb{N}'$ and returns another alternative natural number $n'++'\in\mathbb{N}'$, such that the Peano axioms all hold with the natural numbers, zero, and increment replaced by their alternative counterparts.
+Show that there exists a bijection $\mathbb{N}\to \mathbb{N}'$ from the natural numbers to the alternative natural numbers such that $f(0)=0'$, and such that for any $n\in\mathbb{N}$ and $n'\in\mathbb{N}'$, we have $f(n)=n'$ if and only if $f(n++)=n'++'$.
+\begin{proof}
+    Define $f$ as $f(0)=0'$ and $f(n++)=f(n)++'$. We need to show that $f(n)=n'\iff f(n++)=n'++'$.
+
+    Suppose $f(n)=n'$. Then $f(n++)=f(n)++'=n'++'$. Suppose $f(n++)=n'++'$. By definition, $f(n++)=f(n)++'$. Then, $f(n)++'=n'++'$. So $f(n)=n'$. Hence, $f(n)=n'\iff f(n++)=n'++'$.
+
+    Then we need to show that $f$ is bijective. Let $f(n)=n'$. Suppose $n_1$ and $n_2$ are two natural numbers. Assume $f(n_1)=f(n_2)$. By definition, $f(n++)=f(n)++'$, $f(n)=f(n-1)++',\dotsc$. $f(n_1)=f(n_2)$ only if the recursive steps reach the base case at the same time, in other words,
+    $f(n_1)=f(n_2)$ only if $n_1=n_2$. Thus, $f$ is injective. 
+
+    Use induction to show that $f$ is surjective. Consider the base case $0'$, by definition, $f(0)=0'$ so the base case is proved. Assume for $n'$, there exists $n\in \mathbb{N}$ such that $f(n)=n'$. Then 
+    $n'++'=f(n)++'=f(n++)$, and $n++\in\mathbb{N}$. Thus, for every $n'\in\mathbb{N}'$, there exists $n\in\mathbb{N}$ such that $f(n)=n'$. Thus, $f$ is surjective.
+
+    Since $f$ is both injective and surjective, it is bijective.
+\end{proof}
 \end{document}
