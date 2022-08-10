@@ -1,0 +1,166 @@
+\documentclass[12pt, letter]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{bm}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}
+\usepackage{setspace}
+
+\setstretch{1.25}
+\begin{document}
+\section*{3.6 Cardinality of sets}
+\subsubsection*{Definition 3.6.1 (Equal cardinality).}
+We say that two sets $X$ and $Y$ have equal cardinality iff there exists a bijection $f:X\to Y$ from $X$ to $Y$.
+\subsubsection*{Proposition 3.6.4}
+Let $X,Y,Z$ be sets. Then $X$ has equal cardinality with $X$. If $X$ has equal cardinality with $Y$, then $Y$ has equal cardinality with $X$.
+If $X$ has equal cardinality with $Y$ and $Y$ has equal cardinality with $Z$, then $X$ has equal cardinality with $Z$.
+\subsubsection*{Definition 3.6.5}
+Let $n$ be a natural number. A set $X$ is said to have cardinality $n$, iff it has equal cardinality with $\{i\in\mathbf{N}:1\leq i\leq n\}$. We also say that $X$ has
+$n$ elements iff it has cardinality $n$.
+\subsubsection*{Proposition 3.6.8 (Uniqueness of cardinality).}
+Let $X$ be aset with some cardinality $n$. Then $X$ cannot have any other cardinality, i.e., $X$ cannot have cardinality $m$ for any $m\ne n$. 
+\subsubsection*{Lemma 3.6.9}
+Suppose that $n\geq 1$, and $X$ has cardinality $n$. Then $X$ is non-empty, and if $x$ is any element of $X$, then the set $X-\{x\}$ (i.e., $X$ with the element $x$ removed)
+has cardinality $n-1$.
+\subsubsection*{Definition 3.6.10 (Finite sets).}
+A set is finite iff it has cardinality $n$ for some natural number $n$; otherwise, the set is called infinite. If $X$ is a finite set, we use $\#(X)$
+to denote the cardinality of $X$.
+\subsubsection*{Theorem 3.6.12}
+The set of natural numbers $\mathbf{N}$ is infinite.
+\subsubsection*{Proposition 3.6.14 (Cardinal arithmetic).}
+See Exercise 3.6.4.
+\subsection*{Exercises}
+\subsubsection*{Exercise 3.6.1}
+Prove Proposition 3.6.4.
+\begin{itemize}
+    \item $X$ has equal cardinality with $X$.
+    \begin{proof}
+        Define function $f:X\to X$ such that for each $x\in X$, $f(x)=x$. For $x_1\ne x_2$, $f(x_1)=x_1$ and $f(x_2)=x_2$. So $f(x_1)\ne f(x_2)$. Therefore,
+        $f$ is injective. By definition, for every $x\in X$, $f(x)=x$. So $f$ is surjective. Thus, $f$ is bijective and $X$ has equal cardinality with $X$.
+    \end{proof}
+    \item If $X$ has equal cardinality with $Y$, then $Y$ has equal cardinality with $X$.
+    \begin{proof}
+        Since $X$ has equal cardinality with $Y$, there exists a bijective function $f:X\to Y$. Since $f$ is bijective, there exists $f^{-1}:Y\to X$. For $y_1,y_2\in Y$, 
+        if we have $f^{-1}(y_1)=f^{-1}(y_2)$, by the definition of function, $f(f^{-1}(y_1))=f(f^{-1}(y_2))$, then $y_1=y_2$. So $f^{-1}$ is injective.
+        For every $x\in X$, we have $f(x)\in Y$ such that $f^{-1}(f(x))=x$. So $f^{-1}$ is surjective. Thus, $f^{-1}$ is bijective and $Y$ has equal cardinality with $X$.
+    \end{proof}
+    \item If $X$ has equal cardinality with $Y$ and $Y$ has equal cardinality with $Z$, then $X$ has equal cardinality with $Z$.
+    \begin{proof}
+        Since $X$ has equal cardinality with $Y$, there exists a bijective function $f:X\to Y$. Since $Y$ has equal cardinality with $Z$, there exists a bijective function $g:Y\to Z$.
+        By Exercise 3.3.7, $g\circ f:X\to Z$ is also bijective. Thus, $X$ has equal cardinality with $Z$.
+    \end{proof}
+\end{itemize}
+\subsubsection*{Exercise 3.6.2}
+Show that a set $X$ has cardinality 0 if and only if $X$ is the empty set.
+\begin{proof}
+    By definition 3.6.5, $X$ has $n$ elements iff it has cardinality $n$. So since $X$ has cardinality 0, it has no element in it which means $X$ is the empty set.
+    On the other hand, if $X$ is the empty set, it has 0 element and thus has cardinality 0.
+\end{proof}
+\subsubsection*{Exercise 3.6.3}
+Let $n$ be a natural number, and let $f:\{i\in\mathbf{N}:1\leq i\leq n\}\to\mathbf{N}$ be a function. Show that there exists a natural number $M$ such that $f(i)\leq M$ for all $1\leq i\leq n$.
+Thus finite subsets of the natural numbers are bounded.
+\begin{proof}
+   For function $f:\{i\in\mathbf{N}:1\leq i\leq n\}\to \mathbf{N}$, we claim that $M=\max\{f(1),\dotsc,f(n)\}$. Induct on $n$. Base case: $n=1$. Let $M=\max\{f(1)\}=f(1)$. $M\leq f(i)$ for $1\leq i\leq 1$. This proves the base case. Then suppose inductively that there exists $M'=
+    \max\{f(1),\dotsc, f(n)\}$ is the upper bound for $f:\{i\in\mathbf{N}:1\leq i\leq n\}\to\mathbf{N}$. Now consider $f:\{i\in\mathbf{N}:1\leq i\leq n+1\}\to\mathbf{N}$. Let $M=\max\{M',f(n+1)\}$. 
+    For all $1\leq i\leq n$, we have $f(i)\leq M'\leq M$. Also we have $f(n+1)\leq M$. Thus, $f(i)\leq M$ for all $1\leq i\leq n+1$. This closes the induction.
+\end{proof}
+\subsubsection*{Exercise 3.6.4}
+Prove proposition 3.6.14.
+\begin{enumerate}
+    \item Let $X$ be a finite set, and let $x$ be an object which is not an element of $X$. Then $X\cup\{x\}$ is finite and $\#(X\cup\{x\})=\#(X)+1$.
+    \begin{proof}
+        Use $n$ to denote the cardinality of $X$. By Lemma 3.6.9, $\#(X)=\#((X\cup\{x\})-\{x\})=\#(X\cup\{x\})-1$. So $\#(X\cup\{x\})=\#(X)+1=n+1$ which is also a natural number.
+        Thus, $X\cup\{x\}$ is finite and $\#(X\cup\{x\})=\#(X)+1$.
+    \end{proof}
+    \item Let $X$ and $Y$ be finite sets. Then $X\cup Y$ is finite and $\#(X\cup Y)\leq \#(X)+\#(Y)$. If in addition $X$ and $Y$ are disjoint, then $\#(X\cup Y)=\#(X)+\#(Y)$.
+    \begin{proof}
+        Use $m$ to denote the cardinality of $X=\{x_1,\dotsc, x_m\}$ and $n$ to denote the cardinality of $Y=\{y_1\dotsc, y_n\}$. Induct on $n$. The base case is when $\#(Y)=n=0$. $\#(X\cup Y)=\#(X)\leq \#(X)+\#(Y)=\#(X)$.
+        Now suppose inductively $\#(X\cup Y)\leq \#(X)+\#(Y)$ when $\#(Y)=n$ ($Y=\{y_1,\dotsc, y_n\}$). Consider when $Y=\{y_1,\dotsc,y_n,y_{n+1}\}$ and $\#(Y)=n+1$. 
+        If $y_{n+1}\in \{x_1,\dotsc, x_m\}\cup\{y_1,\dotsc, y_n\}$, then 
+        \begin{equation*}
+            \begin{gathered}
+                \#(\{x_1,\dotsc,x_m\}\cup\{y_1,\dotsc,y_{n+1}\})=\#(\{x_1,\dotsc,x_m\}\cup\{y_1,\dotsc,y_{n}\})\\ \leq m+n<m+(n+1)=\#(X)+\#(Y).
+            \end{gathered}
+        \end{equation*}
+        So in this case, $\#(X\cup Y)<\#(X)+\#(Y)$. If $y_{n+1}\notin \{x_1,\dotsc, x_m\}\cup\{y_1,\dotsc, y_n\}$, then 
+        \begin{equation*}
+            \begin{gathered}
+                \#(\{x_1,\dotsc,x_m\}\cup\{y_1,\dotsc,y_{n+1}\})=\#(\{x_1,\dotsc,x_m\}\cup\{y_1,\dotsc,y_{n}\})+1,
+            \end{gathered}
+        \end{equation*}
+        since by induction hypothesis we have,
+        \begin{equation*}
+            \#(\{x_1,\dotsc,x_m\}\cup\{y_1,\dotsc,y_{n}\})\leq m+n,
+        \end{equation*}
+        then 
+        \begin{equation*}
+            \#(\{x_1,\dotsc,x_m\}\cup\{y_1,\dotsc,y_{n+1}\})\leq m+(n+1)=\#(X)+\#(Y).
+        \end{equation*}
+        So in this case, $\#(X\cup Y)\leq \#(X)+\#(Y)$. Thus, in both cases, we have $\#(X\cup Y)\leq \#(X)+\#(Y)$. This closes the induction. Hence, since both $X$ and $Y$ are finite,
+        $X\cup Y$ is also finite.
+
+        If $X$ and $Y$ are disjoint, by Lemma 3.6.9, we have 
+        \begin{equation*}
+            \begin{gathered}
+                \#(X\cup Y-\{y_1\})=\#(X\cup Y)-1,\\
+                \#((X\cup Y-\{y_1\}))=\#(X\cup Y-\{y_1\})-1,\\
+                \vdots\\
+                \#((X\cup Y-\{y_1\}-\cdots-\{y_{n-1}\})-\{y_n\})=\#(X\cup Y-\cdots-\{y_{n-1}\})-1.
+            \end{gathered}
+        \end{equation*}
+        Sum these $n$ equations up, we have 
+        \begin{equation*}
+            \#(X)=\#((X\cup Y-\{y_1\}-\cdots-\{y_{n-1}\})-\{y_n\})=\#(X\cup Y)-\#(Y).
+        \end{equation*}
+        Thus, $\#(X\cup Y)=\#(X)+\#(Y)$.
+    \end{proof}
+    \item Let $X$ be a finite set, and let $Y$ be a subset of $X$. Then $Y$ is finite, and $\#(Y)\leq \#(X)$. If in addition $Y\ne X$, then we have $\#(Y)<\#(X)$.
+    \begin{proof}
+        Assume $Y\ne X$. Denote $X=\{x_1,\dotsc,x_n\}$, $Y=\{y_1,\dotsc, y_m\}$. Induct on $n$. When $n\leq m$, the statement is vacuously true. Suppose 
+        inductively that $\#(Y)<\#(X)$ is true. Consider when $X=\{x_1,\dotsc,x_{n+1}\}$, $\#(\{x_1,\dotsc,x_{n+1}\})=\#(\{x_1,\dotsc,x_n\})+1$. So $\#(\{y_1,\dotsc,y_m\})< \#(\{x_1,\dotsc, x_n\})
+        < \#(\{x_1,\dotsc, x_{n}\})+1=\#(\{x_1,\dotsc, x_{n+1}\})$. This closes the induction. For the case $Y=X$, $\#(Y)=\#(X)$, so $\#(Y)\leq \#(X)$. Since $\#(Y)\leq \#(X)$ and $X$ is finite, $Y$ is 
+        also finite.
+    \end{proof}
+    \item If $X$ is a finite set, and $f:X\to Y$ is a function, then $f(X)$ is a finite set with $\#(f(X))\leq\#(X)$. If in addition $f$ is one-to-one, then $\#(f(X))=\#(X)$.
+    \begin{proof}
+        Denote $X=\{x_1,\dotsc,x_n\}$. Induct on $n$. When $n=0$, $\#f(X)=\#(X)=0$. The base case is proved. Suppose inductively $\#(f(X))\leq\#(X)$ is true for $n\in\mathbf{N}$. 
+        Now consider $X=\{x_1,\dotsc,x_n,x_{n+1}\}$. By Lemma 3.6.9, $\#(\{x_1,\dotsc, x_{n+1}\})=\#(\{x_1,\dotsc, x_n\})+1$. By Proposition 3.6.14-(b),\\
+         $f(\{x_1,\dotsc,x_n,x_{n+1}\})=f(\{x_1,\dotsc,x_n\})\cup f(x_{n+1})\leq \#f(\{x_1,\dotsc,x_n\})+1=\#(\{x_1,\dotsc,x_{n+1}\})$. This closes the induction.
+
+         If $f$ is one-to-one, the proof is similar and we only need to modify a bit from the previous one. The proof of the base case stays the same. Suppose inductively $\#(f(X))=\#(X)$. Now 
+         $f(\{x_1,\dotsc,x_{n+1}\})=f(\{x_1,\dotsc,x_n\})\cup f(x_{n+1})$, since $f$ is injective, these two sets are disjoint. By Proposition 3.6.14.(b), $\#(f\{x_1,\dotsc,x_{n+1}\})=\#(X)+1=\#(\{x_1,\dotsc,x_{n+1}\})$.
+         This closes the induction.
+    \end{proof}
+    \item Let $X$ and $Y$ be finite sets. Then Cartesian product $X\times Y$ is finite and $\#(X\times Y)=\#(X)\times \#(Y)$.
+    \begin{proof}
+        Let $X$ has equal cardinality with $\{i\in\mathbf{N}:1\leq i\leq n\}$ and y has equal cardinality with $\{i\in\mathbf{N}:1\leq i\leq m\}$, use $f$ to denote this function. The statement we need to prove is $\#(X\times Y)$ 
+        has equal cardinality with $\{i\in\mathbf{N}:1\leq i\leq nm\}$. Induct on $n$. When $n=0$, $\#(X\times Y)=\#(X)\times \#(Y)=0$. Suppose the statement is true for $n\in\mathbf{N}$. Consider when 
+        $X$ has the same cardinality with $\{i\in\mathbf{N}:1\leq i\leq n+1\}$. By induction hypothesis, there exists a bijective function from $\#(X\times Y)$ to $\{i\in\mathbf{N}:1\leq i\leq nm\}$. Define the map from $X\times Y$ (partially)
+        to $\{i\in\mathbf{N}:1\leq i\leq n+1\}$ as: for $x=x_{n+1}\in X$, $y\in Y$, $g(x,y)=nm+f(y)$. We need to verify that $g$ is also bijective. 
+
+        For any $j\in\{i\in\mathbf{N}:1\leq i\leq nm\}$, by induction hypothesis, there exists a bijective function $h$ from $X\times Y$ to $\{i\in\mathbf{N}:1\leq i\leq nm\}$, so there exists some $x\in X$,
+        $y\in Y$ such that $h(x,y)=j$. Let $g(x,y)=h(x,y)=j$ for $x\in X-\{x_{n+1}\}$ and $y\in Y$. For any $j\in\{i\in\mathbf{N}:nm+1\leq i\leq (n+1)m\}$, we have $g(n+1,j-nm)$. Thus, function $g$ is surjective. 
+        Suppose $x_1,x_2\in X-\{x_{n+1}\}$, $y_1,y_2\in Y$, $(x_1,y_1)\ne(x_2,y_2)$, by induction hypothesis, $g(x_1,y_1)\ne g(x_2,y_2)$. 
+        For $x_1\in X-\{x_{n+1}\}$, $x_2=x_{n+1}$, $y_1,y_2\in Y$, we have $g(x_1,y_1)\leq nm$ and $g(x_2,y_2)>nm$. So $g(x_1,y_1)\ne g(x_2,y_2)$. For $x_1=x_2=x_{n+1}$ and $y_1,y_2\in Y, y_1\ne y_2$, by definition, $g(x_1,y_1)\ne g(x_2,y_2)$. 
+        Thus, $g$ is injective. So $g$ is bijective and thus $\#(X\times Y)$ has equal cardinality with $\{i\in\mathbf{N}:1\leq i\leq (n+1)m\}$.
+    \end{proof}
+    \item Let $X$ and $Y$ be finite sets. Then the set $Y^X$ is finite and $\#(Y^X)=\#(Y)^{\#(X)}$.
+    \begin{proof}
+        Denote $X=\{x_1,\dotsc,x_n\}$ and $Y=\{y_1,\dotsc,y_m\}$. The statement we need to prove is $Y^X$ has equal cardinality with $\{i\in\mathbf{N}:1\leq i\leq m^n\}$. Induct on $n$. When $n=0$, the number of functions from $X$ to the empty set is 1 which is equal 
+        to $m^0$. This proved the base case. Suppose inductively $Y^X$ has equal cardinality with $\{i\in\mathbf{N}:1\leq i\leq m^n\}$ when $X=\{x_1,\dotsc,x_n\}$. Now consider when $X=\{x_1,\dotsc,x_{n+1}\}$. We want to show that it has equal cardinality with $M=\{i\in\mathbf{N}:1\leq i\leq m^{n+1}\}$.
+        Define function $g$ that maps function $f$ such that $f(x_{n+1})=y_i\in Y$ to $(m^n+i)\in M$. The proof of the bijectivity of $g$ is similar to $(e)$. Once we have proved $g$ is bijective,
+        the induction is closed. 
+    \end{proof}
+\end{enumerate}
+\end{document}
