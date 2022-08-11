@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1660189227 "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 3/3.6/3.6.tex" "3.6.pdf" "3.6" 1660189228
+["pdflatex"] 1660189227 "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 3/3.6/3.6.tex" "3.6.pdf" "3.6" 1660189233
   "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 3/3.6/3.6.tex" 1660189226 19099 1939c90f3f351f0324045533be59087c ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
@@ -165,6 +165,6 @@
   "3.6.aux" 1660189228 51 e307200bf934680127d789540f364594 "pdflatex"
   "3.6.tex" 1660189226 19099 1939c90f3f351f0324045533be59087c ""
   (generated)
-  "3.6.aux"
   "3.6.pdf"
   "3.6.log"
+  "3.6.aux"
