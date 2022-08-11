@@ -163,4 +163,94 @@ Prove proposition 3.6.14.
         the induction is closed. 
     \end{proof}
 \end{enumerate}
+\subsubsection*{Exercise 3.6.5}
+Let $A$ and $B$ be sets. Show that $A\times B$ and $B\times A$ have equal cardinality by constructing an explicit bijection between the two sets. Then use Proposition 3.6.14 to conclude an alternate proof of Lemma 2.3.2.
+\begin{proof}
+    Firstly, we need to define a bijective function $f:A\times B\to B\times A$ such that for $a\in A$ and $b\in B$, $f(a,b)=(b,a)$. 
+    Suppose $(a_1,b_1),(a_2,b_2)\in A\times B$, $f(a_1,b_1)=f(a_2,b_2)$. Then $(b_1,a_1)=(b_2,a_2)$. By definition of ordered pair, $a_1=a_2$ and $b_1=b_2$.
+    Therefore, $(a_1,b_1)=(a_2,b_2)$. Thus, $f$ is injective. For any $(b,a)\in B\times A$, there exists $(a,b)\in A\times B$ such that $f(a,b)=(b,a)$. So $f$ is surjective.
+    Hence, $f$ is bijective, and $A\times B$ and $B\times A$ have equal cardinality. Suppose $\#(A)=n$ and $\#(B)=m$. By Proposition 3.6.14,
+    \begin{equation*}
+        \begin{gathered}
+            \#(A\times B)=\#(A)\times \#(B)=n\times m,\\
+            \#(B\times A)=\#(B)\times \#(A)=m\times n,
+        \end{gathered}
+    \end{equation*}
+    and since 
+    \begin{equation*}
+        \#(A\times B)=\#(B\times A),
+    \end{equation*}
+    we have 
+    \begin{equation*}
+        n\times m=m\times n.
+    \end{equation*}
+\end{proof} 
+\subsubsection*{Exercise 3.6.6}
+Let $A,B,C$ be sets. Show that the sets $(A^B)^C$ and $A^{B\times C}$ have equal cardinality by constructing an explicit bijection between the two sets.
+Conclude that $(a^b)^c=a^{bc}$ for any natural numbers $a,b,c$. Use similar argument to also conclude $a^b\times a^c=a^{b+c}$.
+\begin{proof}
+    Suppose we have $f:B\to A$, $g:C\to A^B$ and $l:B\times C\to A$, let $h:(A^B)^C\to A^{B\times C}$ be a function such that for $g\in (A^B)^C$, for all $b\in B, c\in C$,
+    $(h(g))(b,c)=(g(c))(b)$. Suppose $g_1,g_2\in (A^B)^C$ and $h(g_1)=h(g_2)$. Then by definition, for any $b\in B$, $c\in C$, $(g_1(c))(b)=(g_2(c))(b)$. Let $g_1(c)=f_1$ and $g_2(c)=f_2$. 
+    Since for all $b\in B$, $f_1(b)=f_2(b)$, we have $f_1=f_2$. Then for all $c\in C$, $f_1=g_1(c)=g_2(c)=f_2$, so $g_1=g_2$. Thus, $h$ is injective. For any function $l$, for any
+    $b\in B$, $c\in C$, let $f(b)=l(b,c)$ and $g(c)=f$, by definition, we have $(h(g))(b,c)=l$. Thus, $h$ is surjective. Since $h$ is both injective and surjective, $h$ is bijective. Thus,
+    $(A^B)^C$ and $A^{B\times C}$ have equal cardinality. 
+    
+    Suppose $\#(A)=a$, $\#(B)=b$ and $\#(C)=c$. By Proposition 3.6.14,
+    \begin{equation*}
+        \begin{gathered}
+            \#(A^B)^C=\#(A^B)^{\#(C)}=(\#(A)^{\#(B)})^{\#(C)}=(a^b)^c,\\
+            \#(A^{B\times C})=\#(A)^{\#(B\times C)}=\#(A)^{\#(B)\times \#(C)}=a^{b\times c},
+        \end{gathered}
+    \end{equation*}
+    since $\#((A^B)^C)=\#(A^{B \times C})$, we have 
+    \begin{equation*}
+        (a^b)^c=a^{b\times c}.
+    \end{equation*}
+    Suppose $f: B\to A$, $g:C\to A$, $l:B\cup C\to A$ and $B$ and $C$ are disjoint. Define $h:A^B\times A^C\to A^{B\cup C}$ as for $b\in B$,
+    $c\in C$, $(h(f,g))(b)=f(b)$ and $(h(f,g))(c)=g(c)$. We can show that $h$ is bijective in a similar way. Use this argument and Proposition 3.6.14
+    denote $\#(A)=a,\#(B)=b,\#(C)=c$, we can show that $a^b\times a^c=a^{b+c}$.
+\end{proof}
+\subsubsection*{Exercise 3.6.7}
+Let $A$ and $B$ be sets. Let us say that $A$ has lesser or equal cardinality to $B$ if there exists an injection $f:A\to B$ from $A$ to $B$.
+Show that if $A$ and $B$ are finite sets, then $A$ has lesser or equal cardinality to $B$ iff $\#(A)\leq\#(B)$.
+\begin{proof}
+    We need to show that $\exists$ injection $f:A\to B\iff \#(A)\leq \#(B)$.
+
+    Suppose $\exists$ injection $f:A\to B$. By Proposition 3.6.14, $\#(f(A))=\#(A)$. By definition of function, if $a\in A$, $f(a)\in B$. So $f(A)\subseteq B$.
+    Again by Proposition 3.6.14, $\#f(A)\leq \#f(B)$. Hence, $\#(A)=\#f(A)\leq\#(B)$.
+
+    Suppose $\#(A)\leq \#(B)$. Let $\#(A)=m$ and $\#(B)=n$. By definition, there exists a bijection $f:A\to \{i\in\mathbf{N}:1\leq i\leq m\}$ and 
+    a bijection $g:B\to \{i\in\mathbf{N}:1\leq i\leq n\}$. As we have shown in Exercise 3.6.1, $g^{-1}$ is also bijective. Consider $h=g^{-1}\circ f$. $\{i\in\mathbf{N}:1\leq i\leq m\}
+    \in\{i\in\mathbf{N}:1\leq i\leq n\}$, so the range of $f$ is within the domain of $g^{-1}$. Then $h$ is a valid function from $A$ to $B$. 
+    We need to show that $h$ is injective. Suppose we have $a_1,a_2\in A$ such that $g^{-1}(f(a_1))=g^{-1}(f(a_2))$. Since $g^{-1}$ is bijective, there must be $f(a_1)=f(a_2)$.
+    Since $f$ is bijective, we have $a_1=a_2$. Thus, $h$ is injective. By definition, $A$ has lesser or equal cardinality to $B$.
+\end{proof}
+\subsubsection*{Exercise 3.6.8}
+Let $A$ and $B$ be sets such that there exists an injection $f:A\to B$ from $A$ to $B$. Assume also that $A$ is non-empty. Show that there exists a surjection $g:B\to A$ from $B$
+to $A$. 
+\begin{proof}
+    Define $g:B\to A$ as below 
+    \begin{equation*}
+        g(b)=
+        \begin{cases}
+            a \text{ such that } f(a)=b, & b\in f(A)\\
+            0, & \text{otherwise}
+        \end{cases}.
+    \end{equation*}
+    Then for any $a\in A$, we have $f(a)\in B$ such that $g(f(a))=a$. Hence, $g$ is surjective.
+\end{proof}
+\subsubsection*{Exercise 3.6.9}
+Let $A$ and $B$ be finite sets. Show that $A\cup B$ and $A\cap B$ are also finite sets, and that $\#(A)+\#(B)=\#(A\cup B)+\#(A\cap B)$.
+\begin{proof}
+    By Exercise 3.1.10, $A\cup B=(A\backslash B)\cup (B\backslash A)\cup (A\cap B)$ and $A\backslash B$, $B\backslash A$, and $A\cap B$ are disjoint. 
+    $A=A\backslash B+A\cap B \implies \#(A)=\#(A\backslash B)+\#(A\cap B)$. $B=B\backslash A+A\cap B \implies \#(B)=\#(B\backslash A)+\#(A\cap B)$.
+    So $\#(A)+\#(B)=(\#(A\backslash B)+\#(B\backslash A)+\#(A\cap B))+\#(A\cap B)=\#(A\cap B)+\#(A\cap B)$.
+\end{proof}
+\subsubsection*{Exercise 3.6.10}
+Let $A_1, \dotsc, A_n$ be finite sets such that $\#(\bigcup_{i\in\{1,\dotsc,n\}}A_i)>n$. Show that there exists
+$i\in\{1,\dotsc,n\}$ such that $\#(A_i)\geq 2$. (This is known as the pigeonhole principle.)
+\begin{proof}
+    Suppose for all $i\in\{1,\dotsc,n\}$, $\#(A_i)\leq 1$. Then $\#(\bigcup_{i\in\{1,\dotsc,n\}}A_i)=\#(A_1\cup\dotsc\cup A_n)\leq 
+    \#(A_1)+\cdots+\#(A_n)\leq n$. (Contradiction.) Therefore, there exists $i\in\{1,\dotsc,n\}$ such that $\#(A)\geq 2$.
+\end{proof}
 \end{document}

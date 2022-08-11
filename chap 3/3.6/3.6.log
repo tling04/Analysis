@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.18)  9 AUG 2022 22:20
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.18)  10 AUG 2022 20:40
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -515,20 +515,20 @@ Overfull \hbox (27.36528pt too wide) in paragraph at lines 74--77
 []\T1/cmr/m/n/12 For func-tion $\OML/cmm/m/it/12 f \OT1/cmr/m/n/12 : \OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 i \OMS/cmsy/m/n/12 2 \OT1/cmr/bx/n/12 N \OT1/cmr/m/n/12 : 1 \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 i \OMS/cmsy/m/n/12 ^^T \OML/cmm/m/it/12 n\OMS/cmsy/m/n/12 g ! \OT1/cmr/bx/n/12 N$\T1/cmr/m/n/12 , we claim that $\OML/cmm/m/it/12 M \OT1/cmr/m/n/12 = []\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12 f\OT1/cmr/m/n/12 (1)\OML/cmm/m/it/12 ; [] ; f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 n\OT1/cmr/m/n/12 )\OMS/cmsy/m/n/12 g$\T1/cmr/m/n/12 .
  []
 
-[3] [4] [5] [6] [7] (./3.6.aux) ) 
+[3] [4] [5] [6] [7] [8] [9] [10] (./3.6.aux) ) 
 Here is how much of TeX's memory you used:
- 15971 strings out of 480608
- 298129 string characters out of 5903630
+ 15975 strings out of 480608
+ 298169 string characters out of 5903630
  538182 words of memory out of 5000000
- 31564 multiletter control sequences out of 15000+600000
- 545401 words of font info for 59 fonts, out of 8000000 for 9000
+ 31566 multiletter control sequences out of 15000+600000
+ 546931 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 60i,8n,60p,500b,251s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on 3.6.pdf (7 pages, 161794 bytes).
+ 60i,9n,60p,500b,251s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
+Output written on 3.6.pdf (10 pages, 184632 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 96 PDF objects out of 1000 (max. 8388607)
+ 70 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
