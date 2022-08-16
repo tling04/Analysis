@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1660515284 "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 4/Chapter 4.tex" "Chapter 4.pdf" "Chapter 4" 1660515285
-  "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 4/Chapter 4.tex" 1660515283 22674 5a47f826a67b8759a8110ba31e9dbe13 ""
+["pdflatex"] 1660691297 "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 4/Chapter 4.tex" "Chapter 4.pdf" "Chapter 4" 1660691298
+  "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 4/Chapter 4.tex" 1660691296 37465 ec31d808b1f541d9f20bf08a4f33e8b5 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1136849721 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -39,9 +39,13 @@
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb" 1248133631 32080 340ef9bf63678554ee606688e7b5339d ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
+  "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb" 1248133631 37166 8ab3487cbe3ab49ebce74c29ea2418db ""
+  "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1248133631 35469 70d41d2b9ea31d5d813066df7c99281c ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
+  "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1248133631 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb" 1248133631 32587 1788b0c1c5b39540c96f5e42ccd6dae8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb" 1248133631 32626 4f5c1b83753b1dd3a97d1b399a005b4b ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb" 1215737283 140176 d4962f948b4cc0adf4d3dde77a128c95 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb" 1215737283 135942 859a90cad7494a1e79c94baf546d7de5 ""
@@ -159,9 +163,9 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1586288239 4811913 0be9a7e86c70a26e5e3042966bcd7097 ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1600388267 2432463 5d4593b96709ee1f5a9ca033c656cab2 ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "Chapter 4.aux" 1660515284 51 e307200bf934680127d789540f364594 "pdflatex"
-  "Chapter 4.tex" 1660515283 22674 5a47f826a67b8759a8110ba31e9dbe13 ""
+  "Chapter 4.aux" 1660691298 51 e307200bf934680127d789540f364594 "pdflatex"
+  "Chapter 4.tex" 1660691296 37465 ec31d808b1f541d9f20bf08a4f33e8b5 ""
   (generated)
   "Chapter 4.log"
-  "Chapter 4.aux"
   "Chapter 4.pdf"
+  "Chapter 4.aux"

@@ -13,6 +13,12 @@
 \usepackage{mathtools}
 \usepackage{listings}
 \usepackage{bm}
+\newcommand{\ec}{$\varepsilon$-close }
+\newcommand{\dc}{$\delta$-close }
+\newcommand{\ve}{$\varepsilon$ }
+\newcommand{\ssc}{\subsubsection* }
+\newcommand{\E}{Exercise }
+\newcommand{\La}{[label=(\alph*)]}
 \newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
 \usepackage[english]{babel}
 \newtheorem{theorem}{Theorem}
@@ -461,5 +467,223 @@ Show that if $x,y,z$ are rational numbers such that $x<y$ and $z$ is negative, t
 \begin{proof}
     $x<y\implies y-x=r$ where $r$ is a positive rational number. Since $z$ is negative, $-z$ is positive. Then $(y-x)(-z)=-(y-x)z=(x-y)z=xz-yz=(-z)r>0$.
     Therefore, $xz>yz$. 
+\end{proof}
+\subsection*{4.3 Absolute value and exponentiation}
+\subsubsection*{Definition 4.3.1 (Absolute value).}
+If $x$ is a rational number, the absolute value $|x|$ of $x$ is defined as follows. If $x$ is positive, then $|x|:=x$. If $x$ is negative, then $|x|:=-x$.
+If $x$ is zero, then $|x|:=0$.
+\subsubsection*{Definition 4.3.2 (Distance).}
+Let $x$ and $y$ be rational numbers. The quantity $|x-y|$ is called the distance between $x$ and $y$ and is sometimes denoted $d(x,y)$, thus $d(x,y):=|x-y|$.
+For instance, $d(3,5)=2$.
+\subsubsection*{Proposition 4.3.3 (Basic properties of absolute value and distance).}
+Let $x,y,z$ be rational numbers.
+\begin{enumerate}[label=(\alph*)]
+    \item (Non-degeneracy of absolute value) We have $|x|\geq 0$. Also, $|x|=0$ if and only if $x$ is 0.
+    \item (Triangle inequality for absolute value) We have $|x+y|\leq |x|+|y|$.
+    \item We have the inequalities $-y\leq x\leq y$ if and only if $y\geq |x|$. In particular, we have $-|x|\leq x\leq |x|$.
+    \item (Multiplicativity of absolute value) We have $|xy|=|x||y|$. In particualr, $|-x|=|x|$.
+    \item (Non-degeneracy of distance) We have $d(x,y)\geq 0$. Also, $d(x,y)=0$ if and only if $x=y$.
+    \item (Symmetry of distance) $d(x,y)=d(y,x)$.
+    \item (Triangle inequality for distance) $d(x,z)\leq d(x,y)+d(y,z)$.
+\end{enumerate}
+\subsubsection*{Definition 4.3.4 ($\varepsilon$-closeness).}
+Let $\varepsilon >0$ be a rational number, and let $x,y$ be raional numbers. We say that $y$ is $\varepsilon$-close to $x$ iff we have $d(y,x)<\varepsilon$.
+\subsubsection*{Proposition 4.3.7}
+Let $x,y,z,w$ be rational numbers.
+\begin{enumerate}[label=(\alph*)]
+    \item If $x=y$, then $x$ is \ec to $y$ for every $\varepsilon>0$. Conversely, if $x$ is \ec to $y$ for every $\varepsilon>0$, then we have $x=y$.
+    \item Let \ve$>0$. If $x$ is \ec to $y$, then $y$ is \ec to $x$.
+    \item Let \ve, $\delta>0$. If $x$ is \ec to $y$, and $y$ is \dc to $z$, then $x$ and $z$ are $(\varepsilon+delta)$-close.
+    \item Let \ve, $\delta>0$. If $x$ and $y$ are \ec, and $z$ and $w$ are \dc, then $x+z$ and $y+w$ are $(\varepsilon+\delta)$-close, and $x-z$ and $y-w$ are 
+    also $(\varepsilon+\delta)$-close.
+    \item Let \ve$>0$. If $x$ and $y$ are \ec, they are also $\varepsilon'$-close for every $\varepsilon'>\varepsilon$.
+    \item Let \ve$>0$. If $x$ and $y$ are \ec to $x$, and $w$ is between $y$ and $z$, then $w$ is also \ec to $x$.
+    \item Let \ve$>0$. If $x$ nad $y$ are \ec, and $z$ is non-zero, then $xz$ and $yz$ are $\varepsilon|z|$-close.
+    \item Let \ve, $\delta>0$. If $x$ and $y$ are \ec, and $z$ and $w$ are \dc, then $xz$ and $yw$ are $(\varepsilon|z|+\delta|x|+\varepsilon\delta)$-close.
+\end{enumerate} 
+\subsubsection*{Definition 4.3.9 (Exponentiation to a natural number).}
+Let $x$ be a rational number. To raise $x$ to the power 0, we define $x^0:=1$; in particular we define $0^0:=1$. Now suppose inductively that $x^n$ has been defined 
+for some natural number $n$, then we define $x^{n+1}:=x^n\times x$. 
+\subsubsection*{Proposition 4.3.10 (Properties of exponentiation, I)}
+Let $x,y$ be rational numbers, and let $n,m$ be natural numbers.
+\begin{enumerate}[label=(\alph*)]
+    \item We have $x^n x^m=x^{n+m}$, $(x^n)^m=x^{nm}$, and $(xy)^n=x^n y^n$.
+    \item Suppose $n>0$. Then we have $x^n=0$ if and only if $x=0$.
+    \item If $x\geq y\geq 0$, then $x^n\geq y^n\geq 0$. If $x>y\geq 0$ and $n>0$, then $x^n>y^n\geq 0$.
+    \item We have $|x^n|=|x|^n$.
+\end{enumerate} 
+\subsubsection*{Definition 4.3.11 (Exponentiation to a negative number).}
+Let $x$ be a non-zero rational number. Then for any negative integer $-n$, we define $x^{-n}:=1/x^n$.
+\subsubsection*{Proposition 4.3.12 (Properties of exponentiation, II).}
+\begin{enumerate}[label=(\alph*)]
+    \item We have $x^n x^m=x^{n+m}$, $(x^n)^m=x^{nm}$, and $(xy)^n=x^n y^n$.
+    \item If $x\geq y\geq 0$, then $x^n\geq y^n>0$ if $n$ is positive, and $0<x^n\leq y^n$ if $n$ is negative.
+    \item If $x,y>0$, $n\ne 0$, and $x^n=y^n$, then $x=y$. 
+    \item We have $|x^n|=|x|^n$.
+\end{enumerate} 
+\ssc{\E 4.3.1}
+\begin{enumerate}[label=(\alph*)]
+    \item \begin{proof}
+        If $x$ is positive, $|x|=x>0$. If $x=0$, $|x|=0$. If $x$ is negative, $|x|=-x$>0. Therefore, $|x|\geq 0$. Suppose $|x|=0$. Since if $x$ is positive or negative, 
+        $|x|$ would be positive, $x$ can only be 0. And $|x|=0$, so $x=0$. If $x=0$, by definition, $|x|=0$. Thus, $|x|=0$ if and only if $x$ is 0. 
+    \end{proof}
+    \item \begin{proof}
+    If $x=0$ or $y=0$ (or both), we have $|x+y|=|x|+|y|$.
+
+    If $x>0$, $y>0$, we have $|x+y|=x+y=|x|+|y|$.
+
+    If $x<0$, $y<0$, we have $|x+y|=-(x+y)=(-x)+(-y)=|x|+|y|$.
+
+    If $x>0\,(y>0)$, $y<0\,(x<0)$, and $x+y>0$, we have $|x|+|y|=x-y>x+y=|x+y|$.
+
+    If $x>0\,(y>0)$, $y<0\,(x<0)$, and $x+y<0$, we have $|x|+|y|=x-y>-x-y=-(x+y)=|x+y|$.
+
+    If $x>0\,(y>0)$, $y<0\,(x<0)$, and $x+y=0$, we have $|x|+|y|\geq |x+y|=0$ by $(a)$.
+
+    Thus, $|x+y|\leq |x|+|y|$.
+    \end{proof}
+    \item \begin{proof}
+        We need to show that $-y\leq x\leq y\iff y\geq |x|$. 
+
+        Suppose $-y\leq x\leq y$. Since the inequalities stand, $y$ cannot be negative. If $x=0$, we have $|x|=0$ and $y\geq 0=|x|$.
+        If $x>0$, we have $y\geq x=|x|$. If $x<0$, we have $-y\leq x\implies y\geq -x=|x|$. Thus, $-y\leq x\leq y\implies y\geq |x|$.
+
+        Suppose $y\geq |x|$. When $x=0$, we have $y\geq 0$ and $y\leq 0$. So $-y\leq x\leq y$. When $x>0$, we have $y\geq x$. Since $y\geq 0\implies -y\leq 0$, $x\geq -y$. So 
+        $-y\leq x\leq y$. When $x<0$, we have $y\geq |x|=-x\implies x\geq -y$. Since $y\geq |x|\geq 0$, we have $y\geq x$. So $-y\leq x\leq y$. 
+        Therefore, in all cases we have $-y\leq x\leq y$. Thus, $y\geq |x|\implies -y\leq x\leq y$.
+
+        Thus, $-y\leq x\leq y\iff y\geq |x|$.
+        
+        And since $|x|\geq |x|$, we have $-|x|\leq x\leq |x|$.
+    \end{proof}
+    \item \begin{proof}
+        If $x=0$ or $y=0$ (or both), we have $|xy|=|x||y|=0$.
+
+        If $x>0$, $y>0$, then $|xy|=xy=|x||y|$.
+
+        If $x>0$ ($y>0$), $y<0$ $(x<0)$, then $|xy|=-xy=x(-y)=|x||y|$.
+
+        If $x<0$, $y<0$, then $|xy|=xy=(-x)(-y)=|x||y|$.
+
+        Thus, $|xy|=|x||y|$.
+
+        Let $y=-1$, we have $|-x|=x$.
+    \end{proof}
+    \item \begin{proof}
+        Since $d(x,y)$ is an absolute value, by $(a)$ we have $d(x,y)\geq 0$. By $(a)$, we also have $d(x,y)=|x-y|=0$ if and only if $x-y=0\iff x=y$.
+    \end{proof}
+    \item \begin{proof}
+        By $(d)$, we have $d(x,y)=|x-y|=|y-x|=d(y,x)$.
+    \end{proof}
+    \item \begin{proof}
+        By $(b)$, we have $d(x,z)=|x-z|=|(x-y)+(y-z)|\leq|x-y|+|y-z|=d(x,y)+d(y,z)$.
+    \end{proof}
+\end{enumerate}
+\ssc{\E 4.3.2}
+\begin{enumerate}[label=(\alph*)]
+    \item \begin{proof}
+        Suppose $x=y$, then $|x-y|=0\leq$ \ve for every \ve $>0$. Suppose $x$ is \ec to $y$ for every \ve$>0$. If $x\ne y$, then $|x-y|=a>0$. Let \ve$=a/2$, we have
+        $|x-y|=2$\ve$>$ \ve (contradiction). Therefore, $x=y$. 
+    \end{proof}
+    \item \begin{proof}
+        Since $x$ is \ec to $y$, $|x-y|\leq $ \ve. As $|y-x|=|x-y|$, we have $|y-x|\leq $\ve. Therefore, $y$ is \ec to $x$.
+    \end{proof}
+    \item \begin{proof}
+        Since $x$ is \ec to $y$, $|x-y|\leq$ \ve. Since $y$ is \dc to $z$, $|y-z|\leq \delta$. By Proposition 4.3.3, we have $|x-z|\leq |x-y|+|y-z|\leq 
+        (\varepsilon+\delta)$. Thus, $x$ and $z$ are $(\varepsilon+\delta)$-close.
+    \end{proof}
+    \item \begin{proof}
+        Since $x$ is \ec to $y$, $|x-y|\leq$ \ve. Since $z$ is \dc to $w$, $|z-w|\leq \delta$. By Proposition 4.3.3, $|(x+z)-(y+w)|=|(x-y)+(z-w)|\leq |x-y|+|z-w|\leq \varepsilon+\delta$.
+        Therefore, $x+z$ and $y+w$ are $(\varepsilon+\delta)$-close. Since $|z-w|\leq \delta$ implies $|w-z|\leq \delta$, by Proposition 4.3.3, we have 
+        $|(x-z)-(y-w)|=|(x-y)+(w-z)|\leq |x-y|+|w-z|\leq \varepsilon+\delta$. Therefore, $x-z$ and $y-w$ are also $(\varepsilon+\delta)$-close.
+    \end{proof}
+    \item \begin{proof}
+        Since $x$ and $y$ are \ec, we have $|x-y|\leq \varepsilon$. Since $\varepsilon<\varepsilon'$, $|x-y|\leq\varepsilon<\varepsilon'$ for every $\varepsilon'>\varepsilon$ which also implies 
+        $|x-y|\leq\varepsilon'$ for every $\varepsilon'>\varepsilon$. Thus, $x$ and $y$ are $\varepsilon'$-close for every $\varepsilon'>\varepsilon$. 
+    \end{proof}
+    \item \begin{proof}
+        Without loss of generality, assume $y\leq w\leq z$. 
+        
+        $x\geq z$. Since $y$ is \ec to $x$, $|x-y|=x-y\leq\varepsilon$. Then $|w-x|=x-w\geq x-y=|x-y|\leq\varepsilon$. So $w$ is \ec to $x$.
+
+        $x\leq y$. Since $z$ is \ec to $x$, $|z-x|=z-x\leq \varepsilon$. Then $|w-x|=w-x\leq z-x=|z-x|\leq\varepsilon$. So $w$ is \ec to $x$.
+
+        $y\leq x\leq z$. We have $|w-x|\leq\max(|z-x|,|x-y|)\leq\varepsilon$. So $w$ is \ec to $x$.
+    \end{proof}
+    \item \begin{proof}
+        Since $x$ and $y$ are $\varepsilon$-close, $|x-y|\leq\varepsilon$. Since $|z|\geq 0$, we have $|x-y||z|\leq\varepsilon|z|$. By Proposition 4.3.3, $|xz-yz|=
+        |(x-y)z|=|x-y||z|\leq\varepsilon|z|$. Thus, $xz$ and $yz$ are $\varepsilon|z|$-close.
+    \end{proof}
+\end{enumerate}
+\ssc{\E 4.3.3}
+Prove Proposition 4.3.10.
+\begin{enumerate}[label=(\alph*)]
+    \item \begin{proof}
+        $x^n x^m=x^{n+m}$. Induct on $n$. When $n=0$, we have $x^0x^m=x^{0+m}=x^m$. The base case is proved. Assume inductively $x^n x^m=x^{n+m}$. 
+        Then $x^{n+1}x^m=x\cdot x^n\cdot x^m=x\cdot x^{n+m}=x^{(n+1)+m}$. This closes the induction.
+
+        $(x^n)^m=x^{nm}$. Induct on $m$. When $m=0$, we have $(x^n)^0=x^{n\cdot 0}=1$. Then assume inductively $(x^n)^m=x^{nm}$. Then we have
+        $(x^n)^{m+1}=(x^n)^m\cdot x^n=x^{mn}\cdot x^n=x^{mn+n}=x^{n(m+1)}$. This closes the induction.
+
+        $(xy)^n=x^n y^n$. Induct on $n$. When $n=0$, we have $(xy)^0=x^0 y^0=1$. Assume inductively $(xy)^n=x^n y^n$. Then $(xy)^{n+1}=(xy)^n(xy)=x^n y^n xy=
+        x^{n+1}y^{n+1}$. This closes the induction.
+    \end{proof}
+    \item \begin{proof}
+        $x^n=0\implies x=0$. Induct on $n$. When $n=1$, $x^n=x^1=0\implies x=0$. The base case is proved. Assume inductively $x^n=0\implies x=0$. Then 
+        if we have $x^{n+1}=0$, by definition, $x^n\cdot x=0$. Then either $x^n=0$ or $x=0$. If $x^n=0$, by induction hypothesis, $x=0$. Thus, in both cases, we have $x=0$.
+        Then $x^{n+1}=0\implies x=0$. This closes the induction.
+
+        $x=0\implies x^n=0$. If $x=0$, we have $x^n=x\cdot x^{n-1}=0$. Thus, $x=0\implies x^n=0$.
+
+        Therefore, $x^n=0$ if and only if $x=0$.
+    \end{proof}
+    \item \begin{proof}
+        $x\geq y\geq 0\implies x^n\geq y^n\geq 0$. Induct on $n$. When $n=0$, if $x\geq y\geq 0$, we have $x^0\geq y^0\geq 0$. Now assume inductively 
+        $x\geq y\geq 0\implies x^n\geq y^n\geq 0$. Then $x^{n+1}=x\cdot x^n\geq x\cdot y^n\geq y\cdot y^n=y^{n+1}$. And $y^{n+1}=y\cdot y^n\geq y^n=0$.
+        Therefore, $x^{n+1}\geq y^{n+1}\geq 0$. This closes the induction.
+
+        The latter part can be shown in a similar way.
+    \end{proof}
+    \item \begin{proof}
+        $|x^n|=|x|^n$. Induct on $n$. When $n=0$, $|x^0|=|x|^0=1$. Assume inductively $|x^n|=|x|^n$. Then $|x^{n+1}|=|x^n\cdot x|=|x^n||x|=|x|^n\cdot |x|=|x|^{n+1}$.
+        This closes the induction.
+    \end{proof}
+\end{enumerate}
+\ssc{\E 4.3.4}
+Prove Proposition 4.3.12.
+\begin{enumerate}[label=(\alph*)]
+    \item $x^n x^m=x^{n+m}$. 
+    \begin{itemize}
+        \item $n\geq 0$, $m\geq 0$. Has been proved in Exercise 4.3.3.
+        \item $n<0$, $m<0$. Since $-n>0$ and $-m>0$, we have $x^n x^m=\frac{1}{x^{-n}}\cdot \frac{1}{x^{-m}}=\frac{1}{x^{-(n+m)}}=x^{n+m}$.
+        \item $n\geq 0$ ($m\geq 0$), $m<0$ ($n<0$), $n+m\geq 0$. Since $-m>0$, we have $x^n x^m=(x^{n+m}x^{-m})x^m=x^{n+m}(x^{-m}x^m)=x^{n+m}$.
+        \item $n\geq 0$ ($m\geq 0$), $m<0$ ($n<0$), $n+m<0$. Then $-n-m>0$. $x^{n+m}=\frac{1}{x^{-n-m}}\implies \frac{1}{x^n}x^{n+m}=\frac{1}{x^{-n-m}}\cdot\frac{1}{x^n}
+        =\frac{1}{x^{-m}}=x^m$. Therefore, $x^n x^m=x^{n+m}$.
+    \end{itemize}
+    $(x^n)^m=x^{nm}$. \\
+    First, we need to show that $\frac{1}{x^n}=(\frac{1}{x})^n$ for natural number $n$. Induct on $n$. When $n=0$, $\frac{1}{x^0}=(\frac{1}{x})^0=1$. 
+    Assume inductively $\frac{1}{x^n}=(\frac{1}{x})^n$. Then $\frac{1}{x^{n+1}}=\frac{1}{x^n}\cdot \frac{1}{x}=(\frac{1}{x})^n\cdot\frac{1}{x}=(\frac{1}{x})^{n+1}$. 
+    This closes the induction.
+    \begin{itemize}
+        \item $n\geq 0, m\geq 0$. Has been proved in Exercise 4.3.3.
+        \item $n<0, m<0$. $(x^n)^m=\frac{1}{(x^n)^{-m}}=\frac{1}{(\frac{1}{n})^{-m}}=\frac{1}{\frac{1}{(x^{-n})^{-m}}}=\frac{1}{\frac{1}{x^{(-n)(-m)}}}=\frac{1}{\frac{1}{x^{nm}}}=x^{nm}$.
+        \item $n\geq 0$ ($m\geq 0$), $m<0$ ($n<0$). Then $(x^n)^m=\frac{1}{(x^n)^{-m}}=\frac{1}{x^{-nm}}=x^{nm}$.
+    \end{itemize}
+    $(xy)^n=x^n y^n$. We have proved the case when $n\geq 0$. If $n<0$, we have $(xy)^n=\frac{1}{(xy)^{-n}}=\frac{1}{x^{-n}y^{-n}}=\frac{1}{x^{-n}}\frac{1}{y^{-n}}=x^n y^n$.
+    \item $x\geq y>0\implies x^n\geq y^n>0$ when $n>0$. Consider the base case when $n=1$. If $x\geq y>0$, we have $x^1\geq y^1>0$. Assume inductively $x\geq y>0\implies x^n\geq y^n>0$.
+    Then $x^{n+1}=x^n\cdot x\geq y^n\cdot x\geq y^n\cdot y=y^{n+1}$, $y^{n+1}=y^n\cdot y>0\cdot y=0$. So $x^{n+1}\geq y^{n+1}>0$. This closes the induction.
+
+    When $n$ is negative, use the conclusion above. Since $-n>0$, we have $x^{-n}\geq y^{-n}>0$. Since $x^{-n}\geq y^{-n}$, by multiplying both sides by $x^n y^n$ (which is positive), we have 
+    $y^n\geq x^n$. Since $x^{-n}=\frac{1}{x^n}>0$, we have $x^n>0$. Therefore, $0<x^n\leq y^n$.
+    \item When $n>0$, suppose $x^n=y^n$ and $x\ne y$. If $x>y$, $x^n>y^n$. If $y>x$, $y^n>x^n$. In either case, $x^n\ne y^n$ (contradiction). Therefore, $x=y$. When $n<0$, 
+    since $-n>0$, we have $x^{-n}=y^{-n}\implies x=y$. By multiplyting both sides of $x^{-n}=y^{-n}$, we have $x^n=y^n\iff x^{-n}=y^{-n}$. Thus, $x^n=y^n\iff x^{-n}=y^{-n}\implies x=y$.
+    Therefore, if $x,y>0,n\ne 0$, and $x^n=y^n$, then $x=y$.
+    \item The case $n\geq 0$ has been proved in Exercise 4.3.3. When $n<0$, we have $-n>0$, then $|x^{-n}|=|x|^{-n}$. And $|x^{-n}|=|(\frac{1}{x})^n|=|\frac{1}{x^n}|=\frac{1}{|x^n|}$,
+    $|x|^{-n}=\frac{1}{|x|^n}$. Since $\frac{1}{|x^n|}=\frac{1}{|x|^n}$, we have $|x^n|=|x|^n$. 
+\end{enumerate}
+\ssc{\E 4.3.5}
+Prove that $2^N\geq N$ for all positive integers $N$.
+\begin{proof}
+    When $N=1$, $2^1\geq 1$ as desired. Assume inductively $2^N\geq N$. Then $2^{N+1}=2^N\cdot 2\geq 2N=N+N\geq N+1$. Therefore, $2^N\geq N$ is true for all positive integers $N$.
 \end{proof}
 \end{document}
