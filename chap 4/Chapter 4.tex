@@ -686,4 +686,68 @@ Prove that $2^N\geq N$ for all positive integers $N$.
 \begin{proof}
     When $N=1$, $2^1\geq 1$ as desired. Assume inductively $2^N\geq N$. Then $2^{N+1}=2^N\cdot 2\geq 2N=N+N\geq N+1$. Therefore, $2^N\geq N$ is true for all positive integers $N$.
 \end{proof}
+\subsection*{4.4 Gaps in the rational numbers}
+\subsubsection*{Proposition 4.4.1 (Interspersing of integers by rationals).}
+Let $x$ be a rational number. then there exists an integer $n$ such that $n\leq x<n+1$. In fact, this integer is unique. In particualr, there exists a natural number $N$ such that 
+$N>x$.
+\subsubsection*{Proposition 4.4.3 (Interspersing of rationals by rationals).}
+If $x$ and $y$ are two rationals such that $x<y$, then there exists a third rational $z$ such that $x<z<y$.
+\subsubsection*{Proposition 4.4.4}
+There does not exist any rational number $x$ for which $x^2=2$.
+\subsubsection*{Proposition 4.4.5}
+For every rational number $\varepsilon>0$, there exists a non-negative rational number $x$ such that $x^2<2<(x+\varepsilon)^2$.
+\subsubsection*{Exercise 4.4.1}
+Prove Proposition 4.4.1.
+\begin{proof}
+    Consider $x\geq 0$. Then $x=\frac{a}{b}$ where $a,b$ are natural numbers and $b\ne 0$. Since $a$ is a natural number and $b>0$, by Proposition 2.3.9, $a=bn+r$ where $0\leq r<n$. 
+    Therefore, $bn\leq a=bn+r< b(n+1)$. Thus, $n\leq x=\frac{a}{b}<n+1$. 
+
+    Now consider $x<0$. We have $-x=\frac{a}{b}$. By Proposition 2.3.9, we have $a=bm+r$ where $0\leq r<b$. If $r>0$, $bm<a<b(m+1)$ so $m<-x<m+1$. Then $-(m+1)<x<-m$ where $-(m+1)$ and $-m$ are integers.
+    Since $-(m+1)<x<-m$ we can also say $-(m+1)\leq x<-m$.
+    If $r=0$, we can write $a=b(m+1)+r=b(m+1)$ since $-x>0$. Then we have $m<-x\leq (m+1)$ and therefore $-(m+1)\leq x<m$. 
+    Thus, in both cases, we can find an integer $n$ such that $n\leq x<n+1$. Therefore, for any rational number $x$, there exists an integer 
+    $n$ such that $n\leq x<n+1$.
+
+    Assume we have $n\leq x<n+1$ and $m\leq x<m+1$ where $n,m$ are integers and $n\ne m$. Without loss of generality, suppose $m>n$. Then $m\geq n+1$. So we have 
+    $x\geq m\geq n+1$ and $x<n+1$ at the same time (contradiction). Therefore, $m>n$ does not hold. Similarly, we can show that $m<n$ does not hold either. Thus, $m=n$ and the integer is unique.
+
+    Since there exists an integer $n$ such that $n\leq x<n+1$, let $N=n+1$, we have $N>x$.
+\end{proof}
+\subsubsection*{Exercise 4.4.2}
+A definition: a sequence $a_0,a_1,a_2,\dotsc$ of numbers (natural numbers, integers, rationals, or reals) is said to be infinite descent if we have $a_n>a_{n+1}$ for all
+natural numbers $n$.
+\begin{enumerate}[label=(\alph*)]
+    \item Prove the principle of infinite descent: that it is not possible to have a sequence of natural numbers which is in infinite descent.
+    \begin{proof}
+        Assume that one can find a sequence of natrual numbers which is in infinite descent. Show that $a_n\geq k$ for all $k\in\mathbf{N}$ and all $n\in\mathbf{N}$. Induct on $k$. When $k=0$, since $a_n$ is a natural 
+        number for all $n\in\mathbf{N}$. Therefore, $a_n\geq 0$ for all $n\in\mathbf{N}$. Assume inductively $a_n\geq k$ for all $n\in\mathbf{N}$. We want to show that $a_n\geq k+1$ for all $n\in\mathbf{N}$.
+        Consider an arbitrary $n\in\mathbf{N}$. Since $a_n>a_{n+1}$ and they are natural numbers, we have $a_n\geq a_{n+1}+1$. And by induction hypothesis, we have $a_{n+1}\geq k$. Therefore, we have $a_n\geq g_{n+1}+1\geq k+1$. 
+        Thus, $a_n\geq k+1$ for all $n\in\mathbf{N}$. This closes the induction. 
+        
+        Then, since $a_0$ is a natural number, we have $a_n\geq a0$ for all $n\in\mathbf{N}$. So $a_1\geq a_0$. But by the definition of infinite descent, we have $a_0>a_1$. (Contradiction.)
+        Therefore, it is not possible to have a sequence of natural numbers which is in infinite descent.
+    \end{proof}
+    \item Does the principle of infinite descent work if the sequence $a_1,a_2,a_3,\dotsc$ is allowed to take integer values instead of natural number values? What about if it is allowed 
+    to take positive rational values instead of natural numbers? Explain.
+    \begin{proof}
+        The principle of infinite descent does not work if we are allowed to take integer values. Since for every $a_n\in \mathbf{Z}$, we can take $a_{n+1}=a_n-1$ such that $a_{n+1}\in\mathbf{Z}$ and $a_{n+1}<a_n$. 
+        It also does not work for positive rational values. Since natural numbers do not have a upper bound, for every $a_n=\frac{p}{q}$ where $p,q$ are positive integers, we can find $a_{n+1}=\frac{p}{q+1}$ such that 
+        $p,(q+1)$ are positive integers. Therefore, for every $a_n\in\mathbf{R}$ ($n\in \mathbf{Z}^+$), we can find $a_{n+1}<a_n$. 
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 4.4.3}
+Fill in the gaps marked in the proof of Proposition 4.4.4.
+\begin{proof}
+    Every natrual number is either even or odd, but not both. Assume $p$ is both even and odd. Then $p=2m=2n+1$ for some natural numbers $m,n$. 
+    Then $2(m-n)=1$ which means $1=2\times 0+1$ is even. (Contradiction.) Thus, natural numbers cannot be both even and odd. Then we need to show that every natural number $n$ is either 
+    even or odd. Induct on $n$. $n=0$ is even. Assume inductively $n$ is either even or odd. If $n$ is odd, there exists $m\in\mathbf{N}$ such that $n=2m$. Then $n+1=2m+1$ which is odd.
+    If $n$ is even, then there exists $m\in\mathbf{N}$ such that $n=2m+1$. Then $n+1=2m+1+1=2(m+1)$ which is even. Therefore, $n+1$ is either odd or even. 
+    Thus, every natrual number is either even or odd, but not both.
+
+    If $p$ is odd, then $p^2$ is also odd. Since $p$ is odd, there exists a natural number $m\in\mathbf{N}$ such that $p=2m+1$. Then $p^2=(2m+1)(2m+1)=4m^2+4m+1=2(2m^2+2m)+1$ where $(2m^2+2m)$
+    is a natural number. Thus, $p^2$ is odd.
+
+    $p^2=2q^2\implies q<p$. For positive natural numbers $p,q$, assume $p=q$. Then $p^2=q^2$ and $p^2<p^2+p^2=q^2+q^2=2q^2$. (contradiction)
+    Assume $p<q$. Then $p^2=p\times p<q\times p<q\times q<2\times q\times q=2q^2$. (contradiction) Therefore, there must be $q<p$.
+\end{proof}
 \end{document}
