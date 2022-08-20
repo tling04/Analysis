@@ -1,0 +1,157 @@
+\documentclass[12pt, letter]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumitem}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{bm}
+\newcommand{\ssc}{\subsubsection* }
+\newcommand{\an}{$(a_n)_{n=1}^\infty$ }
+\newcommand{\bn}{$(b_n)_{n=1}^\infty$ }
+\newcommand{\E}{Exercise }
+\newcommand{\La}{[label=(\alph*)]}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}
+\usepackage{setspace}
+
+\setstretch{1.25}
+\begin{document}
+\section*{Chapter 5}
+\section*{The real numbers}
+\subsection*{5.1 Cauchy sequences}
+\subsubsection*{Definition 5.1.1 (Sequences).}
+Let $m$ be an integer. A sequence $(a_n)_{n=m}^{\infty}$ of rational numbers is any function from the set $\{n\in\mathbf{Z}:n\geq m\}$ to $\mathbf{Q}$, i.e.,
+a mapping which assigns to each integer $n$ greater than or equal to $m$, a rational number $a_n$. More informally, a sequence $(a_n)_{n=m}^\infty$ of rational 
+numbers is a collection of rationals $a_m$, $a_{m+1}$, $a_{m+2},\dotsc$
+\subsubsection*{Definition 5.1.3 ($\varepsilon$-steadiness).}
+Let $\varepsilon>0$. A sequence $(a_n)_{n=0}^\infty$ is said to be $\varepsilon$-steady iff each pair $a_j,a_k$ of sequence elements is $\varepsilon$-close for 
+every natural number $j,k$. In other words, the sequence $a_0,a_1,a_2,\dotsc$ is $\varepsilon$-steady iff $|a_j-a_k|\leq\varepsilon$ for all $j,k$.
+\subsubsection*{Definition 5.1.6 (Eventual $\varepsilon$-steadiness).}
+Let $\varepsilon>0$. A sequence $(a_n)_{n=0}^\infty$ is said to be eventually $\varepsilon$-steady iff the sequence $a_N,a_{N+1},a_{N+2},\dotsc$ is $\varepsilon$-steady 
+for some natural number $N\geq 0$. In other words, the sequence $a_0,a_1,a_2,\dotsc$ is eventually $\varepsilon$-steady iff there exists an $N\geq 0$ such that 
+$|a_j-a_k|\leq\varepsilon$ for all $j,k\geq N$.
+\subsubsection*{Definition 5.1.8 (Cauchy sequences).}
+A sequence $(a_n)_{n=0}^\infty$ of rational numbers is said to be a Cauchy sequence iff for every rational $\varepsilon>0$, the sequence $(a_n)_{n=0}^\infty$ is 
+eventually $\varepsilon$-steady. In other words, the sequence $a_0,a_1,a_2,\dotsc$ is a Cauchy sequence iff for every $\varepsilon>0$, there exists an $N\geq 0$
+such that $d(a_j,a_k)$ for all $j,k\geq N$.
+\subsubsection*{Proposition 5.1.11}
+The sequence $a_1,a_2,a_3,\dotsc$ defined by $a_n:=1/n$ (i.e., the sequence $1,1/2,1/3,\dotsc$) is a Cauchy sequence. 
+\subsubsection*{Definition 5.1.12 (Bounded sequences).} 
+Let $M\geq 0$ be rational. A finite sequence $a_1,a_2,\dotsc,a_n$ is bounded by $M$ iff $|a_i|\leq M$ for all $1\leq i\leq n$. An infinite sequence $(a_n)_{n=1}^\infty$
+is bounded by $M$ iff $|a_i|\leq M$ for all $i\geq 1$. A sequence is said to be bounded iff it is bounded by $M$ for some rational $M\geq 0$.
+\subsubsection*{Lemma 5.1.14 (Finite sequences are bounded).}
+Every finite sequence $a_1,a_2,\dotsc, a_n$ is bounded.
+\subsubsection*{Lemma 5.1.15 (Cauchy sequences are bounded).}
+Every Cauchy sequence $(a_n)_{n=1}^\infty$ is bounded.
+\subsubsection*{Exercise 5.1.1}
+Prove Lemma 5.1.15.
+\begin{proof}
+    Suppose $(a_n)_{n=1}^\infty$ is a Cauchy sequence. So for $\varepsilon=1$, there exists an $N\geq 1$ such that $d(a_j,a_k)\leq 1$ for all
+    $j,k\geq N$. Then the sequence can be splite into two parts: $a_1,\dotsc,a_N$ and $a_{N+1},a_{N+2},\dotsc$. The former is a finite sequence, by Lemma 5.1.14, 
+    it is bounded. Suppose this finite sequence is bounded by $M_1$. Consider $a_{N+1},a_{N+2},\dotsc$. Since it is $1$-steady, for any $i>N+1$, we have 
+    $|a_i-a_{N+1}|\leq 1$. Rearrange the inequalities, we have $a_{N+1}-1\leq a_i\leq a_{N+1}+1$. Let $M_2=a_{N+1}+1$. Then $a_{N+1}<M_2$ and for every $i>N+1$, we have 
+    $a_i\leq M_2$. So sequence $a_{N+1},a_{N+2},\dotsc$ is bounded by $M_2$. Let $M=\max\{M_1,M_2\}$. Then the Cauchy sequence $(a_n)_{n=1}^\infty$
+    is bounded by $M$. 
+\end{proof}
+\subsection*{5.2 Equivalent Cauchy sequences}
+\subsubsection*{Definition 5.2.1 ($\varepsilon$-close sequences).}
+Let $(a_n)_{n=0}^\infty$ and $(b_n)_{n=0}^\infty$ be two sequences, and let $\varepsilon>0$. We say that the sequence $(a_n)_{n=0}^\infty$ is $\varepsilon$-close 
+to $(b_n)_{n=0}^\infty$ iff $a_n$ is $\varepsilon$-close to $b_n$ for each $n\in\mathbf{N}$. In other words, the sequence $a_0,a_1,a_2,\dotsc$ is $\varepsilon$-close
+to the sequence $b_1,b_1,b_2,\dotsc$ iff $|a_n-b_n|\leq\varepsilon$ for all $n=0,1,2,\dotsc$.
+\subsubsection*{Definition 5.2.3 (Eventually $\varepsilon$-close sequences).}
+Let $(a_n)_{n=0}^\infty$ and $(b_n)_{n=0}^\infty$ be two sequences, and let $\varepsilon>0$. We say that the sequence $(a_n)_{n=0}^\infty$ is eventually $\varepsilon$-close 
+to $(b_n)_{n=0}^\infty$ iff there exists an $N\geq 0$ such that the sequences $(a_n)_{n=N}^\infty$ and $(b_n)_{n=N}^\infty$ are $\varepsilon$-close. In other words,
+$a_0,a_1,a_2,\dotsc$ is eventually $\varepsilon$-close to $b_0,b_1,b_2,\dotsc$ iff there exists an $N\geq 0$ such that $|a_n-b_n|\leq\varepsilon$ for all $n\geq N$.
+\subsubsection*{Definition 5.2.6 (Equivalent sequences).}
+Two sequences $(a_n)_{n=0}^\infty$ and $(b_n)_{n=0}^\infty$ are equivalent iff for each rational $\varepsilon>0$, the sequences $(a_n)_{n=0}^\infty$ and 
+$(b_n)_{n=0}^\infty$ are eventually $\varepsilon$-close. In other words, $a_0,a_1,a_2,\dotsc$ and $b_0,b_1,b_2,\dotsc$ are equivalent iff for every for every rational $\varepsilon>0$,
+there exists an $N\geq 0$ such that $|a_n-b_n|\leq\varepsilon$ for all $n\geq N$.
+\subsubsection*{Proposition 5.2.8}
+Let $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ be the sequences $a_n=1+10^{-n}$ and $b_n=1-10^{-n}$. Then the sequences $a_n$, $b_n$ are equivalent.
+\subsubsection*{Exercise 5.2.1}
+Show that if $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are equivalent sequences of rationals, then $(a_n)_{n=1}^\infty$ is a Cauchy sequence if and only if $(b_n)_{n=1}^\infty$
+is a Cauchy sequence.
+\begin{proof}
+    Assume $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are equivalent sequences of rationals, and $(a_n)_{n=1}^\infty$ is a Cauchy sequence. We want to show that for any rational 
+    $\varepsilon>0$, there exists $N\geq 1$ such that $b_N,b_{N+1},\dotsc$ is $\varepsilon$-steady. 
+
+    Since $(a_n)_{n=1}^\infty$ is a Cauchy sequence and $\frac{\varepsilon}{3}>0$, there exists $N_1\geq 1$ such that for all $i,j\geq N_1$, $|a_i-a_j|\leq \frac{\varepsilon}{3}$.
+    Since $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are equivalent, and $\frac{\varepsilon}{3}>0$, there exists $N_2\geq 1$ such that for all $i\geq N_2$, $|b_i-a_i|\leq\frac{\varepsilon}{3}$.
+    Let $N=\max\{N_1,N_2\}$. Suppose $i\geq N$ is an arbitrary natural number. Since $N\geq N_1$, we have 
+    \begin{equation*}
+        |a_i-a_{i+1}|\leq \frac{\varepsilon}{3}.
+    \end{equation*}
+    Since $N\geq N_2$, we have
+    \begin{equation*}
+        \begin{gathered}
+            |b_i-a_i|\leq\frac{\varepsilon}{3}
+        \end{gathered}
+    \end{equation*}
+    and 
+    \begin{equation*}
+        |a_{i+1}-b_{i+1}|\leq \frac{\varepsilon}{3}.
+    \end{equation*}
+    Since 
+    \begin{equation*}
+        |a_i-a_{i+1}|\leq \frac{\varepsilon}{3}
+    \end{equation*}
+    and 
+    \begin{equation*}
+        |b_i-a_i|\leq\frac{\varepsilon}{3},
+    \end{equation*}
+    we have 
+    \begin{equation*}
+        |b_i-a_{i+1}|\leq |a_i-a_{i+1}|+|b_i-a_i|\leq\frac{\varepsilon}{3}+\frac{\varepsilon}{3}=\frac{2\varepsilon}{3}.
+    \end{equation*}
+    Since 
+    \begin{equation*}
+        |a_{i+1}-b_{i+1}|\leq \frac{\varepsilon}{3}
+    \end{equation*}
+    and 
+    \begin{equation*}
+        |b_i-a_{i+1}|\leq\frac{2\varepsilon}{3},
+    \end{equation*}
+    we have 
+    \begin{equation*}
+        |b_i-b_{i+1}|\leq|a_{i+1}-b_{i+1}|+|b_i-a_{i+1}|\leq\frac{\varepsilon}{3}+\frac{2\varepsilon}{3}=\varepsilon.
+    \end{equation*}
+    Thus, for any $\varepsilon>0$, we can find $N=\max\{N_1,N_2\}$ such that $b_N,b_{N+1},dotsc$ is $\varepsilon$-steady. Therefore, $(b_n)_{i=1}^\infty$
+    is a Cauchy sequence. 
+
+    Similarly, we can show that if $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are equivalent sequences of rationals and $(b_n)_{i=1}^\infty$ is 
+    a Cauchy sequence, then $(a_n)_{n=1}^\infty$ is a Cauchy sequence. Thus, if $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are equivalent sequences of rationals, then $(a_n)_{n=1}^\infty$ is a Cauchy sequence if and only if $(b_n)_{n=1}^\infty$
+    is a Cauchy sequence.
+\end{proof}
+\subsubsection*{Exercise 5.2.2}
+Let $\varepsilon>0$. Show that if $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are eventually $\varepsilon$-close, then \an is bounded if and only if \bn is bounded.
+\begin{proof}
+    Suppose $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are eventually $\varepsilon$-close and \an is bounded. Since $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are eventually $\varepsilon$-close,
+    for any $\varepsilon>0$, there exists $N\geq 1$ such that for any $i\geq N$, $|a_i-b_i|\leq\varepsilon$. Consider an arbitrary $\varepsilon>0$. We can find $N\geq 1$ such that for any 
+    $i\geq N$, $|a_i-b_i|\leq \varepsilon$. Then 
+    \begin{equation*}
+        a_i-\varepsilon\leq b_i\leq a_i+\varepsilon.
+    \end{equation*}
+    Since \an is bounded, there exists $M$ such that $|a_i|\leq M$ for all $i\geq 1$. Then 
+    \begin{equation*}
+        -M\leq a_i\leq M.
+    \end{equation*}
+    So
+    \begin{equation*}
+        -M-\varepsilon\leq b_i\leq M+\varepsilon.
+    \end{equation*}
+    Therefore, $|b_i|\leq M+\varepsilon$ for all $i\geq 1$. Thus, \bn is bounded. 
+
+    Similarly, we can show that if $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are eventually $\varepsilon$-close, and \bn is bounded, then \an is bounded.
+
+    Thus, if $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are eventually $\varepsilon$-close, then \an is bounded if and only if \bn is bounded. 
+\end{proof}
+\end{document}
