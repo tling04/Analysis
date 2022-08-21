@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1661041250 "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 5/Chapter 5.tex" "Chapter 5.pdf" "Chapter 5" 1661041251
-  "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 5/Chapter 5.tex" 1661041250 18849 b5f0342b0999b93e80da34f1e72c9fd1 ""
+["pdflatex"] 1661046163 "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 5/Chapter 5.tex" "Chapter 5.pdf" "Chapter 5" 1661046169
+  "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 5/Chapter 5.tex" 1661046162 18779 7f140c4a542bf875e6f002881a9348af ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
@@ -160,9 +160,9 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1586288239 4811913 0be9a7e86c70a26e5e3042966bcd7097 ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1600388267 2432463 5d4593b96709ee1f5a9ca033c656cab2 ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "Chapter 5.aux" 1661041251 51 e307200bf934680127d789540f364594 "pdflatex"
-  "Chapter 5.tex" 1661041250 18849 b5f0342b0999b93e80da34f1e72c9fd1 ""
+  "Chapter 5.aux" 1661046163 51 e307200bf934680127d789540f364594 "pdflatex"
+  "Chapter 5.tex" 1661046162 18779 7f140c4a542bf875e6f002881a9348af ""
   (generated)
-  "Chapter 5.aux"
   "Chapter 5.log"
+  "Chapter 5.aux"
   "Chapter 5.pdf"

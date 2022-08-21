@@ -95,9 +95,9 @@ is a Cauchy sequence.
 
     Since $(a_n)_{n=1}^\infty$ is a Cauchy sequence and $\frac{\varepsilon}{3}>0$, there exists $N_1\geq 1$ such that for all $i,j\geq N_1$, $|a_i-a_j|\leq \frac{\varepsilon}{3}$.
     Since $(a_n)_{n=1}^\infty$ and $(b_n)_{n=1}^\infty$ are equivalent, and $\frac{\varepsilon}{3}>0$, there exists $N_2\geq 1$ such that for all $i\geq N_2$, $|b_i-a_i|\leq\frac{\varepsilon}{3}$.
-    Let $N=\max\{N_1,N_2\}$. Suppose $i\geq N$ is an arbitrary natural number. Since $N\geq N_1$, we have 
+    Let $N=\max\{N_1,N_2\}$. Consider arbitrary $i,j\geq N$. Since $N\geq N_1$, we have 
     \begin{equation*}
-        |a_i-a_{i+1}|\leq \frac{\varepsilon}{3}.
+        |a_i-a_j|\leq \frac{\varepsilon}{3}.
     \end{equation*}
     Since $N\geq N_2$, we have
     \begin{equation*}
@@ -107,11 +107,11 @@ is a Cauchy sequence.
     \end{equation*}
     and 
     \begin{equation*}
-        |a_{i+1}-b_{i+1}|\leq \frac{\varepsilon}{3}.
+        |a_j-b_j|\leq \frac{\varepsilon}{3}.
     \end{equation*}
     Since 
     \begin{equation*}
-        |a_i-a_{i+1}|\leq \frac{\varepsilon}{3}
+        |a_i-a_j|\leq \frac{\varepsilon}{3}
     \end{equation*}
     and 
     \begin{equation*}
@@ -119,19 +119,19 @@ is a Cauchy sequence.
     \end{equation*}
     we have 
     \begin{equation*}
-        |b_i-a_{i+1}|\leq |a_i-a_{i+1}|+|b_i-a_i|\leq\frac{\varepsilon}{3}+\frac{\varepsilon}{3}=\frac{2\varepsilon}{3}.
+        |b_i-a_j|\leq |a_i-a_j|+|b_i-a_i|\leq\frac{\varepsilon}{3}+\frac{\varepsilon}{3}=\frac{2\varepsilon}{3}.
     \end{equation*}
     Since 
     \begin{equation*}
-        |a_{i+1}-b_{i+1}|\leq \frac{\varepsilon}{3}
+        |a_j-b_j|\leq \frac{\varepsilon}{3}
     \end{equation*}
     and 
     \begin{equation*}
-        |b_i-a_{i+1}|\leq\frac{2\varepsilon}{3},
+        |b_i-a_j|\leq\frac{2\varepsilon}{3},
     \end{equation*}
     we have 
     \begin{equation*}
-        |b_i-b_{i+1}|\leq|a_{i+1}-b_{i+1}|+|b_i-a_{i+1}|\leq\frac{\varepsilon}{3}+\frac{2\varepsilon}{3}=\varepsilon.
+        |b_i-b_j|\leq|a_j-b_j|+|b_i-a_j|\leq\frac{\varepsilon}{3}+\frac{2\varepsilon}{3}=\varepsilon.
     \end{equation*}
     Thus, for any $\varepsilon>0$, we can find $N=\max\{N_1,N_2\}$ such that $b_N,b_{N+1},dotsc$ is $\varepsilon$-steady. Therefore, $(b_n)_{i=1}^\infty$
     is a Cauchy sequence. 
