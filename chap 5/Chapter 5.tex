@@ -19,9 +19,9 @@
 \newcommand{\anz}{$(a_n)_{n=0}^\infty$ }
 \newcommand{\bnz}{$(b_n)_{n=0}^\infty$ }
 \newcommand{\cn}{$(c_n)_{n=1}^\infty$ }
-\newcommand{\la}{LIM$_{n\to\infty}a_n$ }
-\newcommand{\lb}{LIM$_{n\to\infty}b_n$ }
-\newcommand{\lc}{LIM$_{n\to\infty}c_n$ }
+\newcommand{\la}{LIM$_{n\to\infty}a_n$  }
+\newcommand{\lb}{LIM$_{n\to\infty}b_n$}
+\newcommand{\lc}{LIM$_{n\to\infty}c_n$}
 \newcommand{\lao}{LIM$_{n\to\infty}a_n^{-1}$ }
 \newcommand{\lbo}{LIM$_{n\to\infty}b_n^{-1}$ }
 \newcommand{\lab}{LIM$_{n\to\infty}(a_n+b_n)$ }
@@ -172,28 +172,28 @@ Let $x=$ \la, $y=$ \lb, and $z=$ \lc be real numbers. Then, with the above defin
 Finally, if $x=y$ and $y=z$, then $x=z$.
 \subsubsection*{Definition 5.3.4 (Addition of reals).}
 Let $x=$ \la and $y=$ \lb be real numbers. Then we define the sum $x+y$ to be $x+y:=$ \lab.
-\ssc{Lemma 5.3.6 (Sum of Cauchy sequences is Cauchy).}
+\subsubsection*{Lemma 5.3.6 (Sum of Cauchy sequences is Cauchy).}
 Let $x=$ \la and $y=$ \lb be real numbers. Then $x+y$ is also a real number (i.e., $(a_n+b_n)_{n=1}^\infty$ is a Cauchy sequence of rationals).
-\ssc{Lemma 5.3.7 (Sums of equivalent Cauchy sequences are equivalent).}
+\subsubsection*{Lemma 5.3.7 (Sums of equivalent Cauchy sequences are equivalent).}
 Let $x=$ \la, $y=$ \lb, and $x'=$ LIM$_{n\to a_n'}$ be real numbers. Suppose that $x=x'$. Then we have $x+y=x'+y$.
-\ssc{Lemma 5.3.9 (Multiplication of reals).}
+\subsubsection*{Lemma 5.3.9 (Multiplication of reals).}
 Let $x=$ \la and $y=$ \lb be real numbers. Then we define the product $xy$ to be $xy:=$ LIM$_{n\to\infty}a_n b_n$.
-\ssc{Proposition 5.3.10 (Multiplication is well defined).}
+\subsubsection*{Proposition 5.3.10 (Multiplication is well defined).}
 Let $x=$ \la, $y=$ \lb, and $x'=$ LIM$_{n\to\infty}a_n'$ be real numbers. Then $xy$ is also a real number. Furthermore, if $x=x'$, then $xy=x'y$.
-\ssc{Proposition 5.3.11}
+\subsubsection*{Proposition 5.3.11}
 All the laws of algebra from Proposition 4.1.6 hold not only for the integers, but for the reals as well.
-\ssc{Definition 5.3.12 (Sequences bounded away from zero).}
+\subsubsection*{Definition 5.3.12 (Sequences bounded away from zero).}
 A sequence \an of rational numbers is said to be bounded away from zero iff there exists a raional number $c>0$ such that $|a_n|>c$ for all $n\geq 1$.
-\ssc{Lemma 5.3.14.}
+\subsubsection*{Lemma 5.3.14.}
 Let $x$ be a non-zero real number. Then $x=$ \la for some Cauchy sequence \an which is bounded away from zero.
-\ssc{Lemma 5.3.15.}
+\subsubsection*{Lemma 5.3.15.}
 Suppose that \an is a Cauchy sequence which is bounded away from zero. Then the sequence $(a_n^{-1})_{n=1}^\infty$ is also a Cauchy sequence.
 \ssc{Definition 5.3.16 (Reciprocals of real numbers).}
 Let $x$ be a non-zero real number. Let \an be a Cauchy sequence bounded away from zero such that $x=$ \la. Then we define the reciprocal $x^{-1}$ by the formula
 $x^{-1}:=$ LIM$_{n\to\infty}a_n^{-1}$. 
-\ssc{Lemma 5.3.17 (Reciprocation is well defined).}
+\subsubsection*{Lemma 5.3.17 (Reciprocation is well defined).}
 Let \an and \bn be two Cauchy sequences bounded away from zero such that \la = \lb (i.e., the two sequences are equivalent). Then \lao = \lbo.
-\ssc{\E 5.3.1.}
+\subsubsection*{Exercise 5.3.1}
 Prove Proposition 5.3.3.
 \begin{proof}
     Reflexivity. Since $x=$ \la, \an is a Cauchy sequence. Obviously, \an and \an are equivalent. Therefore, \la = \la ($x=x$).
@@ -208,7 +208,7 @@ Prove Proposition 5.3.3.
      Let $N=\max(N_1,N_2)$, then for all $i\geq N$, $|a_i-c_i|\leq |a_i-b_i|+|b_i-c_i|\leq \frac{\varepsilon}{2}+\frac{\varepsilon}{2}=\epsilon$. Thus, \an and \cn are equivalent. 
      So $x=z$.
 \end{proof} 
-\ssc{\E 5.3.2}
+\subsubsection*{Exercise 5.3.2}
 Prove Proposition 5.3.10.
 \begin{proof}
     $xy$ is a real number. We want to show that for any $\varepsilon>0$, there exists $N\geq 1$ such that $|a_i b_i-a_j b_j|\leq\varepsilon$ for any $i,j\geq N$. Consider an 
@@ -250,7 +250,7 @@ Prove Proposition 5.3.10.
     \end{equation*}
     Thus, $(a_n b_n)_{n=1}^\infty$ and $(a_n' b_n)_{n=1}^\infty$ are equivalent and that $xy=x'y$. 
 \end{proof}
-\ssc{\E 5.3.3}
+\subsubsection*{Exercise 5.3.3}
 Let $a,b$ be rational numbers. Show that $a=b$ if and only if \la = \lb (i.e., the Cauchy sequences $a,a,a,a,\dotsc$ and $b,b,b,b,\dotsc$ are equivalent if and only if $a=b$).
 This allows us to embed the rational numbers inside the real numbers in a well-defined manner.
 \begin{proof}
@@ -269,14 +269,14 @@ This allows us to embed the rational numbers inside the real numbers in a well-d
 
     Thus, $a=b$ if and only if \la = \lb.
 \end{proof}
-\ssc{\E 5.3.4}
+\subsubsection*{Exercise 5.3.4}
 Let \anz be a sequence of rational numbers which is bounded. Let \bnz be another sequence of rational numbers which is equivalent to \anz. 
 Show that \bnz is also bounded.
 \begin{proof}
     Suppose \anz is bounded by $M$. Similar to Exercise 5.2.2, we can split \bn to $b_0,\dotsc,b_N$ and $b_{N+1},b_{N+2},\dotsc$ such that the former is bounded by some rational number $M_1$ and 
     the latter is bounded by $M+\varepsilon$ for any $\varepsilon>0$. Let $M_0=\max(M,M_1)$, then \bnz is bounded by $M_0$. 
 \end{proof}
-\ssc{\E 5.3.5}
+\subsubsection*{Exercise 5.3.5}
 Show that LIM$_{n\to\infty}1/n=0$. 
 \begin{proof}
     We want to show that $a_n=1/n$ and $0,0,0,\dotsc$ are equivalent. Consider an arbitrary $\varepsilon>0$. Let $N=\lceil\frac{1}{\varepsilon}\rceil$, we have 
@@ -285,5 +285,165 @@ Show that LIM$_{n\to\infty}1/n=0$.
     \end{equation*}
     for all $i\geq N$. 
     Thus, LIM$_{n\to\infty}1/n=0$. 
+\end{proof}
+\subsection*{5.4 Ordering the reals}
+\subsubsection*{Definition 5.4.1.}
+Let \an be a sequence of rationals. We say that this sequence is positively bounded away from zero iff we have a positive rational $c>0$ such that $a_n\geq c$ for all $n\geq 1$ (in particular, 
+the sequence is entirely positive). The sequence is negatively bounded away from zero iff we have a negative rational $-c<0$ such that $a_n\leq -c$ for all $n\geq 1$ (in particular, 
+the sequence is entirely negative).
+\subsubsection*{Definition 5.4.3.}
+A real number $x$ is said to be positive iff it can be written as $x=$ \la for some Cauchy sequence \an which is positively bounded away from zero. $x$ is said to be 
+negative iff it can be written as $x=$ \la for some sequence \an which is negatively bounded away from zero.
+\subsubsection*{Proposition 5.4.4 (Basic properties of positive reals).}
+For every real number $x$, exactly one of the following three statements is true: $(a)$ $x$ is zero; $(b)$ $x$ is positive; $(c)$ $x$ is negative. A real number $x$ is negative if and 
+only if $-x$ is positive. If $x$ and $y$ are positive, then so are $x+y$ and $xy$.
+\subsubsection*{Definition 5.4.5 (Absolute value).}
+Let $x$ be a real number. We define the absolute value $|x|$ of $x$ to equal $x$ if $x$ is positive, $-x$ when $x$ is negative, and $0$ when $x$ is zero.
+\subsubsection*{Definition 5.4.6 (Ordering of the real numbers).}
+Let $x$ and $y$ be real numbers. We say that $x$ is greater than $y$, and write $x>y$, iff $x-y$ is a positive real number, and $x<y$ iff $x-y$ is a negative real number.
+We define $x\geq y$ iff $x>y$ or $x=y$, and similarly define $x\leq y$.
+\subsubsection*{Proposition 5.4.7.}
+All the claims in Proposition 4.2.9 which held for rationals, continue to hold for real numbers.
+\subsubsection*{Proposition 5.4.8.}
+let $x$ be a positive real number. Then $x^{-1}$ is also positive. Also, if $y$ is another positive number and $x>y$, then $x^{-1}<y^{-1}$.
+\subsubsection*{Proposition 5.4.9 (The non-negative reals are closed).}
+Let $a_1,a_2,a_3,\dotsc$ be a Cauchy sequence of non-negative rational numbers. Then \la is a non-negative real number.
+\subsubsection*{Corollary 5.4.10.}
+Let \an and \bn be Cauchy sequences of rationals such that $a_n\geq b_n$ for all $n\geq 1$. Then \la  $\geq$ \lb.
+\subsubsection*{Proposition 5.4.12 (Bounding of reals by rationals).}
+Let $x$ be a positive real number. Then there exists a positive rational number $q$ such that $q\leq x$, and there exists a positive integer $N$
+such that $x\leq N$.
+\subsubsection*{Corollary 5.4.13 (Archimedean property).}
+Let $x$ and $\varepsilon$ be any positive real numbers. Then there exists a positive integer $M$ such that $M\varepsilon>x$.
+\subsubsection*{Proposition 5.4.14.}
+Given any two real numbers $x<y$, we can find a rational number $q$ such that $x<q<y$.
+\subsubsection*{Exercise 5.4.1.}
+Prove Proposition 5.4.4.
+\begin{proof}
+    Assume $x=$ \la. \\
+    At least one of the three statements is true. If \an is equivalent to $(0)_{n=1}^\infty$, $x$ is 0. If the Cauchy sequence \an is not equivalent to $(0)_{n=1}^\infty$, 
+    by Lemma 5.3.14, \an is bounded away from zero. Then there exists a rational number $c>0$ such that $|a_i|\geq c$ for all $i\geq 1$. Since \an is a Cauchy sequence, 
+    let $\varepsilon=c/2$, then there exists an there exists $N\geq 1$ such that $|a_i-a_j|\leq \varepsilon=c/2$ for all $i,j\geq N$. Let $j=N$, we have 
+    $|a_i-a_N|\leq c/2$ for all $i\geq N$. Since \an is bounded away from 0 by $c$, $a_N$ cannot be $0$. If $a_N>0$, we have $a_N\geq c$ and $a_N-c/2\leq a_i\leq a_N+c/2$. So $a_i\geq a_N-c/2\geq c/2>0$, and 
+    \an is eventually positively bounded away from zero. In particular, $a_i\geq c$ for all $i\geq N$. Let $b_i=c$ when $i< N$ and $b_i=a_i$ when $i\geq N$. Then \bn is equivalent to 
+    \an and $x=$ \la $=$ \lb\,is a positive real number. Similarly, we can show that if $a_N<0$, $x$ would be negative. Thus, at least one of the three statements is true.
+
+    At most one of the three statements is true. Suppose $x$ is zero. For any $c>0$, there exists $N\geq 1$ such that $|a_i-0|=|a_i|\leq \frac{c}{2}<c$. Therefore, \an is not bounded away from zero.
+    Thus, $x$ is not positive nor negative. Suppose $x$ is positive. Then there exists $c>0$ such that $a_i>c>0$ for all $i\geq 1$. So for any $c'>0$, $a_i>0>-c'$. Therefore, $x$ cannot be negative. 
+    Similarly, if $x$ is negative, it cannot be positive. Thus, at most one of the three statements is true.
+
+    $x$ is negative $\iff -x$ is positive. We know that $-x=$ LIM$(-a_n)_{n=1}^\infty$. Suppose $x$ is negative. Then there exists $c>0$ such that $-a_i<-c$ for all $i\geq 1$. 
+    So $a_i>c$ for all $i\geq 1$. Thus, \an is positively bounded away from zero, and $x=$ \la is positive. Similarly, we can show that if $-x$ is positive, then $x$ is negative.
+
+    Assume $y=$ \lb. Suppose $x$ and $y$ are positive. Then there exist $c_1,c_2>0$ such that $a_i\geq c_1$ and $b_i\geq c_2$ for all $i\geq 1$. Let $c=c_1+c_2$, we have 
+    $(a_i+b_i)\geq c=c_1+c_2$ for all $i\geq 1$. Therefore, $x+y$ is positive. Let $c'=c_1c_2$, we have $a_i b_i\geq c'=c_1c_2$ for all $i\geq 1$. Therefore, $xy$ is positive.
+\end{proof}
+\subsubsection*{Exercise 5.4.2.}
+Prove the remaining claims in Proposition 5.4.7.
+\begin{enumerate}[label=(\alph*)]
+    \item \begin{proof}
+        Since $x-y$ is a real number, by Proposition 5.4.4, exactly one of the three statements $x-y=0$, $x-y>0$, or $x-y<0$ is true. Thus, exactly one of $x=y$, $x>y$, or 
+        $x<y$ is true.
+    \end{proof}
+    \item \begin{proof}
+        Since $x-y$ is a real number, by Proposition 5.4.4, $x-y$ is negative iff $-(x-y)=y-x$ is positive. Thus, $x<y$ iff $y>x$.
+    \end{proof}
+    \item \begin{proof}
+        Since $x<y$, we have $y>x$, hence, $y-x$ is positive. Similarly, since $y<z$, $z-y$ is positive. By Proposition 5.4.4, $z-x=(y-x)+(z-y)$ is positive.
+        Therefore, $x<z$. 
+    \end{proof}
+    \item \begin{proof}
+        Since $x<y$, we have $x-y=x-y+0=x-y+z-z=(x+z)-(y+z)<0$. Therefore, $x+z<y+z$.
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 5.4.3.}
+Show that for every real number $x$ there is exactly one integer $N$ such that $N\leq x<N+1$. (This integer $N$ is called the integer part of $x$, and is sometimes denoted $N=\lfloor x\rfloor$.)
+\begin{proof}
+    Denote $x=$ \an where \an is a Cauchy sequence. Let $\varepsilon=\frac{1}{2}$. Then there exists an $N\geq 1$ such that $|x_i-x_N|\leq \varepsilon=\frac{1}{2}$ for all $i\geq N$. 
+    Therefore, $|x-x_N|\leq \frac{1}{2}$. So 
+    \begin{equation*}
+        -\frac{1}{2}\leq x-x_N\leq \frac{1}{2}\implies x_N-\frac{1}{2}\leq x \leq x_N+\frac{1}{2}.
+    \end{equation*}
+    Since $x_N$ is rational, $x_N-\frac{1}{2}$ and $x_N+\frac{1}{2}$ are also rational. Then there exists exactly one integer $n$ such that 
+    \begin{equation*}
+        n\leq x_N-\frac{1}{2}<n+1
+    \end{equation*}
+    and 
+    \begin{equation*}
+        n+1\leq x_N+\frac{1}{2}<n+2.
+    \end{equation*}
+    Then there are two cases. If $x<n+1$, there exists exactly one integer $N$ such that 
+    \begin{equation*}
+        N=n\leq x_N-\frac{1}{2}\leq x<n+1=N+1.
+    \end{equation*}
+    If $x\geq n+1$, there exists exists exactly one integer $N$ such that 
+    \begin{equation*}
+        N=n+1\leq x\leq x_N+\frac{1}{2}<n+2=N+1.
+    \end{equation*}
+    Therefore, for every real number $x$ there is exactly one integer $N$ such that $N\leq x<N+1$.
+ \end{proof}
+ \subsubsection*{Exercise 5.4.4.}
+Show that for any positive real number $x>0$ there exists a positive integer $N$ such that $x>1/N>0$.
+\begin{proof}
+    Let $x=$ \la. Since $x$ is a positive real number, it is positively bounded away from zero. Then there exists a positive rational number $c>0$, such that $a_n\geq c>0$
+    for $n\geq 1$. By Corollary 5.4.10, we have $x=$ \la $\geq c>0$. Since $c>c/2>0$, we have $x\geq c>c/2>0$. Let $N=\frac{2}{c}+1$, then $0<\frac{1}{N}<\frac{c}{2}$. 
+    Then we have $x>\frac{1}{N}>0$.
+\end{proof}
+\subsubsection*{Exercise 5.4.5.}
+Prove Proposition 5.4.14.
+\begin{proof}
+    $y-x>0\implies y-x>0$. By Exercise 5.4.4, there exists a positive integer $N$ such that $y-x>1/N>0$. Then we have $Ny>Nx+1>Nx$. And by Exercise 5.4.3, there exists exactly one integer 
+    $n$ such that $n\leq Nx<n+1$. Then we also have $n+1\leq Nx+1<n+2$. Therefore, $n\leq Nx<n+1\leq Nx+1<Ny$. Therefore, there exists an integer between $Nx$ and $Ny$. 
+    Divide the inequalities by $N$, we have $x<\frac{n+1}{N}<y$ where $\frac{n+1}{N}$ is a rational number. Therefore, if $x<y$, we can find a rational number $q$ such that $x<q<y$.
+\end{proof}
+\subsubsection*{Exercise 5.4.6.}
+Let $x,y$ be real numbers and let $\varepsilon>0$ be a positive real. Show that $|x-y|<\varepsilon$ if and only if $y-\varepsilon<x<y+\varepsilon$, and that $|x-y|\leq \varepsilon$ if and 
+only if $y-\varepsilon\leq x\leq y+\varepsilon$.
+\begin{itemize}
+    \item $|x-y|<\varepsilon\iff y-\varepsilon<x<y+\varepsilon$.
+    \begin{proof}
+        Suppose $|x-y|<\varepsilon$. By definition, if $x-y>0$, we have $x-y<\varepsilon\implies x<y+\varepsilon$, and if $x-y<0$, we have $y-x<\varepsilon\implies y-\varepsilon<x$.
+        Combining the two inequalities, we have $y-\varepsilon<x<y+\varepsilon$. 
+
+        Suppose $y-\varepsilon<x<y+\varepsilon$. Then $-\varepsilon<x-y<\varepsilon$. So if $x-y$ is positive, $|x-y|=x-y<\varepsilon$. 
+        Otherwise, $|x-y|=y-x<\varepsilon$. Therefore, $|x-y|<\varepsilon$.
+
+        Thus, $|x-y|<\varepsilon\iff y-\varepsilon<x<y+\varepsilon$.
+    \end{proof}
+    \item $|x-y|\leq \varepsilon\iff y-\varepsilon\leq x\leq y+\varepsilon$.
+    \begin{proof}
+        The proof is almost identical to the previous one. 
+    \end{proof}
+\end{itemize}
+\subsubsection*{Exercise 5.4.7.}
+Let $x$ and $y$ be real numbers. Show that $x\leq y+\varepsilon$ for all real numbers $\varepsilon>0$ if and only if $x\leq y$. Show that $|x-y|\leq \varepsilon$
+for all real numbers $\varepsilon>0$ if and only if $x=y$.
+\begin{itemize}
+    \item $x\leq y+\varepsilon$ for all $\varepsilon>0\iff x\leq y$.
+    \begin{proof}
+        Suppose $x\leq y+\varepsilon$ for all $\varepsilon>0$. Assume $x>y$. Then we have $x-y>\frac{x-y}{2}>0$. Let $\varepsilon=\frac{x-y}{2}$. We have 
+        Then we have $x\leq y+\varepsilon=y+\frac{x-y}{2}\implies x\leq y$. (contradiction) Therefore, we must have $x\leq y$.
+
+        Suppose $x\leq y$. For all $\varepsilon>0$, we have $x\leq y<y+\varepsilon$.
+
+        Thus, $x\leq y+\varepsilon$ for all $\varepsilon>0\iff x\leq y$.
+    \end{proof}
+    \item $|x-y|\leq \varepsilon$ for all real numbers $\varepsilon>0 \iff x=y$.
+    \begin{proof}
+        Suppose $|x-y|\leq \varepsilon$ for all real numbers. By Exercise 5.4.6, we have $-\varepsilon<x-y<\varepsilon$. Since $x<y+\varepsilon$, we have $x\leq y$.
+        Since $y<x+\varepsilon$, we have $y\leq x$. And since $y\leq x$ and $x\leq y$, we have $x=y$.
+
+        Suppose $x=y$. Then $|x-y|=0\leq \varepsilon$ for all $\varepsilon>0$.
+
+        Thus, $|x-y|\leq \varepsilon$ for all real numbers $\varepsilon>0 \iff x=y$.
+    \end{proof}
+\end{itemize}
+\subsubsection*{Exercise 5.4.8.}
+Let \an be a Cauchy sequence of rationals, and let $x$ be a real number. Show that if $a_n\leq x$ for all $n\geq 1$, then \la $\leq x$. Similarly, 
+show that if $a_n\geq x$ for all $n\geq 1$, then \la $\geq x$.
+\begin{proof}
+    Suppose $a_n\leq x$ for all $n\geq 1$. Assume \la $> x$. Let $y=$ \la. If $y=$ \la $>x$, by Proposition 5.4.14, ther exists a rational number $q$
+    such that $y=$ \la $> q>x$. On the other hand, we have $a_n\leq x<q$ for all $n\geq 1$. By Corollary 5.4.10, we have $y=$ \la $\leq q$ which contradicts 
+    $y>q$. Therefore, \la $\leq x$. The second statement can be proved in a similar way.
 \end{proof}
 \end{document}
