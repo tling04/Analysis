@@ -446,4 +446,78 @@ show that if $a_n\geq x$ for all $n\geq 1$, then \la $\geq x$.
     such that $y=$ \la $> q>x$. On the other hand, we have $a_n\leq x<q$ for all $n\geq 1$. By Corollary 5.4.10, we have $y=$ \la $\leq q$ which contradicts 
     $y>q$. Therefore, \la $\leq x$. The second statement can be proved in a similar way.
 \end{proof}
+\subsection*{5.5 The least upper bound property}
+\subsubsection*{Definition 5.5.1 (Upper bound).}
+Let $E$ be a subset of $\mathbf{R}$, and let $M$ be a real number. We say that $M$ is an upper bound for $E$, iff we have $x\leq M$ for every element $x$ in $E$.
+\subsubsection*{Definition 5.5.5 (Least upper bound).}
+Let $E$ be a subset of $\mathbf{R}$, and $M$ be a real number. We say that $M$ is a least upper bound for $E$ iff (a) $M$ is an upper bound for $E$, and also (b)
+any other upper bound $M'$ for $E$ must be larger than or equal to $M$.
+\subsubsection*{Proposition 5.5.8 (Uniqueness of least upper bound).}
+Let $E$ be a subset of $\mathbf{R}$. Then $E$ can have at most one least upper bound.
+\subsubsection*{Theorem 5.5.9 (Existence of least upper bound).}
+Let $E$ be a non-empty subset of $\mathbf{R}$. If $E$ has an upper bound, (i.e., $E$ has some upper bound $M$), then it must have exactly one least upper bound.
+\subsubsection*{Definition 5.5.10 (Supremum).}
+Let $E$ be a subset of the real numbers. If $E$ is non-empty and has some upper bound, we define $\sup(E)$ to be the least upper bound of $E$ (this is well-defined by Theorem 5.5.9).
+We introduce two additional symbols, $+\infty$ and $-\infty$. If $E$ is non-empty and has no upper bound, we set $\sup(E):=+\infty$; if $E$ is empty, we set $\sup(E):=-\infty$.
+We refer to $\sup(E)$ as the supremum of $E$, and also denote it by $\sup E$.
+\subsubsection*{Exercise 5.5.1.}
+Let $E$ be a subset of the real numbers $\mathbf{R}$, and suppose that $E$ has a least upper bound $M$ which is a real number, i.e., $M=\sup(E)$. Let $-E$
+be the set \[-E:=\{-x:x\in E\}.\] Show that $-M$ is the greaest lower bound of $-E$, i.e., $-M=\inf(-E)$.
+\begin{proof}
+    For all $-x\in -E$, since $M\geq x$, we have $-M\leq -x$. Therefore, $-M$ is a lower bound for $-E$. Assume there exists some $\varepsilon>0$ such that $-M+\varepsilon$
+    is also a lower bound for $-E$. Then for all $-x\in -E$, we have $-M+\varepsilon \leq -x\implies M-\varepsilon\geq x$, hence $M-\varepsilon$ is an upper bound for $E$   
+    which contradicts the fact that $M$ is the least upper bound for $E$. Therefore, $-M$ is the least lower bound for $-E$.
+\end{proof}
+\subsubsection*{Exercise 5.5.2.}
+Let $E$ be a non-empty subset of $\mathbf{R}$, let $n\geq 1$ be an integer, and let $L<K$ be integers. Suppose that $K/n$ is an upper bound for $E$, but that $L/n$ is not an upper bound for 
+$E$. Without using Theorem 5.5.9, show that there eixsts an integer $L<m\leq K$ such that $m/n$ is an upper bound for $E$, but that $(m-1)/n$ is not an upper bound for $E$. 
+\begin{proof}
+    Since $L<K$ and $K/n$ is an upper bound for $E$, there exists an integer $m$ such that $L<m\leq K$ and $m/n$ is an upper bound for $E$ (for example, we can let $m=K$). 
+    \textbf{Suppose for all such} $m$, $(m-1)/n$ \textbf{is also an upper bound for} $E$. Since such $(m-1)/n$ is an upper bound for $E$, we must have $(m-1)>L$. (Then since $(m-1)/n$ is an upper bound for $E$ and 
+    $L<(m-1)\leq K$, $(m-2)/n$ is also an upper bound for $E$ and for similar reason, $L<(m-2)\leq K$.) \\
+    Let $P(i)$ be $(m-i)/n$ is an upper bound for $E$ (and $L<m-i\leq K$). We want to show that $P(i)$ is true for all natural number $i$. 
+    Then the base case is true since there exists an $m$ that satisfies the conditions. Assume inductively $P(i)$ is true. Since $(m-i)/n$ is an upper bound for $E$
+    and $L<(m-i)\leq K$, by our assumption, $(m-i-1)/n=(m-(i+1))/n$ is also an upper bound for $E$ and it is less than $(m-i)/n$, hence $K\geq (m-(i+1))>L$. Therefore, $P(i+1)$ is true which closes the induction. 
+    \\
+    Thus, $L<(m-i)\leq K$ and $(m-i)/n$ is an upper bound for $E$ for all natural number $i$. Let $i=\lceil m-L\rceil\geq m-L$. Then $(m-i)/n\leq L/n$ is an upper bound for $E$ which contradicts the fact that 
+    $L/n$ is not an upper bound for $E$.
+    
+    Thus, there exists $L<m\leq K$ such that $m/n$ is an upper bound for $E$, but that $(m-1)/n$ is not an upper bound for $E$. 
+\end{proof} 
+\subsubsection*{Exercise 5.5.3.}
+Let $E$ be a non-empty subset of $\mathbf{R}$, let $n\geq 1$ be an integer, and let $m,m'$ be integers with the properties that $m/n$ and $(m'-1)/n$ are not upper bounds for $E$.
+Show that $m=m'$.
+\begin{proof}
+    Assume $m\ne m'$. Without loss of generality, suppose $m'>m$, since $m,m'$ are integers, we have $m'>m'-1\geq m\implies\frac{m'}{n}>\frac{m'-1}{n}\geq\frac{m}{n}$. By Theorem 5.5.9, $E$ has the least upper bound, denote it by $M$.
+    Then we have 
+    \begin{equation*}
+        \frac{m-1}{n}<M\leq \frac{m}{n}\leq\frac{m'-1}{n}<\frac{m'}{n}.
+    \end{equation*}
+    But since $(m'-1)/n$ is not an upper bound for $E$, $\frac{m'-1}{n}<M$, a contradiction. Therefore, $m=m'$.
+\end{proof}
+\subsubsection*{Exercise 5.5.4.}
+Let $q_1,q_2,q_3,\dotsc $ be a sequence of rational numbers with the property that $|q_n-q_n'|\leq \frac{1}{M}$ whenever $M\geq 1$ is an integer and $n,n'\geq M$.
+Show that $q_1,q_2,q_3,\dotsc$ is a Cauchy sequence. Furthermore, if $S:=\text{LIM}_{n\to\infty}q_n$, show that $|q_M-S|\leq\frac{1}{M}$ for every $M\geq 1$.
+\begin{proof}
+    We need to show that for every rational $\varepsilon>0$, there exists $N\geq 1$ such that for $|x_i-x_j|\leq \varepsilon$ for all $i,j\geq N$. When 
+    $\varepsilon\geq 1$, let $M=N=1$, we have $|q_i-q_j|\leq 1\leq\varepsilon$ for all $i,j\geq N$. If $0<\varepsilon<1$, Let $M=N=\lceil \frac{1}{\varepsilon}\rceil \geq \frac{1}{\varepsilon}$. 
+    Then 
+    \begin{equation*}
+        |q_i-q_j|\leq \frac{1}{\lceil \frac{1}{\varepsilon}\rceil}\leq\frac{1}{\frac{1}{\varepsilon}}=\varepsilon
+    \end{equation*}
+    for all $i,j\geq N$. 
+    Therefore, for every rational $\varepsilon>0$, there exists $N\geq 1$ such that for $|x_i-x_j|\leq \varepsilon$ for all $i,j\geq N$. Hence, $q_1,q_2,q_3,\dotsc$ is a Cauchy sequence.
+
+    Let $N=M$, we have $|q_M-q_n|\leq\frac{1}{M}$ for all $n\geq N$. Let $a_n=q_n$ for $n\geq M$ and $a_n=q_M$ fpr $n<M$. Then we have $q_M-\frac{1}{M}\leq a_n\leq q_M+\frac{1}{M}$.
+    for all $n\geq 1$. By Exercise 5.4.8, $q_M-\frac{1}{M}\leq S=\text{LIM}_{n\to\infty}a_n=\text{LIM}_{n\to\infty}q_n\leq q_M+\frac{1}{M}$. Therefore, $|q_M-S|\leq\frac{1}{M}$
+    for every $M\geq 1$.
+\end{proof}
+\subsubsection*{Exercise 5.5.5.}
+Establish an analogue of Proposition 5.4.14, in which ``rational'' is replaced by ``irrational''.
+\begin{proof}
+    Assume for any $x<y$, there does not exist an irrational number $z$ such that $x<z<y$. Suppose $x<z<y$ where $z$ is a rational number. Then $x+\sqrt{2}<z+\sqrt{2}<y+\sqrt{2}$. By assumption,
+    $z+\sqrt{2}$ is a rational number. So $z+\sqrt{2}=\frac{m}{n}$ for some integers $m,n$ ($n\ne 0$). Suppose $z=\frac{a}{b}$ for integers $a,b$ $(b\ne 0)$.
+    Then $\sqrt{2}=\frac{m}{n}-\frac{a}{b}=\frac{bn-ma}{bn}$ where $bn-ma$ and $bn$ are integers ($bn\ne 0$). By definition, $\sqrt{2}$ is a rational number (a contradiction).
+    Therefore, for any $x<y$, there exists an irrational number $z$ such that $x<z<y$.
+\end{proof}
 \end{document}

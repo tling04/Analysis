@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.18)  22 AUG 2022 21:39
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.18)  23 AUG 2022 20:35
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -533,20 +533,20 @@ Overfull \hbox (11.80814pt too wide) in paragraph at lines 254--257
 \T1/cmr/m/n/12 Let $\OML/cmm/m/it/12 a; b$ \T1/cmr/m/n/12 be ra-tio-nal num-bers. Show that $\OML/cmm/m/it/12 a \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 b$ \T1/cmr/m/n/12 if and only if LIM$[]\OML/cmm/m/it/12 a[]$ \T1/cmr/m/n/12 = LIM$[]\OML/cmm/m/it/12 b[]$\T1/cmr/m/n/12 (i.e.,
  []
 
-[9] [10] [11] [12] [13] [14] [15] [16] [17] (./Chapter 5.aux) ) 
+[9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] (./Chapter 5.aux) ) 
 Here is how much of TeX's memory you used:
- 16303 strings out of 480608
- 303608 string characters out of 5903630
+ 16307 strings out of 480608
+ 303648 string characters out of 5903630
  546023 words of memory out of 5000000
- 31892 multiletter control sequences out of 15000+600000
- 545401 words of font info for 59 fonts, out of 8000000 for 9000
+ 31894 multiletter control sequences out of 15000+600000
+ 546931 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,7n,60p,502b,271s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on "Chapter 5.pdf" (17 pages, 211810 bytes).
+Output written on "Chapter 5.pdf" (20 pages, 226431 bytes).
 PDF statistics:
- 122 PDF objects out of 1000 (max. 8388607)
- 88 compressed objects within 1 object stream
+ 132 PDF objects out of 1000 (max. 8388607)
+ 95 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
