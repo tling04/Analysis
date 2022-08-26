@@ -520,4 +520,170 @@ Establish an analogue of Proposition 5.4.14, in which ``rational'' is replaced b
     Then $\sqrt{2}=\frac{m}{n}-\frac{a}{b}=\frac{bn-ma}{bn}$ where $bn-ma$ and $bn$ are integers ($bn\ne 0$). By definition, $\sqrt{2}$ is a rational number (a contradiction).
     Therefore, for any $x<y$, there exists an irrational number $z$ such that $x<z<y$.
 \end{proof}
+\subsection*{5.6 Real exponentiation, part I}
+\subsubsection*{Definition 5.6.1 (Exponentiating a real by a natural number).}
+Let $x$ be a real number. To raise $x$ to the power 0, we define $x^0:=1$. Now suppose recursively that $x^n$ has been defined for some natural number $n$, then we define $x^{n+1}:=x^n\times x$.
+\subsubsection*{Definition 5.6.2 (Exponentiating a real by an integer).}
+Let $x $be a non-zero real number. Then for any negative integer $-n$, we define $x^{-n}:=1/x^n$.
+\subsubsection*{Proposition 5.6.3.}
+All the properties in Propositions 4.3.10 and 4.3.12 remain valid if $x$ and $y$ are assumed to be real numbers instead of rational numbers.
+\subsubsection*{Definition 5.6.4.}
+Let $x\geq 0$ be a non-negative real, and let $n\geq 1$ be a positive integer. We define $x^{1/n}$, also known as the $n^\text{th}$ root of $x$, by the formula
+\begin{equation*}
+    x^{1/n}:=\sup\{y\in\mathbf{R}:y\geq 0\text{ and }y^n\leq x\}.
+\end{equation*}
+\subsubsection*{Lemma 5.6.5 (Existence of $n^\text{th}$ roots).}
+Let $x\geq 0$ be a non-negative real, and let $n\geq 1$ be a positive integer. Then the set $E:=\{y\in\mathbf{R}:y\geq 0\text{ and }y^n\leq x\}$ is non-empty
+and is also boounded above. In particular, $x^{1/n}$ is a real number.
+\subsubsection*{Lemma 5.6.6.}
+Let $x,y\geq 0$ be non-negative reals, and let $n,m\geq 1$ be positive integers.
+\begin{enumerate}[label=(\alph*)]
+    \item If $y=x^{1/n}$, then $y^n=x$.
+    \item Conversely, if $y^n=x$, then $y=x^{1/n}$.
+    \item $x^{1/n}$ is a non-negative real number, and is positive iff $x$ is positive.
+    \item We have $x>y$ if and only if $x^{1/n}>y^{1/n}$.
+    \item If $x>1$, then $x^{1/k}$ is a decreasing function of $k$. If $x<1$, then $x^{1/k}$ is an increasing function of $k$. If $x=1$, then $x^{1/k}=1$ for all $k$.
+    \item We have $(xy)^{1/n}=x^{1/n}y^{1/n}$.
+    \item We have $(x^{1/n})^{1/m}=x^{1/nm}$.
+\end{enumerate}
+\subsubsection*{Definition 5.6.7.}
+Let $x>0$ be a positive real number, and let $q$ be a rational number. To define $x^q$, we write $q=a/b$ for some integer $a$ and positive integer $b$, and define
+\begin{equation*}
+    x^q:=(x^{1/b})^a.
+\end{equation*}
+\subsubsection*{Lemma 5.6.8.}
+Let $a,a'$ be integers and $b,b'$ be positive integers such that $a/b=a'/b'$, and let $x$ be a positive real number. Then we have $(x^{1/b'})^{a'}=(x^{1/b})^a$.
+\subsubsection*{Lemma 5.6.9.}
+Let $x,y>0$ be positive reals, and let $q,r$ be rationals. 
+\begin{enumerate}[label=(\alph*)]
+    \item $x^q$ is a positive real.
+    \item $x^{q+r}=x^q x^r$ and $(x^q)^r=x^{qr}$.
+    \item $x^{-q}=1/x^q$.
+    \item If $q>0$, then $x>y$ if and only if $x^q>y^q$.
+    \item If $x>1$, then $x^q>x^r$ if and only if $q>r$. If $x<1$, then $x^q>x^r$ if and only if $q<r$.
+\end{enumerate}
+\subsubsection*{Exercise 5.6.1.}
+Prove Lemma 5.6.6.
+\begin{enumerate}[label=(\alph*)]
+    \item \begin{proof}
+        We need to show that both $y^n>x$ and $y^n<x$ lead to contradictions. 
+
+        Suppose $y^n>x$. Similar to the proof of Proposition 5.5.12, we want to show that there exists a real number $r$ and $\varepsilon>0$ such that $y^n>(y-\varepsilon)^n\geq y^n-r\varepsilon\geq x$.
+        Hence $y$ is not the least upper bound for $E$, a contradiction. Use induction to show that there exists a real number $r\geq 0$ such that $(y-\varepsilon)^n\geq y^n-r\varepsilon$.
+        When $n=0$, let $r=0$, we have $1\geq 1$ which proves the base case. Assume inductively that the statement is true for $n$. Then 
+        $(y-\varepsilon)^{n+1}\geq (y^n-r\varepsilon)(y-\varepsilon)\geq y^{n+1}-(y^n+ry)\varepsilon$ where $y^n+ry$ is a non-negative real number. Thus, the statement is true for all natural number $n$.
+        Let $\varepsilon\leq\frac{y^n-x}{r}$, we have $y^n>(y-\varepsilon)^n\geq y^n-r\varepsilon\geq x$. We thus have $y$ not being the least upper bound for $E$, a contradiction. 
+
+        Suppose $y^n<x$. We want to show that there exists positive numbers $\varepsilon,r$ such that $y^n<(y+\varepsilon)^n\leq y^n+r\varepsilon\leq x$ so that $y$ is not an upper bound for $E$. 
+        Since we have $(y+\varepsilon)^n\leq y^n+ny^{n-1}\varepsilon$, for any $\varepsilon>0$, we can let $r=ny^{n-1}$. For any fixed $r$, we let $0<\varepsilon\leq\frac{x-y^n}{r}$, so $y^n+r\varepsilon\leq x$.
+        Therefore, $y^n$ is not an upper bound for $E$, a contradiction.
+
+        Thus, $y^n=x$.
+    \end{proof}
+    \item \begin{proof}
+        Since $y^n=x$, for every $y'\in E$, we have $x=y^n\geq y'\implies y$ is an upper bound for $E$. And $\forall \varepsilon>0$, $(y-\varepsilon)^n<y^n=x$. Therefore, for all $\varepsilon>0$, $(y-\varepsilon)$ is not an upper bound for $E$
+        Hence $y$ is the least upper bound for $E$, by definition, we have $y=x^{1/n}$.
+    \end{proof}
+    \item \begin{proof}
+        For all $y\in E$, we have $x\geq y\geq 0$. Therefore, $x^{1/n}$ is non-negative. Suppose $x^{1/n}>0$. We have $y=x^{1/n}>0$. By $(a)$, we have $x=y^n>0$.
+        Suppose $x>0$. We then have $y^n=x>0$. So $y=x^{1/n}>0$. Thus, $x^{1/n}>0\iff x>0$.
+    \end{proof}
+    \item \begin{proof}
+        Denote $x=a^n$ and $y=b^n$. If $x=a^n>b^n=y$, we have $x^{1/n}=a>b=y^{1/n}$ (otherwise there will be contradictions). On the other hand, if $a>b$, we have $x=a^n>b^n=y$.
+        Thus, $x>y\iff x^{1/n}>y^{1/n}$. 
+    \end{proof}
+    \item \begin{proof}
+         $x>1$. Suppose $k_1>k_2$, then $k_1\geq k_2+1$. $x^{1/k}=y_1\iff y_1^{k_1}=x$, $x^{1/k}=y_1\iff y_1^{k_1}=x$, the remaining part is to show that $y_1<y_2$. Since $x>1$, we have $y_1,y_2>1$.
+         Then 
+         \begin{equation*}
+            \begin{gathered}
+                y_2^{k_2}=y_1^{k_1}\geq y_1^{k_2+1}=y_1^{k_2}\cdot y_1,\\
+                \Bigl(\frac{y_2}{y_1}\Bigr)^{k_2}\geq y_1>1.
+            \end{gathered}
+         \end{equation*}
+         Therefore, 
+         \begin{equation*}
+            \frac{y_2}{y_1}>1\implies y_1<y_2.
+         \end{equation*}
+         Thus, $x^{1/k}$ is a decreasing function of $k$ when $x>1$.  \\
+         $x<1$. In this case, we have $0\leq y_1,y_2<1$, and we need to show that $y_1>y_2$. Then 
+         \begin{equation*}
+            \begin{gathered}
+                y_2^{k_2}=y_1^{k_1}\leq y_1^{k_2+1}=y_1^{k_2}\cdot y_1,\\
+            \Bigl(\frac{y_2}{y_1}\Bigr)^{k_2}\leq y_1<1.
+            \end{gathered}
+         \end{equation*} 
+         Therefore, 
+         \begin{equation*}
+            \frac{y_2}{y_1}<1\implies y_1>y_2.
+         \end{equation*}
+         Thus, $x^{1/k}$ is an increasing function of $k$ when $x>1$. \\
+         If $x=1$. we have $y^n=1$ so $y=1$. Therefore, $x^{1/n}=y=1$.
+    \end{proof}
+    \item \begin{proof}
+        Denote $(xy)^{1/n}$ by $a$. Then $a=(xy)^{1/n}\iff a^n=xy$. Suppose $b^n=x$ and $c^n=y$. We need to show that $a=bc$. By substitution, we have $a^n=b^n c^n=(bc)^n$, hence $a=bc$. Therefore, $(xy)^{1/n}=x^{1/n}y^{1/n}$.
+    \end{proof}
+    \item \begin{proof}
+        Let $a=x^{1/nm}$, then $a^{nm}=x$. Let $b=(x^{1/n})^{1/m}$, then $b^m=x^{1/n}$. We want to show that $a=b$. Since $(b^m)^n=b^{mn}=b^{nm}=a^{nm}$, we have $a=b$. Thus, $(x^{1/n})^{1/m}=x^{1/nm}$. 
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 5.6.2.}
+Prove Lemma 5.6.9.
+\begin{enumerate}[label=(\alph*)]
+    \item \begin{proof}
+        Write $q=a/b$ for some integer $a$ and some positive integers $b$. Then $x^q=x^{a/b}=(x^{1/b})^a$. By Lemma 5.6.6, since $x>0$, $x^{1/b}>0$. Therefore, $x^q=(x^{1/b})^a>0$. Thus, $x^q$ is a positive real.
+    \end{proof}
+    \item \begin{proof}
+        Write $q=a/b$ and $r=c/d$ for some integers $a,c$ and some positive integers $b,d$. Then 
+        \begin{equation*}
+            \begin{aligned}
+                x^{q+r}&=(x^{\frac{a}{b}+\frac{c}{d}})\\
+                &=x^{\frac{ad+bc}{bd}}\\
+                &=(x^{\frac{1}{bd}})^{ad+bc}\\
+                &=x^{\frac{ad}{bd}}\cdot x^{\frac{bc}{bd}}\\
+                &=x^{\frac{a}{b}}\cdot x^{\frac{c}{d}}\\
+                &=x^q\cdot x^r.\\
+                ((x^q)^r)^{bd}&=((x^{\frac{a}{b}})^{\frac{c}{d}})^{bd}\\
+                &=((((x^{\frac{1}{b}})^a)^{\frac{1}{d}})^c)^{bd}\\
+                &=((((x^{\frac{1}{b}})^a)^{\frac{1}{d}})^d)^{bc}\\
+                &=((x^{\frac{1}{b}})^a)^{bc}\\
+                &=((x^{\frac{1}{b}})^b)^{ac}\\
+                &=x^{ac}\\
+                &=(x^{\frac{ac}{bd}})^{bd}\\
+                &=(x^{qr})^{bd},
+            \end{aligned}
+        \end{equation*}
+        hence $(x^q)^r=x^{qr}$. 
+    \end{proof}
+    \item \begin{proof}
+        Write $q=a/b$ for some integer $a$ and some positive integer $b$. Then 
+        \begin{equation*}
+            \begin{aligned}
+                x^{-q}&=x^{-\frac{a}{b}}\\
+                &=(x^{\frac{1}{b}})^{-a}\\
+                &=\frac{1}{(x^{\frac{1}{b}})^a}\\
+                &=\frac{1}{x^q}.
+            \end{aligned}
+        \end{equation*}
+    \end{proof}
+    \item \begin{proof}
+        Write $q=a/b$ for some positive integers $a,b$. 
+        
+        Suppose $x>y$. By Lemma 5.6.6, we have $x^{\frac{1}{b}}>y^{\frac{1}{b}}$. By Proposition 4.3.10, we have $(x^{\frac{1}{b}})^a>(y^{\frac{1}{b}})^a$. Therefore, $x^q=(x^{\frac{1}{b}})^a>(y^{\frac{1}{b}})^a=x^r$.
+
+        Suppose $x^q=(x^{\frac{1}{b}})^a>(y^{\frac{1}{b}})^a=x^r$. By Lemma 5.6.6, $x^{\frac{1}{b}}=((x^{\frac{1}{b}})^a)^{1/a}>((y^{\frac{1}{b}})^a)^{1/a}=y^{1/b}$. Apply Lemma 5.6.6 once again, we have $x>y$.
+    \end{proof}
+    \item \begin{proof}
+         Write $q=a/b$ and $r=c/d$ for some integers $a,c$ and some positive integers $b,d$. $q-r=\frac{a}{b}-\frac{c}{d}=\frac{ad-bc}{bd}$. 
+
+         $x>1$. $x^q=x^{\frac{a}{b}}>x^{\frac{c}{d}}=x^r\iff (x^{\frac{a}{b}})^{\frac{1}{ac}}=x^{\frac{1}{bc}}>x^{\frac{1}{ad}}=(x^{\frac{c}{d}})^\frac{1}{ac}\iff bc<ad$ (since $x>1$). Therefore, $x^q\iff q>r$. 
+
+         $x<1$. $x^q=x^{\frac{a}{b}}>x^{\frac{c}{d}}=x^r\iff (x^{\frac{a}{b}})^{\frac{1}{ac}}=x^{\frac{1}{bc}}>x^{\frac{1}{ad}}=(x^{\frac{c}{d}})^\frac{1}{ac}\iff bc>ad$ (since $x<1$). Therefore, $x^q\iff q<r$. 
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 5.6.3.}
+If $x$ is a real number, show that $|x|=(x^2)^{1/2}$.
+\begin{proof}
+    If $x>0$, $(x^2)^{1/2}=x=|x|$. If $x<0$, $(x^2)^{1/2}=((-x)^2)^{1/2}=-x=|x|$. If $x=0$, $(x^2)^{1/2}=0=|0|$. Thus, $|x|=(x^2)^{1/2}$. 
+\end{proof}
 \end{document}
