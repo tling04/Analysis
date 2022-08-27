@@ -30,24 +30,24 @@
 \section*{Integers and rationals}
 \subsection*{4.1 The integers}
 \subsubsection*{Definition 4.1.1 (Integers).}
-An integer is an expression of the form $a--b$, where $a$ and $b$ are natural numbers. Two integers are considered to be equal, 
-$a--b=c--d$, if and only if $a+d=c+b$. We let $\mathbf{Z}$ denote the set of all integers.
+An integer is an expression of the form $a\mathtt{--}b$, where $a$ and $b$ are natural numbers. Two integers are considered to be equal, 
+$a\mathtt{--}b=c\mathtt{--}d$, if and only if $a+d=c+b$. We let $\mathbf{Z}$ denote the set of all integers.
 \subsubsection*{Definition 4.1.2}
-The sum of two integers, $(a--b)+(c--d)$, is defined by the formula
+The sum of two integers, $(a\mathtt{--}b)+(c\mathtt{--}d)$, is defined by the formula
 \begin{equation*}
-    (a--b)+(c--d):=(a+c)-(b+d).
+    (a\mathtt{--}b)+(c\mathtt{--}d):=(a+c)-(b+d).
 \end{equation*}
-The product of two integers, $(a--b)\times (c--d)$, is defined by
+The product of two integers, $(a\mathtt{--}b)\times (c\mathtt{--}d)$, is defined by
 \begin{equation*}
-    (a--b)\times(c--d):=(ac+bd)--(ad+bc).
+    (a\mathtt{--}b)\times(c\mathtt{--}d):=(ac+bd)\mathtt{--}(ad+bc).
 \end{equation*}
 \subsubsection*{Lemma 4.1.3 (Addition and multiplication are well-defined).}
-Let $a,b,a',b',c,d$ be natural numbers. If $(a--b)=(a'--b')$, then $(a--b)+(c--d)=(a'--b')+(c--d)$ and 
-$(a--d)\times(c--d)=(a'--b')\times(c--d)$, and also $(c--d)+(a--b)=(c--d)+(a'--b')$ and $(c--d)\times(a--b)=(c--d)\times(a'--b')$.
+Let $a,b,a',b',c,d$ be natural numbers. If $(a\mathtt{--}b)=(a'\mathtt{--}b')$, then $(a\mathtt{--}b)+(c\mathtt{--}d)=(a'\mathtt{--}b')+(c\mathtt{--}d)$ and 
+$(a\mathtt{--}d)\times(c\mathtt{--}d)=(a'\mathtt{--}b')\times(c\mathtt{--}d)$, and also $(c\mathtt{--}d)+(a\mathtt{--}b)=(c\mathtt{--}d)+(a'\mathtt{--}b')$ and $(c\mathtt{--}d)\times(a\mathtt{--}b)=(c\mathtt{--}d)\times(a'\mathtt{--}b')$.
 Thus addition and multiplication are well-defined operations (equal inputs give equal outputs).
 \subsubsection*{Definition 4.1.4 (Negation of integers).}
-If $(a--b)$ is an integer, we define the negation $-(a--b)$ to be the integer $(b--a)$. In particular if $n=n--0$
-is a positive natural number, we can define its negation $-n=0--n$.
+If $(a\mathtt{--}b)$ is an integer, we define the negation $-(a\mathtt{--}b)$ to be the integer $(b\mathtt{--}a)$. In particular if $n=n\mathtt{--}0$
+is a positive natural number, we can define its negation $-n=0\mathtt{--}n$.
 \subsubsection*{Lemma 4.1.5 (Trichotomy of integers).}
 Let $x$ be an integer. Then exactly one of the following three statements is true: (a) $x$ is zero;
 (b) $x$ is equal to a positive natural number $n$; or (c) $x$ is the negation $-n$ of a positive natural number $n$.
@@ -86,65 +86,65 @@ Let $a,b,c$ be integers.
 \subsubsection*{Exercise 4.1.1}
 Verify that the definition of equality on the integers is both reflexive and symmetric.
 \begin{proof}
-    Reflexivity: since summation is reflexive, we have $a+b=a+b$. Thus, by definition, $a--b=a--b$. Symmetry: assume $a--b=c--d$, then $a+d=c+b$.
-    Since summation is symmetric, $c+b=a+d$. By definition, we have $c--d=a--b$.
+    Reflexivity: since summation is reflexive, we have $a+b=a+b$. Thus, by definition, $a\mathtt{--}b=a\mathtt{--}b$. Symmetry: assume $a\mathtt{--}b=c\mathtt{--}d$, then $a+d=c+b$.
+    Since summation is symmetric, $c+b=a+d$. By definition, we have $c\mathtt{--}d=a\mathtt{--}b$.
 \end{proof}
 \subsubsection*{Exercise 4.1.2}
-Show that the definition of negation on the integers is well-defined in the sense that $(a--b)=(a'--b')$, then $-(a--b)=-(a'--b')$ (so equal integers have equal negations).
+Show that the definition of negation on the integers is well-defined in the sense that $(a\mathtt{--}b)=(a'\mathtt{--}b')$, then $-(a\mathtt{--}b)=-(a'\mathtt{--}b')$ (so equal integers have equal negations).
 \begin{proof}
-    Since $(a--b)=(a'--b')$, by definition, $a+b'=a'+b$. By the reflexivity and symmetry of summation, we have $b+a'=b'+a$. Thus, by definition, 
-    $b--a=b'--a'$. By definition of negation of integers, $-(a--b)=-(a'--b')$.
+    Since $(a\mathtt{--}b)=(a'\mathtt{--}b')$, by definition, $a+b'=a'+b$. By the reflexivity and symmetry of summation, we have $b+a'=b'+a$. Thus, by definition, 
+    $b\mathtt{--}a=b'\mathtt{--}a'$. By definition of negation of integers, $-(a\mathtt{--}b)=-(a'\mathtt{--}b')$.
 \end{proof}
 \subsubsection*{Exercise 4.1.3}
 Show that $(-1)\times a=-a$ for every integer $a$.
 \begin{proof}
-    By definition, $-1=(0--1)$ and $a=(a--0)$. Then $(-1)\times a=(0--1)\times (a--0)=(0\times a+1\times 0)--(0\times 0+1\times a)=0--a=-a$.
+    By definition, $-1=(0\mathtt{--}1)$ and $a=(a\mathtt{--}0)$. Then $(-1)\times a=(0\mathtt{--}1)\times (a\mathtt{--}0)=(0\times a+1\times 0)\mathtt{--}(0\times 0+1\times a)=0\mathtt{--}a=-a$.
 \end{proof}
 \subsubsection*{Exercise 4.1.4}
 Prove the remaining identities in Proposition 4.1.6.
 \begin{enumerate}
     \item $x+y=y+x$.
     \begin{proof}
-        Suppose $x=a--b$ and $y=c--d$ for some natural numbers $a,b,c,d$. Then $x+y=(a--b)+(c--d)=(a+c)--(b+d)$ and $y+x=(c--d)+(a--b)=(c+a)--(d+b)$. By the symmetry property of summation,
+        Suppose $x=a\mathtt{--}b$ and $y=c\mathtt{--}d$ for some natural numbers $a,b,c,d$. Then $x+y=(a\mathtt{--}b)+(c\mathtt{--}d)=(a+c)\mathtt{--}(b+d)$ and $y+x=(c\mathtt{--}d)+(a\mathtt{--}b)=(c+a)\mathtt{--}(d+b)$. By the symmetry property of summation,
         we have $(a+c)=(c+a)$ and $(b+d)=(d+b)$. Thus, $x+y=y+x$.
     \end{proof}
     \item $(x+y)+z=x+(y+z)$.
     \begin{proof}
-        Suppose $x=a--b$, $y=c--d$, and $z=e--f$ for some natural numbers $a,b,c,d,e,f$,. Then 
+        Suppose $x=a\mathtt{--}b$, $y=c\mathtt{--}d$, and $z=e\mathtt{--}f$ for some natural numbers $a,b,c,d,e,f$,. Then 
         \begin{equation*}
             \begin{aligned}
-                (x+y)+z&=((a--b)+(c--d))+(e--f)\\
-                &=((a+c)--(b+d))+(e--f)\\
-                &=((a+c)+e)--((b+d)+f)\\
-                &=(a+c+e)--(b+d+f);\\
-                x+(y+z)&=(a--b)+((c--d)+(e--f))\\
-                &=(a--b)+((c+e)--(d+f))\\
-                &=(a+(c+e))--(b+(d+f))\\
-                &=(a+c+e)--(b+d+f).
+                (x+y)+z&=((a\mathtt{--}b)+(c\mathtt{--}d))+(e\mathtt{--}f)\\
+                &=((a+c)\mathtt{--}(b+d))+(e\mathtt{--}f)\\
+                &=((a+c)+e)\mathtt{--}((b+d)+f)\\
+                &=(a+c+e)\mathtt{--}(b+d+f);\\
+                x+(y+z)&=(a\mathtt{--}b)+((c\mathtt{--}d)+(e\mathtt{--}f))\\
+                &=(a\mathtt{--}b)+((c+e)\mathtt{--}(d+f))\\
+                &=(a+(c+e))\mathtt{--}(b+(d+f))\\
+                &=(a+c+e)\mathtt{--}(b+d+f).
             \end{aligned}
         \end{equation*}
         Therefore, $(x+y)+z=x+(y+z)$.
     \end{proof}
     \item $x+0=0+x=x$.
     \begin{proof}
-        Since $x+y=y+x$, we have $x+0=0+x$. Let $x=a--b$ for some natural numbers $a,b$, and write $0=0--0$. Then $x+0=(a--b)+(0--0)=(a+0)--(b+0)=a--b=x$. 
+        Since $x+y=y+x$, we have $x+0=0+x$. Let $x=a\mathtt{--}b$ for some natural numbers $a,b$, and write $0=0\mathtt{--}0$. Then $x+0=(a\mathtt{--}b)+(0\mathtt{--}0)=(a+0)\mathtt{--}(b+0)=a\mathtt{--}b=x$. 
         Thus, $x+0=0+x=x$.
     \end{proof}
     \item $x+(-x)=(-x)+x=0$.
     \begin{proof}
-        Since $x+y=y+x$, we have $x+(-x)=(-x)+x$. Let $x=a--b$ for some natural numbers $a,b$, then $-x=b--a$. Write $0$ as $0--0$. 
-        Then $x+(-x)=(a--b)+(b--a)=(a+b)--(b+a)$. Since $(a+b)+0=(b+a)+0=a+b$, we have that $(a+b)--(b+a)=0--0$. So $x+(-x)=0$. Thus, $x+(-x)=(-x)+x=0$.
+        Since $x+y=y+x$, we have $x+(-x)=(-x)+x$. Let $x=a\mathtt{--}b$ for some natural numbers $a,b$, then $-x=b\mathtt{--}a$. Write $0$ as $0\mathtt{--}0$. 
+        Then $x+(-x)=(a\mathtt{--}b)+(b\mathtt{--}a)=(a+b)\mathtt{--}(b+a)$. Since $(a+b)+0=(b+a)+0=a+b$, we have that $(a+b)\mathtt{--}(b+a)=0\mathtt{--}0$. So $x+(-x)=0$. Thus, $x+(-x)=(-x)+x=0$.
     \end{proof}
     \item $xy=yx$.
     \begin{proof}
-        Let $x=a--b$ and $y=c--d$ for some natural numbers $a,b,c,d$. Then 
+        Let $x=a\mathtt{--}b$ and $y=c\mathtt{--}d$ for some natural numbers $a,b,c,d$. Then 
         \begin{equation*}
             \begin{aligned}
-                xy&=(a--b)\times (c--d)\\
-                &=(ac+bd)--(ad+bc);\\
-                yx&=(c--d)\times (a--b)\\
-                &=(ca+db)--(cb+da)\\
-                &=(ac+bd)--(ad+bc).
+                xy&=(a\mathtt{--}b)\times (c\mathtt{--}d)\\
+                &=(ac+bd)\mathtt{--}(ad+bc);\\
+                yx&=(c\mathtt{--}d)\times (a\mathtt{--}b)\\
+                &=(ca+db)\mathtt{--}(cb+da)\\
+                &=(ac+bd)\mathtt{--}(ad+bc).
             \end{aligned}
         \end{equation*}
         Therefore, $xy=yx$.
@@ -153,21 +153,21 @@ Prove the remaining identities in Proposition 4.1.6.
     Has been proved on page 79.
     \item $x1=1x=x$.
     \begin{proof}
-        Since $xy=yx$, we have $x1=1x$. Let $x=a--b$ for some natural numbers $a,b$. $1x=(1--0)(a--b)=1a--1b=a--b=x$. Thus, $x1=1x=x$.
+        Since $xy=yx$, we have $x1=1x$. Let $x=a\mathtt{--}b$ for some natural numbers $a,b$. $1x=(1\mathtt{--}0)(a\mathtt{--}b)=1a\mathtt{--}1b=a\mathtt{--}b=x$. Thus, $x1=1x=x$.
     \end{proof}
     \item $x(y+z)=xy+xz$.
     \begin{proof}
-        Let $x=a--b$, $y=c--d$, and $z=e--f$ for some natural numbers $a,b,c,d,e,f$. Then 
+        Let $x=a\mathtt{--}b$, $y=c\mathtt{--}d$, and $z=e\mathtt{--}f$ for some natural numbers $a,b,c,d,e,f$. Then 
         \begin{equation*}
             \begin{aligned}
-                x(y+z)&=(a--b)((c--d)+(e--f))\\
-                &=(a--b)((c+e)--(d+f))\\
-                &=(a(c+e)+b(d+f))--(a(e+f)+b(c+d))\\
-                &=(ac+ae+bd+bf)--(ae+af+bc+bd);\\
-                xy+xz&=(a--b)(c--d)+(a--b)(e--f)\\
-                &=((ac+bd)--(ad+bc))+((ae+bf)--(af+be))\\
-                &=((ac+bd)+(ae+bf))--((ad+bc)+(af+be))\\
-                &=(ac+ae+bd+bf)--(ae+af+bc+bd).
+                x(y+z)&=(a\mathtt{--}b)((c\mathtt{--}d)+(e\mathtt{--}f))\\
+                &=(a\mathtt{--}b)((c+e)\mathtt{--}(d+f))\\
+                &=(a(c+e)+b(d+f))\mathtt{--}(a(e+f)+b(c+d))\\
+                &=(ac+ae+bd+bf)\mathtt{--}(ae+af+bc+bd);\\
+                xy+xz&=(a\mathtt{--}b)(c\mathtt{--}d)+(a\mathtt{--}b)(e\mathtt{--}f)\\
+                &=((ac+bd)\mathtt{--}(ad+bc))+((ae+bf)\mathtt{--}(af+be))\\
+                &=((ac+bd)+(ae+bf))\mathtt{--}((ad+bc)+(af+be))\\
+                &=(ac+ae+bd+bf)\mathtt{--}(ae+af+bc+bd).
             \end{aligned}
         \end{equation*}
         Therefore, $x(y+z)=xy+xz$.
@@ -180,7 +180,7 @@ Prove the remaining identities in Proposition 4.1.6.
 \subsubsection*{Exercise 4.1.5}
 Prove Proposition 4.1.8.
 \begin{proof}
-    From now on we could just use $-$ instead of $--$. Let $a=c-d$ and $b=e-f$ for some natural numbers $c,d,e,f$. So $ab=0\implies (c-d)(e-f)=0$.
+    From now on we could just use $-$ instead of $\mathtt{--}$. Let $a=c-d$ and $b=e-f$ for some natural numbers $c,d,e,f$. So $ab=0\implies (c-d)(e-f)=0$.
     Assume $c-d\geq 0$ and $e-f\geq 0$, by Lemma 2.3.3, at least one of $a=(c-d)$ and $b=e-f$ is equal to 0. If at least one of $(c-d)$ and $(e-f)$ 
     is negative, without loss of generality, assume $c-d<0$. Then $-(c-d)=d-c>0$ and we have $(d-c)(e-f)=-1\times 0=0$. By Lemma 2.3.3, 
     at least one of $-a=d-c$ and $b=e-f$ is equal to zero, and this statement is equivalent to either $a=0$ or $b=0$ (or both). 

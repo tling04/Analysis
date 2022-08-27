@@ -1,6 +1,6 @@
 # Fdb version 3
-["pdflatex"] 1659229300 "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 3/3.1/3.1.tex" "3.1.pdf" "3.1" 1659229301
-  "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 3/3.1/3.1.tex" 1658083273 18775 0157cd77db0420f1776bdf0fbdc809c0 ""
+["pdflatex"] 1661568398 "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 3/3.1/3.1.tex" "3.1.pdf" "3.1" 1661568399
+  "/Users/xcuber/Library/CloudStorage/OneDrive-Personal/UBC/MATH 320/Tao/Analysis/chap 3/3.1/3.1.tex" 1661568398 18784 05ea4dc94fed35856407785b0fdfe4d3 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1136849721 2971 def0b6c1f0b107b3b936def894055589 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm" 1136768653 3584 402da0b29eafbad07963b1224b222f18 ""
@@ -37,6 +37,8 @@
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
+  "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm" 1136768653 772 9a936b7f5e2ff0557fce0f62822f0bbf ""
+  "/usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm" 1136768653 768 d7b9a2629a0c353102ad947dc9221d49 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb" 1248133631 36741 fa121aac0049305630cf160b86157ee4 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb" 1248133631 32722 d7379af29a190c3f453aba36302ff5a9 ""
   "/usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1248133631 32726 0a1aea6fcd6468ee2cf64d891f5c43c8 ""
@@ -157,9 +159,9 @@
   "/usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1586288239 4811913 0be9a7e86c70a26e5e3042966bcd7097 ""
   "/usr/local/texlive/2020/texmf-var/web2c/pdftex/pdflatex.fmt" 1600388267 2432463 5d4593b96709ee1f5a9ca033c656cab2 ""
   "/usr/local/texlive/2020/texmf.cnf" 1586288231 577 d60164b4589a341208aff7a667fbbdcb ""
-  "3.1.aux" 1659229300 51 e307200bf934680127d789540f364594 "pdflatex"
-  "3.1.tex" 1658083273 18775 0157cd77db0420f1776bdf0fbdc809c0 ""
+  "3.1.aux" 1661568399 51 e307200bf934680127d789540f364594 "pdflatex"
+  "3.1.tex" 1661568398 18784 05ea4dc94fed35856407785b0fdfe4d3 ""
   (generated)
-  "3.1.pdf"
-  "3.1.log"
   "3.1.aux"
+  "3.1.log"
+  "3.1.pdf"

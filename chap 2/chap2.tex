@@ -25,21 +25,21 @@
 For any natural numbers $a, b, c$, we have $(a+b)+c=a+(b+c)$.
 \begin{proof}
     Induct on $b$ by keeping $a$ and $c$ fixed. Consider the base case $b=0$. In this case, LHS$=(a+0)+c=a+c$ and RHS$=a+(0+c)=a+c$. Now suppose that 
-    $(a+b)+c=a+(b+c)$. We need to show that $(a+(b++))+c=a+((b++)+c)$: 
+    $(a+b)+c=a+(b+c)$. We need to show that $(a+(b\mathtt{++}))+c=a+((b\mathtt{++})+c)$: 
     \begin{equation*}
         \begin{aligned}
-            \text{LHS}=(a+(b++))+c=((a+b)++)+c=(a+b+c)++,\\
-            \text{RHS}=a+((b++)+c)=a+((b+c)++)=(a+b+c)++.
+            \text{LHS}=(a+(b\mathtt{++}))+c=((a+b)\mathtt{++})+c=(a+b+c)\mathtt{++},\\
+            \text{RHS}=a+((b\mathtt{++})+c)=a+((b+c)\mathtt{++})=(a+b+c)\mathtt{++}.
         \end{aligned}
     \end{equation*}
     Thus both sides are equal to each other, and we have closed the induction.
 \end{proof}
 
 \subsection*{2.2.2}
-Let $a$ be a positive number. Then there exists exactly one natural number $b$ such that $b++=a$. (I'm assuming that it meant $a$ is a positive natural number.)
+Let $a$ be a positive number. Then there exists exactly one natural number $b$ such that $b\mathtt{++}=a$. (I'm assuming that it meant $a$ is a positive natural number.)
 \begin{proof}
-    Induct on $a$. Since $0$ is not positive, we consider the base case $a=1$. We have $b++=b+1=0+1=1$. Cancellation law tells us that $b=0$, which is unique. Now suppose that there exists exactly one natural number $b_0$ such that $b_0++=a$, we need to show that
-    there exists exactly one natural number $b$ such that $b++=a++$. By Cancellation law, we have $b=a=b_0++$. Since $b$ is the successor of $b_0$ and $b_0$ is unique, $b$ is also unique. Thus we have closed the induction.
+    Induct on $a$. Since $0$ is not positive, we consider the base case $a=1$. We have $b\mathtt{++}=b+1=0+1=1$. Cancellation law tells us that $b=0$, which is unique. Now suppose that there exists exactly one natural number $b_0$ such that $b_0\mathtt{++}=a$, we need to show that
+    there exists exactly one natural number $b$ such that $b\mathtt{++}=a\mathtt{++}$. By Cancellation law, we have $b=a=b_0\mathtt{++}$. Since $b$ is the successor of $b_0$ and $b_0$ is unique, $b$ is also unique. Thus we have closed the induction.
 \end{proof}
 
 \subsection*{2.2.3}
@@ -74,14 +74,14 @@ $a\geq b$ if and only if $a+c\geq b+c$.
     Thus, if $a\geq b$ and $b\geq a$, then $a=b$.
 \end{proof}
 \subsubsection*{(e)}
-$a<b$ if and only if $a++\leq b$.
+$a<b$ if and only if $a\mathtt{++}\leq b$.
 \begin{proof}
-    First, we need to show that $a<b\Rightarrow a++\leq b$. $a<b$ means there exists a natural number $n$ such that 
-    $a+n=b$, particularly, $a\ne b$. Then $n$ must not be zero. So $n$ is the predecessor of a natural number, denote it as $m$. Then we have $a+n=a+(m++)=(a+m)++=(a++)+m=b$. Therefore, $a++\leq b$. Then 
-    we need to show that $a++\leq b\Rightarrow a<b$. There exists a natural number $n$ such that $(a++)+n=b$. $(a++)+n=(a+n)++=a+(n++)=b$. Since $n++$ is the successor of $n$, $n++$ must not be equal to $0$.
-    If $a=b$, there will be $a+(n++)=a\Rightarrow n++=0$, contradiction. Therefore, $a\ne b$. 
+    First, we need to show that $a<b\Rightarrow a\mathtt{++}\leq b$. $a<b$ means there exists a natural number $n$ such that 
+    $a+n=b$, particularly, $a\ne b$. Then $n$ must not be zero. So $n$ is the predecessor of a natural number, denote it as $m$. Then we have $a+n=a+(m\mathtt{++})=(a+m)\mathtt{++}=(a\mathtt{++})+m=b$. Therefore, $a\mathtt{++}\leq b$. Then 
+    we need to show that $a\mathtt{++}\leq b\Rightarrow a<b$. There exists a natural number $n$ such that $(a\mathtt{++})+n=b$. $(a\mathtt{++})+n=(a+n)\mathtt{++}=a+(n\mathtt{++})=b$. Since $n\mathtt{++}$ is the successor of $n$, $n\mathtt{++}$ must not be equal to $0$.
+    If $a=b$, there will be $a+(n\mathtt{++})=a\Rightarrow n\mathtt{++}=0$, contradiction. Therefore, $a\ne b$. 
     
-    Thus, $a<b$ if and only if $a++\leq b$.
+    Thus, $a<b$ if and only if $a\mathtt{++}\leq b$.
 \end{proof}
 \subsubsection*{(f)}
 $a<b$ if and only if $b=a+d$ for some positive number $d$.
@@ -100,16 +100,16 @@ $0\leq b$ for all $b$.
     By definition of addition, we have $0+b=b$. Thus, $0\leq b$.
 \end{proof}
 \subsubsection*{(b)}
-If $a>b$, then $a++>b$.
+If $a>b$, then $a\mathtt{++}>b$.
 \begin{proof}
-    By Proposition 2.2.12.e, we have $a>b\Rightarrow a\geq b++$. And by Proposition 2.2.12.d, $a+1\geq (b++)+1$ that is equivalent to 
-    $a++\geq b+2$. Since 2 is positive, by Proposition 2.2.12.f, we have $a++>b$. 
+    By Proposition 2.2.12.e, we have $a>b\Rightarrow a\geq b\mathtt{++}$. And by Proposition 2.2.12.d, $a+1\geq (b\mathtt{++})+1$ that is equivalent to 
+    $a\mathtt{++}\geq b+2$. Since 2 is positive, by Proposition 2.2.12.f, we have $a\mathtt{++}>b$. 
 \end{proof}
 \subsubsection*{(c)}
-If $a=b$, then $a++>b$.
+If $a=b$, then $a\mathtt{++}>b$.
 \begin{proof}
-    We know from Proposition 2.2.12.a that $a\geq a$, so $a\geq a=b$. And again by Proposition 2.2.12.d, we have $a++=a+1\geq b+1$. Since 1 is positive, 
-    by Proposition 2.2.12.f, $a++>b$.
+    We know from Proposition 2.2.12.a that $a\geq a$, so $a\geq a=b$. And again by Proposition 2.2.12.d, we have $a\mathtt{++}=a+1\geq b+1$. Since 1 is positive, 
+    by Proposition 2.2.12.f, $a\mathtt{++}>b$.
 
 \end{proof}
 \subsection*{2.2.5}
@@ -123,45 +123,45 @@ Then we can conclude that $P(m)$ is true for all natural numbers $m\geq m_0$.
     So $P(m)$ is true for all $m_0\leq m\leq n$. Hence, $P(m)$ is true for all $m_0\leq m<n+1$. ($m\leq n \Leftrightarrow m<n+1$ can be shown using prop 2.2.12.) Thus, $Q(n+1)$ is true. This closes the induction.
 \end{proof}
 \subsection*{2.2.6}
-Let $n$ be a natural number, and let $P(m)$ be a property pertaining to the natural numbers such that whenever $P(m++)$ is true, then $P(m)$
+Let $n$ be a natural number, and let $P(m)$ be a property pertaining to the natural numbers such that whenever $P(m\mathtt{++})$ is true, then $P(m)$
 is true. Suppose that $P(n)$ is also true. Prove that $P(m)$ is true for all natural numbers $m\leq n$. (Principle of backwards induction.)
 \begin{proof}
     Apply induction to $n$. For the base case $n=0$, suppose $P(0)$ is true. In this case, $m$ can only be 0 ($m+k=0 \Rightarrow m=0,k=0$). Since $P(0)$ is true, 
-    the base case is proved. Next, suppose if $P(n)$ is true then $P(m)$ is true for all natural numbers $m\leq n$. We want to show that if $P(n++)$ is true then $P(m)$ is true for all 
-    natural numbers $m\leq n++$. $m\leq n$ means there exists a natural number $a$ such that $m+a=n++$. $a$ is either 0 or a positive number. If $a$ is 0, $m=n++$. If $a$ is positive, $m<n++$ (by prop 2.2.12.f), this is equivalent to $m\leq n$ (can be shown using prop 2.2.12.). 
-    For $m=n++$, $P(m)$ is true because of the assumption. For each $m\leq n$, $P(m)$ is also true by induction hypothesis. Therefore, $P(m)$ is true for all natural numbers $m\leq n++$. And we have closed the induction.
+    the base case is proved. Next, suppose if $P(n)$ is true then $P(m)$ is true for all natural numbers $m\leq n$. We want to show that if $P(n\mathtt{++})$ is true then $P(m)$ is true for all 
+    natural numbers $m\leq n\mathtt{++}$. $m\leq n$ means there exists a natural number $a$ such that $m+a=n\mathtt{++}$. $a$ is either 0 or a positive number. If $a$ is 0, $m=n\mathtt{++}$. If $a$ is positive, $m<n\mathtt{++}$ (by prop 2.2.12.f), this is equivalent to $m\leq n$ (can be shown using prop 2.2.12.). 
+    For $m=n\mathtt{++}$, $P(m)$ is true because of the assumption. For each $m\leq n$, $P(m)$ is also true by induction hypothesis. Therefore, $P(m)$ is true for all natural numbers $m\leq n\mathtt{++}$. And we have closed the induction.
 \end{proof}
-In the above proofs, $n++$ and $n+1$ got mixed up because $n++=n+1$ has been illustrated on Page 26 (and the $+1$ version is a little easier). But $++$ is a more desirable expression since it stands for the successor in a general way.
+In the above proofs, $n\mathtt{++}$ and $n+1$ got mixed up because $n\mathtt{++}=n+1$ has been illustrated on Page 26 (and the $+1$ version is a little easier). But $\mathtt{++}$ is a more desirable expression since it stands for the successor in a general way.
 
 \section*{2.3}
 \subsection*{Definition 2.3.1 (Multiplication of natural numbers).}
-Let $m$ be a natural number. To multiply zero to $m$, we define $0\times m:=0$. Now suppose inductively that we have defined how to multiply $n$ to $m$. Then we can multiply $n++$ to $m$ by defining $(n++)\times m:=(n\times m)+m$.
+Let $m$ be a natural number. To multiply zero to $m$, we define $0\times m:=0$. Now suppose inductively that we have defined how to multiply $n$ to $m$. Then we can multiply $n\mathtt{++}$ to $m$ by defining $(n\mathtt{++})\times m:=(n\times m)+m$.
 \subsection*{2.3.1}
 \textbf{Lemma 2.3.2} (Multiplication is commutatitive). Let $n,m$ be natural numbers. Then $n\times m=m\times n$.
 \begin{proof}
-    First, we want to show that $m\times 0=0$. Induct on $m$. When $m=0$, by definition $0\times m=0$ for every $m$, so $0\times 0=0$. Suppose $m\times 0=0$, we want to show that $(m++)\times 0=0$. By definition, we got $(m++)\times 0=(m\times 0)+0$ which is equal to $0+0=0$. 
+    First, we want to show that $m\times 0=0$. Induct on $m$. When $m=0$, by definition $0\times m=0$ for every $m$, so $0\times 0=0$. Suppose $m\times 0=0$, we want to show that $(m\mathtt{++})\times 0=0$. By definition, we got $(m\mathtt{++})\times 0=(m\times 0)+0$ which is equal to $0+0=0$. 
     This closes the induction.
 
-    Then, we want to show that $n\times(m++)=n\times m+n$. Induct on $n$ by keeping $m$ fixed. Consider the base case $n=0$. The LHS is equal to $0\times(m++)=0$ by definition. The RHS is equal to 
-    $0\times m+0$ which is also 0. Now suppose inductively $n\times (m++)=n\times m+n$. We need to show that $(n++)\times (m++)=(n++)\times m+(n++)$. 
+    Then, we want to show that $n\times(m\mathtt{++})=n\times m+n$. Induct on $n$ by keeping $m$ fixed. Consider the base case $n=0$. The LHS is equal to $0\times(m\mathtt{++})=0$ by definition. The RHS is equal to 
+    $0\times m+0$ which is also 0. Now suppose inductively $n\times (m\mathtt{++})=n\times m+n$. We need to show that $(n\mathtt{++})\times (m\mathtt{++})=(n\mathtt{++})\times m+(n\mathtt{++})$. 
     \begin{equation*}
         \begin{aligned}
-            \text{LHS}&=(n++)\times(m++)=n\times (m++)+(m++)\\&=n\times m+n+(m++)=n\times m+(n+m)++,\\
-            \text{RHS}&=(n++)\times m+(n++)=n\times m+m+(n++)=n\times m+(n+m)++.
+            \text{LHS}&=(n\mathtt{++})\times(m\mathtt{++})=n\times (m\mathtt{++})+(m\mathtt{++})\\&=n\times m+n+(m\mathtt{++})=n\times m+(n+m)\mathtt{++},\\
+            \text{RHS}&=(n\mathtt{++})\times m+(n\mathtt{++})=n\times m+m+(n\mathtt{++})=n\times m+(n+m)\mathtt{++}.
         \end{aligned}
     \end{equation*}
     Thus, both sides are equal to each other. This closes the induction.
 
     Now we can use the things above to show Lemma 2.3.2. We induct on $n$ by keeping $m$ fixed. Consider the base case $n=0$. $0\times m=m\times 0=0$ by definition and the lemma we have shown above. Assume inductively $n\times m = m\times n$. We want to show that 
-    $(n++)\times m=m\times (n++)$. By definition, the LHS is equal to $(n++)\times m=(n\times m)+m$. By the lemma we proved above, the RHS is equal to $m\times(n++)=m\times n+m=n\times m+m$. So both sides are equal to each other. We have closed the induction.  
+    $(n\mathtt{++})\times m=m\times (n\mathtt{++})$. By definition, the LHS is equal to $(n\mathtt{++})\times m=(n\times m)+m$. By the lemma we proved above, the RHS is equal to $m\times(n\mathtt{++})=m\times n+m=n\times m+m$. So both sides are equal to each other. We have closed the induction.  
 \end{proof}
 \subsection*{2.3.2}
 \textbf{Lemma 2.3.3} (Positive natural numbers have no zero divisors). Let $n,m$ be natural numbers. Then $n\times m=0$ if and only if at least one of $m,n$ is equal to zero. In particular, if $n$ and $m$ are both positive, then $nm$ is also positive.
 \begin{proof}
-    Try to prove the second statement first. Assume $n,m$ are both positive natural numbers. So we can represent $n$ as $a++$ where $a$ is a natural number. Then 
+    Try to prove the second statement first. Assume $n,m$ are both positive natural numbers. So we can represent $n$ as $a\mathtt{++}$ where $a$ is a natural number. Then 
     \begin{equation*}
         \begin{aligned}
-            nm&=(a++)\times m\\
+            nm&=(a\mathtt{++})\times m\\
             &=a\times m+m.
         \end{aligned}
     \end{equation*}
@@ -180,11 +180,11 @@ Let $m$ be a natural number. To multiply zero to $m$, we define $0\times m:=0$. 
             \text{RHS}=a\times(0\times c)=a\times 0=0.
         \end{aligned}
     \end{equation*}
-    Thus, the base case is proved. Assume inductively $(a\times b)\times c=a\times(b\times c)$. We need to show that $(a\times(b++))\times c=a\times((b++)\times c)$.
+    Thus, the base case is proved. Assume inductively $(a\times b)\times c=a\times(b\times c)$. We need to show that $(a\times(b\mathtt{++}))\times c=a\times((b\mathtt{++})\times c)$.
     \begin{equation*}
         \begin{aligned}
-            \text{LHS}&=(a\times(b++))\times c=(a\times b+a)\times c=(a\times b)\times c+ac,\\
-            \text{RHS}&=a\times ((b++)\times c)=a\times(b\times c+c)=a\times (b\times c)+ac.
+            \text{LHS}&=(a\times(b\mathtt{++}))\times c=(a\times b+a)\times c=(a\times b)\times c+ac,\\
+            \text{RHS}&=a\times ((b\mathtt{++})\times c)=a\times(b\times c+c)=a\times (b\times c)+ac.
         \end{aligned}
     \end{equation*}
     By induction hypothesis, $(a\times b)\times c=a\times(b\times c)$. Thus, both sides are equal to each other. This closes the induction.
@@ -199,17 +199,17 @@ Prove the identity $(a+b)^2=a^2+2ab+b^2$ for all natural numbers $a,b$.
             \text{RHS}&=a^2+2ab+b^2=a^2+0+0=a^2.
         \end{aligned}
     \end{equation*}
-    So the base case is proved. Now assume inductively $(a+b)^2=a^2+2ab+b^2$. We need to show that $(a+(b++))^2=a^2+2a(b++)+(b++)^2$.
+    So the base case is proved. Now assume inductively $(a+b)^2=a^2+2ab+b^2$. We need to show that $(a+(b\mathtt{++}))^2=a^2+2a(b\mathtt{++})+(b\mathtt{++})^2$.
     \begin{equation*}
         \begin{aligned}
-            \text{LHS}&=(a+(b++))^2\\&=((a+b)++)^2\\
-            &=((a+b)++)\times((a+b)++)\\
-            &=(a+b)(a+b)+(a+b)+(a+b)++\\
-            &=\underbrace{a^2+2ab+b^2}_{\text{by induction hypothesis}}+(2a+2b)++,\\
-            \text{RHS}&=a^2+2a(b++)+(b++)^2\\
-            &=a^2+2ab+2a+b(b++)+(b++)\\
-            &=a^2+2ab+2a+b^2+b+(b++)\\
-            &=a^2+2ab+b^2+(2a+2b)++.
+            \text{LHS}&=(a+(b\mathtt{++}))^2\\&=((a+b)\mathtt{++})^2\\
+            &=((a+b)\mathtt{++})\times((a+b)\mathtt{++})\\
+            &=(a+b)(a+b)+(a+b)+(a+b)\mathtt{++}\\
+            &=\underbrace{a^2+2ab+b^2}_{\text{by induction hypothesis}}+(2a+2b)\mathtt{++},\\
+            \text{RHS}&=a^2+2a(b\mathtt{++})+(b\mathtt{++})^2\\
+            &=a^2+2ab+2a+b(b\mathtt{++})+(b\mathtt{++})\\
+            &=a^2+2ab+2a+b^2+b+(b\mathtt{++})\\
+            &=a^2+2ab+b^2+(2a+2b)\mathtt{++}.
         \end{aligned}
     \end{equation*}
     Thus, both sides are equal to each other. This closes the induction.

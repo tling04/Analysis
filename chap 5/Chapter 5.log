@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.18)  26 AUG 2022 18:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020) (preloaded format=pdflatex 2020.9.18)  26 AUG 2022 19:48
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -535,15 +535,15 @@ Overfull \hbox (11.80814pt too wide) in paragraph at lines 254--257
 
 [9] [10] [11] [12] [13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] (./Chapter 5.aux) ) 
 Here is how much of TeX's memory you used:
- 16316 strings out of 480608
- 303744 string characters out of 5903630
+ 16311 strings out of 480608
+ 303690 string characters out of 5903630
  547023 words of memory out of 5000000
- 31899 multiletter control sequences out of 15000+600000
- 548993 words of font info for 66 fonts, out of 8000000 for 9000
+ 31896 multiletter control sequences out of 15000+600000
+ 548488 words of font info for 63 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  60i,10n,60p,502b,312s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/local/texlive/2020/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx0800.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfbx1728.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm0800.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb></usr/local/texlive/2020/texmf-dist/fonts/type1/public/cm-super/sfti1200.pfb>
-Output written on "Chapter 5.pdf" (26 pages, 293815 bytes).
+Output written on "Chapter 5.pdf" (26 pages, 293809 bytes).
 PDF statistics:
  168 PDF objects out of 1000 (max. 8388607)
  120 compressed objects within 2 object streams

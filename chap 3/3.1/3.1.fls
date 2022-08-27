@@ -215,6 +215,9 @@ OUTPUT 3.1.pdf
 INPUT /usr/local/texlive/2020/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecrm0800.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecrm0600.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt12.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
+INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecrm1440.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecbx1440.tfm
 INPUT /usr/local/texlive/2020/texmf-dist/fonts/tfm/jknappen/ec/ecti1200.tfm
