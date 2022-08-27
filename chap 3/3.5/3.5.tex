@@ -330,41 +330,41 @@ This exercise will establish a rigorous version of Proposition 2.1.16. Let $f:\m
 \end{equation*}
 and 
 \begin{equation*}
-    a(n++)=f(n,a(n))\text{ for all }n\in \mathbb{N},
+    a(n\mathtt{++})=f(n,a(n))\text{ for all }n\in \mathbb{N},
 \end{equation*}
 and furthermore that this function is unique.
 \begin{proof}
-    First show inductively that for every $n\in\mathbb{N}$, there exists a unique function $a_N:\{n\in\mathbb{N}:n\leq N\}\to \mathbb{N}$ such that $a_N(0)=c$ and $a_N(n++)=f(n,a_N(n))$ - let this statement be $P(N)$. Assume $P(N)$ is true, we need to show that 
-    $P(N++)$ is also true. Define $a_{N++}$ as follows: 
+    First show inductively that for every $n\in\mathbb{N}$, there exists at least one function $a_N:\{n\in\mathbb{N}:n\leq N\}\to \mathbb{N}$ such that $a_N(0)=c$ and $a_N(n\mathtt{++})=f(n,a_N(n))$ - let this statement be $P(N)$. Assume $P(N)$ is true, we need to show that 
+    $P(N\mathtt{++})$ is also true. Define $a_{N\mathtt{++}}$ as follows: 
     \begin{equation*}
         \begin{gathered}
-            \text{ if }n < N++, a_{N++}(n)=a_N(n),\\
-            \text{ if }n = N++, a_{N++}(n)=f(N,a_N(N)).
+            \text{ if }n < N\mathtt{++}, a_{N\mathtt{++}}(n)=a_N(n),\\
+            \text{ if }n = N\mathtt{++}, a_{N\mathtt{++}}(n)=f(N,a_N(N)).
         \end{gathered}
     \end{equation*}
-    Then for the base case of $P(N++)$, $a_{N++}(0)=a_N(0)=c$ which satisfies the requirement. Now consider $a_{N++}(n++)$. Suppose $n<N++$. Then we have either $n++<N++$ or $n++=N++$. If $n++<N++$, by definition, we have $a_{N++}(n++)=a_N(n++)=f(n,a_N(n))$. Since $n<N++$,
-    $a_{N++}(n)=a_N(n)$. Therefore, $a_{N++}(n++)=f(n,a_N(n))=f(n,a_{N++}(n))$. If $n++=N++$, $a_{N++}(n++)=a_{N++}(N++)=f(N,a_N(N))$. Since $n++=N++\iff n=N$, $a_{N++}=f(n,a_N(n))$. Since $n<N++$, $a_N(n)=a_{N++}(n)$. Therefore, $a_{N++}=f(n,a_{N++}(n))$. 
-    Thus, $a_{N++}$ exists. 
+    Then for the base case of $P(N\mathtt{++})$, $a_{N\mathtt{++}}(0)=a_N(0)=c$ which satisfies the requirement. Now consider $a_{N\mathtt{++}}(n\mathtt{++})$. Suppose $n<N\mathtt{++}$. Then we have either $n\mathtt{++}<N\mathtt{++}$ or $n\mathtt{++}=N\mathtt{++}$. If $n\mathtt{++}<N\mathtt{++}$, by definition, we have $a_{N\mathtt{++}}(n\mathtt{++})=a_N(n\mathtt{++})=f(n,a_N(n))$. Since $n<N\mathtt{++}$,
+    $a_{N\mathtt{++}}(n)=a_N(n)$. Therefore, $a_{N\mathtt{++}}(n\mathtt{++})=f(n,a_N(n))=f(n,a_{N\mathtt{++}}(n))$. If $n\mathtt{++}=N\mathtt{++}$, $a_{N\mathtt{++}}(n\mathtt{++})=a_{N\mathtt{++}}(N\mathtt{++})=f(N,a_N(N))$. Since $n\mathtt{++}=N\mathtt{++}\iff n=N$, $a_{N\mathtt{++}}=f(n,a_N(n))$. Since $n<N\mathtt{++}$, $a_N(n)=a_{N\mathtt{++}}(n)$. Therefore, $a_{N\mathtt{++}}=f(n,a_{N\mathtt{++}}(n))$. 
+    Thus, $a_{N\mathtt{++}}$ exists. 
     
-    Define $a(n)=a_N(n), N=n$. Thus, $a(0)=a_0(0)=c$ and $a(n++)=a_{N++}(n++)=f(n,a_{N++}(n))=f(n,a_N(n))=f(n,a(n))$. Hence, there exists such a function $a$.
+    Define $a(n)=a_N(n), N=n$. Thus, $a(0)=a_0(0)=c$ and $a(n\mathtt{++})=a_{N\mathtt{++}}(n\mathtt{++})=f(n,a_{N\mathtt{++}}(n))=f(n,a_N(n))=f(n,a(n))$. Hence, there exists such a function $a$.
 
-    Lastly, we want to show the uniqueness of $a$. Assume there exists another function $g$ such that $g(0)=c$ and $g(n++)=g(n,f(n))$ for all $n\in \mathbb{N}$. Then $g(0)=a(0)=c$. Assume $a(n)=g(n)$, $g(n++)=f(n,g(n))=f(n,a(n))=a(n++)$. Therefore, $a(n)=g(n)$ for all $n\in \mathbb{N}$. 
+    Lastly, we want to show the uniqueness of $a$. Assume there exists another function $g$ such that $g(0)=c$ and $g(n\mathtt{++})=g(n,f(n))$ for all $n\in \mathbb{N}$. Then $g(0)=a(0)=c$. Assume $a(n)=g(n)$, $g(n\mathtt{++})=f(n,g(n))=f(n,a(n))=a(n\mathtt{++})$. Therefore, $a(n)=g(n)$ for all $n\in \mathbb{N}$. 
     Hence, $g=a$ and $a$ is unique.
 \end{proof}
 \subsubsection*{Exercise 3.5.13}
 The purpose of this exercise is to show that there is essentially only one version of the natural number system in set theory. Suppose we have a set $\mathbb{N}'$ of ``alternative natural numbers'', an ``alternative zero'' 0', and 
-an ``alternative increment operation'' which takes any alternative natural number $n'\in\mathbb{N}'$ and returns another alternative natural number $n'++'\in\mathbb{N}'$, such that the Peano axioms all hold with the natural numbers, zero, and increment replaced by their alternative counterparts.
-Show that there exists a bijection $\mathbb{N}\to \mathbb{N}'$ from the natural numbers to the alternative natural numbers such that $f(0)=0'$, and such that for any $n\in\mathbb{N}$ and $n'\in\mathbb{N}'$, we have $f(n)=n'$ if and only if $f(n++)=n'++'$.
+an ``alternative increment operation'' which takes any alternative natural number $n'\in\mathbb{N}'$ and returns another alternative natural number $n'\mathtt{++}'\in\mathbb{N}'$, such that the Peano axioms all hold with the natural numbers, zero, and increment replaced by their alternative counterparts.
+Show that there exists a bijection $\mathbb{N}\to \mathbb{N}'$ from the natural numbers to the alternative natural numbers such that $f(0)=0'$, and such that for any $n\in\mathbb{N}$ and $n'\in\mathbb{N}'$, we have $f(n)=n'$ if and only if $f(n\mathtt{++})=n'\mathtt{++}'$.
 \begin{proof}
-    Define $f$ as $f(0)=0'$ and $f(n++)=f(n)++'$. We need to show that $f(n)=n'\iff f(n++)=n'++'$.
+    Define $f$ as $f(0)=0'$ and $f(n\mathtt{++})=f(n)\mathtt{++}'$. We need to show that $f(n)=n'\iff f(n\mathtt{++})=n'\mathtt{++}'$.
 
-    Suppose $f(n)=n'$. Then $f(n++)=f(n)++'=n'++'$. Suppose $f(n++)=n'++'$. By definition, $f(n++)=f(n)++'$. Then, $f(n)++'=n'++'$. So $f(n)=n'$. Hence, $f(n)=n'\iff f(n++)=n'++'$.
+    Suppose $f(n)=n'$. Then $f(n\mathtt{++})=f(n)\mathtt{++}'=n'\mathtt{++}'$. Suppose $f(n\mathtt{++})=n'\mathtt{++}'$. By definition, $f(n\mathtt{++})=f(n)\mathtt{++}'$. Then, $f(n)\mathtt{++}'=n'\mathtt{++}'$. So $f(n)=n'$. Hence, $f(n)=n'\iff f(n\mathtt{++})=n'\mathtt{++}'$.
 
-    Then we need to show that $f$ is bijective. Let $f(n)=n'$. Suppose $n_1$ and $n_2$ are two natural numbers. Assume $f(n_1)=f(n_2)$. By definition, $f(n++)=f(n)++'$, $f(n)=f(n-1)++',\dotsc$. $f(n_1)=f(n_2)$ only if the recursive steps reach the base case at the same time, in other words,
+    Then we need to show that $f$ is bijective. Let $f(n)=n'$. Suppose $n_1$ and $n_2$ are two natural numbers. Assume $f(n_1)=f(n_2)$. By definition, $f(n\mathtt{++})=f(n)\mathtt{++}'$, $f(n)=f(n-1)\mathtt{++}',\dotsc$. $f(n_1)=f(n_2)$ only if the recursive steps reach the base case at the same time, in other words,
     $f(n_1)=f(n_2)$ only if $n_1=n_2$. Thus, $f$ is injective. 
 
     Use induction to show that $f$ is surjective. Consider the base case $0'$, by definition, $f(0)=0'$ so the base case is proved. Assume for $n'$, there exists $n\in \mathbb{N}$ such that $f(n)=n'$. Then 
-    $n'++'=f(n)++'=f(n++)$, and $n++\in\mathbb{N}$. Thus, for every $n'\in\mathbb{N}'$, there exists $n\in\mathbb{N}$ such that $f(n)=n'$. Thus, $f$ is surjective.
+    $n'\mathtt{++}'=f(n)\mathtt{++}'=f(n\mathtt{++})$, and $n\mathtt{++}\in\mathbb{N}$. Thus, for every $n'\in\mathbb{N}'$, there exists $n\in\mathbb{N}$ such that $f(n)=n'$. Thus, $f$ is surjective.
 
     Since $f$ is both injective and surjective, it is bijective.
 \end{proof}
