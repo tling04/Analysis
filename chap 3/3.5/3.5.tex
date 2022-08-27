@@ -334,19 +334,24 @@ and
 \end{equation*}
 and furthermore that this function is unique.
 \begin{proof}
-    First show inductively that for every $n\in\mathbb{N}$, there exists at least one function $a_N:\{n\in\mathbb{N}:n\leq N\}\to \mathbb{N}$ such that $a_N(0)=c$ and $a_N(n\mathtt{++})=f(n,a_N(n))$ - let this statement be $P(N)$. Assume $P(N)$ is true, we need to show that 
-    $P(N\mathtt{++})$ is also true. Define $a_{N\mathtt{++}}$ as follows: 
+    First show inductively that for every $n\in\mathbb{N}$, there exists a unique function $a_N:\{n\in\mathbb{N}:n\leq N\}\to \mathbb{N}$ such that $a_N(0)=c$ and $a_N(n\mathtt{++})=f(n,a_N(n))$ - let this statement be $P(N)$. Define $a_{N\mathtt{++}}$ as follows: 
     \begin{equation*}
         \begin{gathered}
             \text{ if }n < N\mathtt{++}, a_{N\mathtt{++}}(n)=a_N(n),\\
             \text{ if }n = N\mathtt{++}, a_{N\mathtt{++}}(n)=f(N,a_N(N)).
         \end{gathered}
     \end{equation*}
+    First, we use induction to show that there exists at least one such function. Assume $P(N)$ is true, we need to show that $P(N\mathtt{++})$ is also true.
     Then for the base case of $P(N\mathtt{++})$, $a_{N\mathtt{++}}(0)=a_N(0)=c$ which satisfies the requirement. Now consider $a_{N\mathtt{++}}(n\mathtt{++})$. Suppose $n<N\mathtt{++}$. Then we have either $n\mathtt{++}<N\mathtt{++}$ or $n\mathtt{++}=N\mathtt{++}$. If $n\mathtt{++}<N\mathtt{++}$, by definition, we have $a_{N\mathtt{++}}(n\mathtt{++})=a_N(n\mathtt{++})=f(n,a_N(n))$. Since $n<N\mathtt{++}$,
     $a_{N\mathtt{++}}(n)=a_N(n)$. Therefore, $a_{N\mathtt{++}}(n\mathtt{++})=f(n,a_N(n))=f(n,a_{N\mathtt{++}}(n))$. If $n\mathtt{++}=N\mathtt{++}$, $a_{N\mathtt{++}}(n\mathtt{++})=a_{N\mathtt{++}}(N\mathtt{++})=f(N,a_N(N))$. Since $n\mathtt{++}=N\mathtt{++}\iff n=N$, $a_{N\mathtt{++}}=f(n,a_N(n))$. Since $n<N\mathtt{++}$, $a_N(n)=a_{N\mathtt{++}}(n)$. Therefore, $a_{N\mathtt{++}}=f(n,a_{N\mathtt{++}}(n))$. 
     Thus, $a_{N\mathtt{++}}$ exists. 
     
     Define $a(n)=a_N(n), N=n$. Thus, $a(0)=a_0(0)=c$ and $a(n\mathtt{++})=a_{N\mathtt{++}}(n\mathtt{++})=f(n,a_{N\mathtt{++}}(n))=f(n,a_N(n))=f(n,a(n))$. Hence, there exists such a function $a$.
+
+    Then, we show inductively that $a_N$ is unique for all $N\in\mathbb{N}$. We want to show that if we have $a_N:\{n\in\mathbb{N}:n\leq N\}\to \mathbb{N}$ such that $a_N(0)=c$ and $a_N(n\mathtt{++})=f(n,a_N(n))$
+    and $b_N:\{n\in\mathbb{N}:n\leq N\}\to \mathbb{N}$ such that $b_N(0)=c$ and $b_N(n\mathtt{++})=f(n,b_N(n))$, then $a_N(n)=b_N(n)$ for all $n\in\{n\in\mathbb{N}:n\leq N\}$.
+    When $n=0$, we have $a_N(0)=b_N(0)=c$, hence the base case is proved. Suppose inductively $a_N(n)=b_N(n)$. Since $a(n)=b(n)$, we have $a_N(n++)=f(n,a(n))=f(n,b(n))=b_N(n++)$. This closes the induction. 
+    Therefore, $a_N$ is unique. 
 
     Lastly, we want to show the uniqueness of $a$. Assume there exists another function $g$ such that $g(0)=c$ and $g(n\mathtt{++})=g(n,f(n))$ for all $n\in \mathbb{N}$. Then $g(0)=a(0)=c$. Assume $a(n)=g(n)$, $g(n\mathtt{++})=f(n,g(n))=f(n,a(n))=a(n\mathtt{++})$. Therefore, $a(n)=g(n)$ for all $n\in \mathbb{N}$. 
     Hence, $g=a$ and $a$ is unique.
