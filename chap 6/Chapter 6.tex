@@ -1,0 +1,236 @@
+\documentclass[12pt, letter]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in, 8in}]{geometry}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools}
+\usepackage{enumitem}
+\usepackage{listings}
+\usepackage{bm}
+\newcommand{\uvec}[1]{\boldsymbol{\hat{\textbf{#1}}}}
+\newcommand{\la}{\lim_{n\to\infty}a_n}
+\newcommand{\lb}{\lim_{n\to\infty}b_n}
+\newcommand{\an}{(a_n)_{n=m}^\infty}
+\newcommand{\bn}{(b_n)_{n=m}^\infty}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}
+\usepackage{setspace}
+
+\setstretch{1.25}
+\begin{document}
+\section*{Chapter 6}
+\section*{Limits of sequences}
+\subsection*{6.1 Convergence and limit laws}
+\subsubsection*{Definition 6.1.1 (Distance between two real numbers).}
+Given two real numbers $x$ and $y$, we define their distance $d(x,y)$ to be $d(x,y):=|x-y|$.
+\subsubsection*{Definition 6.1.2 ($\varepsilon$-close real numbers).}
+Let $\varepsilon>0$ be a real number. We say that two real numbers $x,y$ are $\varepsilon$-close iff we have $d(y,x)\leq \varepsilon$.
+\subsubsection*{Definition 6.1.3 (Cauchy sequences of reals).}
+Let $\varepsilon>0$ be a real number. A sequence $(a_n)_{n=N}^\infty$ of real numbers starting at some integer index $N$ is said to be $\varepsilon$-steady
+iff $a_j$ and $a_k$ are $\varepsilon$-close for every $j,k\geq N$. A sequence $(a_n)_{n=m}^\infty$ starting at some integer index $m$ is said to be
+eventually $\varepsilon$-steady iff there exists an $N\geq m$ such that $(a_n)_{n=N}^\infty$ is $\varepsilon$-steady. We say that $(a_n)_{n=m}^\infty$
+is a Cauchy sequence iff it is eventually $\varepsilon$-steady for every $\varepsilon>0$. 
+\subsubsection*{Proposition 6.1.4.}
+Let $(a_n)_{n=m}^\infty$ be a sequence of rational numbers starting at some integer index $m$. Then $(a_n)_{n=m}^\infty$ is a Cauchy sequence 
+in the sense of Definition 5.1.8 if and only if it is a Cauchy sequence in the sense of Definition 6.1.3.
+\subsubsection*{Definition 6.1.5 (Convergence of sequences).}
+Let $\varepsilon>0$ be a real number, and let $L$ be a real number. A sequence $(a_n)_{n=N}^\infty$ of real numbers is said to be $\varepsilon$-close
+to $L$ iff $a_n$ is $\varepsilon$-close to $L$ for every $n\geq N$, i.e., we have $|a_n-L|\leq \varepsilon$ for every $n\geq N$. We say that a sequence $(a_n)_{n=m}^\infty$
+is eventually $\varepsilon$-close to $L$ iff there exists an $N\geq m$ such that $(a_n)_{n=N}^\infty$ is $\varepsilon$-close to $L$. We say that a sequence
+$(a_n)_{n=m}^\infty$ converges to $L$ iff it is eventually $\varepsilon$-close to $L$ for every real $\varepsilon>0$.
+\subsubsection*{Proposition 6.1.7 (Uniqueness of limits).}
+Let $(a_n)_{n=m}^\infty$ be a real sequence starting at some integer index $m$, and let $L=L'$ be two distinct real numbers. Then it is not possible for $(a_n)_{n=m}^\infty$
+to converge to $L$ while also converging to $L'$.
+\subsubsection*{Definition 6.1.8 (Limits of sequences).}
+If a sequence $(a_n)_{n=m}^\infty$ converges to some real number $L$, we say that $(a_n)_{n=m}^\infty$ is convergent and that its limit is $L$; we write
+\begin{equation*}
+    L=\lim_{n\to\infty}a_n
+\end{equation*}
+to denote this fact. If a sequence $(a_n)_{n=m}^\infty$ is not converging to any real number $L$, we say that the sequence $(a_n)_{n=m}^\infty$ is divergent 
+and we leave $\lim_{n\to\infty}a_n$ undefined.
+\subsubsection*{Proposition 6.1.11.}
+We have $\lim_{n\to\infty}1/n=0$.
+\subsubsection*{Proposition 6.1.12 (Convergent sequences are Cauchy).}
+Suppose that $(a_n)_{n=m}^\infty$ is a convergent sequence of real numbers. Then $(a_n)_{n=m}^\infty$ is also a Cauchy sequence.
+\subsubsection*{Proposition 6.1.15 (Formal limits are genuine limits).}
+Suppose that $(a_n)_{n=1}^\infty$ is a Cauchy sequence of rational numbers. Then $(a_n)_{n=1}^\infty$ converges to LIM$_{n\to\infty}a_n$, i.e.,
+\begin{equation*}
+    \text{LIM}_{n\to\infty}a_n=\lim_{n\to\infty}a_n. 
+\end{equation*}
+\subsubsection*{Definition 6.1.16 (Bounded sequences).}
+A sequence $(a_n)_{n=m}^\infty$ of real numbers is bounded by a real number $M$ iff we have $|a_n|\leq M$ for all $n\geq m$. We say that $(a_n)_{n=m}^\infty$ is bounded 
+iff it is bounded by $M$ for some real number $M>0$.
+\subsubsection*{Corollary 6.1.17.}
+Every convergent sequence of real numbers is bounded.
+\subsubsection*{Theorem 6.1.19 (Limit Laws).}
+Let $(a_n)_{n=m}^\infty$ and $(b_n)_{n=m}^\infty$ be convergent sequences of real numbers, and let $x,y$ be the real numbers $x:=\la$ and $y:=\lb$.
+\begin{enumerate}[label=(\alph*)]
+    \item  The sequence $(a_n+b_n)_{n=m}^\infty$ converges to $x+y$; in other words, $$\lim_{n\to\infty}(a_n+b_n)=\la+\lb.$$
+    \item The sequence $(a_n b_n)_{n=m}^\infty$ converges to $xy$; in other words, $$\lim_{n\to\infty}(a_n b_n)=(\la)(\lb).$$
+    \item For any real number $c$, the sequence $(ca_n)_{n=m}^\infty$ converges to $cx$; in other words, $$\lim_{n\to\infty}(ca_n)=c\la.$$
+    \item The sequence $(a_n-b_n)_{n=m}^\infty$ converges to $x-y$; in other words, $$\lim_{n\to\infty}(a_n-b_n)=\la - \lb.$$
+    \item Suppose that $y\ne 0$, and that $b_n\ne 0$ for all $n\geq m$. Then the sequence $(b_n^{-1})_{n=m}^\infty$ converges to $y^{-1}$; in other words,
+    $$\lim_{n\to\infty}b_n^{-1}=(\lb)^{-1}.$$
+    \item Suppose that $y\ne 0$, and that $b_n\ne 0$ for all $n\geq m$. Then the sequence $(a_n/b_n)_{n=m}^\infty$ converges to $x/y$; in other words,
+    $$\lim_{n\to\infty}\frac{a_n}{b_n}=\frac{\la}{\lb}.$$
+    \item The sequence $(\max(a_n,b_n))_{n=m}^\infty$ converges to $\max(x,y)$; in other words, $$\lim_{n\to\infty} \max(a_n,b_n)=\max(\la, \lb).$$
+    \item The sequence $(\min(a_n,b_n))_{n=m}^\infty$ converges to $\min(x,y)$; in other words, $$\lim_{n\to\infty}\min(a_n,b_n)=\min (\la,\lb).$$
+\end{enumerate}
+\subsubsection*{Exercise 6.1.1.}
+Let $(a_n)_{n=0}^\infty$ be a sequence of real numbers, such that $a_{n+1}>a_n$ for each natural number $n$. Prove that whenever $n$ and $m$ are natural numbers such that 
+$m>n$, then we have $a_m>a_n$.
+\begin{proof}
+    Induct on $p$ to show that $a_{n+p}>a_n$ for all positive integers $p$. When $p=1$, as stated in the problem, we have $a_{n+p}=a_{n+1}>a_n$. Suppose inductively
+    $a_{n+p}>a_n$ for positive integer $p$. Then $a_{n+p+1}>a_{n+p}>a_n$. This closes the induction. Since $m>n$, $m-n$ is a positive integer. Therefore, $a_{n+(m-n)}=a_m>a_n$.
+\end{proof}
+\subsubsection*{Exercise 6.1.2.}
+Let $(a_n)_{n=m}^\infty$ be a sequence of real numbers, and let $L$ be a real number. Show that $\an$ converges to $L$ if and only if, given any real $\varepsilon>0$,
+one can find an $N\geq m$ such that $|a_n-L|\leq \varepsilon$ for all $n\geq N$.
+\begin{proof}
+    Suppose $\an$ converges to $L$. By definition, $\an$ is eventually $\varepsilon$-close to $L$ for every real $\varepsilon>0$. Therefore, for any real $\varepsilon>0$,
+    there exists $N\geq m$ such that $|a_n-L|\leq\varepsilon$ for all $n\geq N$.
+
+    Suppose given any real $\varepsilon>0$, one can find an $N\geq m$ such that $|a_n-L|\leq \varepsilon$ for all $n\geq N$. Then any real $\varepsilon>0$, 
+    there exists an $N\geq m$ such that $\an$ is eventually $\varepsilon$-close to $L$. Therefore, by definition, $\an$ converges to $L$.
+\end{proof}
+\subsubsection*{Exercise 6.1.3.}
+Let $\an$ be sequence of real numbers, let $c$ be a real number, and let $m'\geq m$ be an integer. Show that $\an$ converges to $c$ if and only if $(a_n)_{n=m'}^\infty$ converges
+to $c$.
+\begin{proof}
+    Suppose $\an$ converges to $c$. Then for any arbitrary $\varepsilon>0$, there exists $N_{\varepsilon}\geq m$ such that $|a_n-c|\leq \varepsilon$. So for any arbitrary $\varepsilon>0$,
+    we can find $M_\varepsilon=\max(N_\varepsilon, m')$ such that $|a_n-c|\leq\varepsilon$ for all $n\geq M_\varepsilon\geq m'$. Therefore, $(a_n)_{n=m}^\infty$ converges to $c$.
+
+    Suppose $(a_n)_{n=m'}^\infty$ converges to $c$. For any arbitrary $\varepsilon>0$, there exists $N_{\varepsilon}\geq m'$ such that $|a_n-c|\leq \varepsilon$ for all $n\geq N_\varepsilon$,
+    since $m'\geq m$, we have $N_\varepsilon\geq m$.  Therefore, for any arbitrary $\varepsilon>0$, we can find $N_{\varepsilon}\geq m$ such that $|a_n-c|\leq \varepsilon$ for all $n\geq N_\varepsilon$.
+    
+    Thus, $\an$ converges to $c\iff (a_n)_{n=m}^\infty$ converges to $c$.
+\end{proof}
+\subsubsection*{Exercise 6.1.4.}
+Let $\an$ be a sequence of real numbers, let $c$ be a real number,  and let $k\geq 0$ be a non-negative integer. Show that $\an$ converges to $c$
+if and only if $(a_{n+k})_{n=m}^\infty$ converges to $c$.
+\begin{proof}
+    We can rewrite $(a_{n+k})_{n=m}^\infty=(a_n)_{m+k}^\infty$ since both of them are equal to the infinite sequence $a_{m+k},a_{m+k+1},\dotsc$. Since 
+    $k\geq 0$, $m+k\geq m$. Therefore, by Exercise 6.1.4, we have $\an$ converges to $c$ if and only if $(a_n)_{m+k}^\infty=(a_{n+k})_{n=m}^\infty$ converges to $c$. 
+\end{proof}
+\subsubsection*{Exercise 6.1.5.}
+Prove proposition 6.1.12.
+\begin{proof}
+    Suppose $\lim\limits_{n\to\infty}\an=L$. By definition, for all real $\varepsilon/2>0$, there exists $N_\varepsilon\geq m$ such that $|a_i-L|\leq\varepsilon/2$ and $|a_j-L|=|L-a_j|\leq\varepsilon/2$
+    for all $i,j\geq N_\varepsilon$. Then for all real $\varepsilon>0$, let $N=N_\varepsilon\geq m$, we have $|a_i-a_j|\leq |a_i-L|+|L-a_j|\leq \varepsilon/2+\varepsilon/2=\varepsilon$ for all $n,m\geq N$.
+    Therefore, $\an$ is a Cauchy sequence.
+\end{proof}
+\subsubsection*{Exercise 6.1.6.}
+Prove Proposition 6.1.15.
+\begin{proof}
+    Write $L:=$LIM$_{n\to\infty}a_n$. We want to show that $L=\lim\limits_{n\to\infty}a_n$. Suppose $L$ and $\an$ are not eventually $\varepsilon$-close.
+    Consider an arbitrary $\varepsilon/2>0$, since $\an$ is Cauchy, there exists $N\geq m$ such that $|a_i-a_j|\leq\varepsilon/2$ for all $i,j\geq N$. For this $N$, since $L$ and $\an$
+    are not eventually $\varepsilon$-close, there exists $i\geq N$ such that $|a_i-L|>\varepsilon$. And since this $i\geq N$, we have $|a_i-a_j|\leq\varepsilon/2$ for all $j\geq i$.
+    Since $|a_i-L|>\varepsilon$, we have 
+    \begin{equation*}
+        a_i > L+\varepsilon\text{ or }a_i < L-\varepsilon.
+    \end{equation*}
+    If $a_i>L+\varepsilon$, since $|a_i-a_j|\leq\varepsilon/2\implies a_i-\varepsilon/2\leq a_j\leq a_i+\varepsilon/2$, we have $L+\varepsilon/2<a_i-\varepsilon/2\leq a_j$.
+    If $a_i<L-\varepsilon$, since $a_i-\varepsilon/2\leq a_j\leq a_i+\varepsilon/2$, we have $a_j\leq a_i+\varepsilon/2<L-\varepsilon/2$. Therefore, we either have $a_j<L-\varepsilon/2$
+    or $a_j>L+\varepsilon/2$ for all $j\geq i$. 
+
+    If $a_j<L-\varepsilon/2$ for all $j\geq i$, by Exericse 5.4.8, we have LIM$_{n\to\infty}a_n\leq L-\varepsilon/2<L$. If $a_j>L+\varepsilon/2$ for all $j\geq i$, by Exericse 5.4.8, we have LIM$_{n\to\infty}a_n\geq L+\varepsilon/2>L$.
+    Then we have either LIM$_{n\to\infty}a_n>L$ or LIM$_{n\to\infty}a_n<L$, and it contradicts the fact that LIM$_{n\to\infty}a_n=L$.
+    Thus, $L$ and $\an$ are eventually $\varepsilon$-close, hence $L=\lim\limits_{n\to\infty}a_n$.
+\end{proof}
+\subsubsection*{Exercise 6.1.7.}
+Show that Definition 6.1.16 is consistent with Definition 5.1.12.
+\begin{proof}
+    We would like to show that if $(a_n)_{n=1}^\infty$ is bounded by $M$ then $\an$ is bounded by $M$. If $(a_n)_{n=1}^\infty$ is bounded by $M$, by Definition 5.1.12, 
+    $|a_i|\leq M$ for all $i\geq 1$. Then for all $i\geq m\geq 1$, we have $|a_i|\leq M$. Therefore, $\an$ is bounded by $M$.
+\end{proof}
+\subsubsection*{Exercise 6.1.8.}
+Prove Theorem 6.1.19.
+\begin{enumerate}[label=(\alph*)]
+    \item \begin{proof}
+        Consider an arbitrary $\varepsilon>0$. Since $\an$ converges to $x$, there exists $N_1\geq m$ such that $|a_n-x|\leq\varepsilon/2$ for all $n\geq N_1$.
+        Since $\bn$ converges to $x$, there exists $N_2\geq m$ such that $|b_n-x|\leq\varepsilon/2$ for all $n\geq N_2$. Let $N=\max(N_1, N_2)$, we have 
+        $|(a_n+b_n)-(x+y)|=|(a_n-x)+(b_n-y)|\leq |a_n-x|+|b_n-y|\leq\varepsilon/2 +\varepsilon/2=\varepsilon$ for all $n\geq N$. Therefore, $\lim\limits_{a_n+b_n}=x+y$.
+    \end{proof}
+    \item \begin{proof}
+        Consider an arbitrary $\varepsilon>0$. Since $\an$ converges to $x$, $\an$ is bounded by a positive number $M_1$. There exists $N_1\geq m$ such that $|a_n-x|\leq\varepsilon/2M_1$
+        for all $n\geq N_1$. We can easily know that there exists a positive number $M_2$ such that $M_2\geq |x|$. Since $\bn$ converges to $y$, there exists $N_2$ such that 
+        $|b_n-y|\leq \varepsilon/2M_2$ for all $n\geq N_2$. Let $N=\max(N_1,N_2)$, then 
+        \begin{equation*}
+            \begin{aligned}
+                |a_n b_n-xy|&=|a_n b_n-xb_n+xb_n-xy|\\
+                &\leq |b_n|\cdot |a_n-x|+|x|\cdot |b_n-y|\\
+                &\leq M_1\cdot \frac{\varepsilon}{2M_1} + M_2\cdot \frac{\varepsilon}{2M_2}\\
+                &=\frac{\varepsilon}{2}+\frac{\varepsilon}{2}\\
+                &=\varepsilon.
+            \end{aligned}
+        \end{equation*}
+        Therefore, $\lim\limits_{n\to\infty}(a_n b_n)=(\lim\limits_{n\to\infty}a_n)(\lim\limits_{n\to\infty}b_n)$.
+    \end{proof}
+    \item \begin{proof}
+        Let $\bn=c,c,c,\dotsc$, by $(b)$, we have $\lim\limits_{n\to\infty}(a_n b_n)=\lim\limits_{n\to\infty}(c a_n)=c\lim\limits_{n\to\infty}(a_n)$.
+    \end{proof}
+    \item \begin{proof}
+        By $(c)$, $\lim\limits_{n\to\infty}(-b_n)=-\lim\limits_{n\to\infty}b_n$. By $(a)$, we have $\lim\limits_{n\to\infty}(a_n-b_n)=\lim\limits_{n\to\infty}(a_n+(-b_n))
+        =\lim\limits_{n\to\infty}a_n+\lim\limits_{n\to\infty}(-b_n)=\lim\limits_{n\to\infty}a_n-\lim\limits_{n\to\infty}(b_n)=x-y$. 
+    \end{proof}
+    \item \begin{proof}
+        Since $\bn$ converges to $y$, there exists $N\geq m$ such that $|b_n-y|\leq|y|/2$ for all $n\geq N$. Then $y-|y|/2\leq b_n\leq y+|y|/2$. If $y<0$, $b_n\leq y+|y|/2=y-y/2=y/2=-|y|/2$.
+        If $y>0$, $b_n\geq y-y/2=|y|/2$. Therefore, $|b_n|\geq |y|/2$ for $n\geq N$. Let $c=\min(|b_m|,\dotsc, |b_{N-1}|,|y|/2)$, we have $|b_i|\leq c$ for all $i\geq m$.
+        So $\bn$ is a Cauchy sequence bounded away from zero, hence $(b_n^{-1})_{n=m}^\infty$ is also a Cauchy sequence.
+
+        Consider an arbitrary $\varepsilon>0$. Since $|b_n|\geq c$ for all $n\geq m$, we have $1/|b_n|\leq 1/c$ for all $n\geq m$. Since $\bn$ converges to $y$,
+        there exists $N\geq m$ such that $|b_n-y|\leq c|y|\varepsilon$. Then 
+        \begin{equation*}
+            \begin{aligned}
+                \left|\frac{1}{b_n}-\frac{1}{y}\right|&=\left|\frac{b_n-y}{b_n\cdot y}\right|\\
+                &=\frac{1}{|b_n|}\cdot \frac{1}{|y|}\cdot |b_n-y|\\
+                &\leq \frac{1}{c}\cdot \frac{1}{|y|}\cdot c|y|\varepsilon\\
+                &=\varepsilon.
+            \end{aligned}
+        \end{equation*}
+        Thus, $(b_n^{-1})_{n=m}^\infty$ converges to $1/y$.
+    \end{proof}
+    \item \begin{proof}
+        By $(b)$, $\lim\limits_{n\to\infty}\frac{a_n}{b_n}=(\lim\limits_{n\to\infty}a_n)(\lim\limits_{n\to\infty}\frac{1}{b_n})$. By $(e)$, $\lim\limits_{n\to\infty}\frac{1}{b_n}=1/y$.
+        Therefore, $\lim\limits_{n\to\infty}\frac{a_n}{b_n}=x\cdot \frac{1}{y}=\frac{x}{y}$.
+    \end{proof}
+    \item \begin{proof} 
+        Suppose $x\geq y$. Consider an arbitrary $\varepsilon>0$. Since $\an$ converges to $x$, there exists $N_1$ such that $|a_n-x|\leq (x-y)/2$ for $n\geq N_1$. Then $
+        -(x-y)/2\leq a_n-x\leq (x-y)/2$, hence $a_n\geq (x+y)/2$. Since $\bn$ converges to $y$, there exists $N_2$ such that $|b_n-y|\leq (x-y)/2$ for $n\geq N_2$.
+        Then $b_n\leq (x+y)/2$. Let $N=\max(N_1,N_2)$, we have $a_n\geq (x+y)/2\geq b_n$ for all $n\geq N$. So when $n\geq N$, $\max(a_n,b_n)=a_n$. Since $\an$ converges to $x$,
+        there exists $M_1\geq m$ such that $|a_n-x|\leq \varepsilon$. Let $M=\max(N,M_1)$, we have $|\max(a_n,b_n)-\max(x,y)|=|a_n-x|\leq \varepsilon$ for all $n\geq M$. 
+
+        Similarly, we can show that if $y>x$, there exists $M\geq m$ such that $|\max(a_n,b_n)-\max(x,y)|=|b_n-y|\leq \varepsilon$ for all $n\geq M$. Thus, $(\max(a_n,b_n))_{n=m}^\infty$ converges to $\max(x,y)$.
+    \end{proof}
+    \item \begin{proof}
+        By $(b)$ and $(g)$, we have 
+        \begin{equation*}
+            \begin{aligned}
+                \lim_{n\to\infty}\min(a_n,b_n)&=-\lim_{n\to\infty}\max(-a_n,-b_n)\\
+                &=-\max(\lim_{n\to\infty}(-a_n),\lim_{n\to\infty}(-b_n))\\
+                &=-\max(-\lim_{n\to\infty}(a_n),-\lim_{n\to\infty}(b_n))\\
+                &=\min(\lim_{n\to\infty}a_n,\lim_{n\to\infty}b_n).
+            \end{aligned}
+        \end{equation*}
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 6.1.9.}
+Explain why Theorem 6.1.19 (f) fails when the limit of the denominator is 0.
+\begin{proof}
+    0 does not have a reciprocal. A counterexample is $a_n=1$, $b_n=1/n$. Then $(a_n/b_n)_{n=m}^\infty=(n)_{n=m}^\infty$ is not convergent and hence does not have a limit. 
+\end{proof}
+\subsubsection*{Exercise 6.1.10.}
+Show that the concept of equivalent Cauchy sequence, as defined in Definition 5.2.6, does not change if $\varepsilon$ is required to be positive real instead of positive rational.
+\begin{proof}
+    For all real $\varepsilon>0$, suppose $\an$ and $\bn$ are eventually $\varepsilon$-close. Since $\varepsilon$ is also a rational number, we have $\an$ and $\bn$ are eventually $\varepsilon$-close for every rational $\varepsilon>0$.
+    Suppose $\an$ and $\bn$ are eventually $\varepsilon$-close for every rational $\varepsilon>0$. Consider an arbitrary real $\varepsilon>0$. Since there exists a rational number such that $0<\varepsilon'<\varepsilon$.
+    Since $\an$ and $\bn$ are eventually $\varepsilon'$-close, there exists $N\geq m$ such that $|a_n-b_n|\leq\varepsilon'<\varepsilon$ for all $n\geq N$. Therefore, $\an$ and $\bn$
+    are eventually $\varepsilon$-close for all real $\varepsilon>0$.
+\end{proof}
+\end{document}
