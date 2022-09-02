@@ -320,4 +320,50 @@ Prove Theorem 6.2.11.
         For all $x\in E$, $M\leq x$. Then $-M\geq -x$ for all $-x\in -E$, so $-M\geq \sup(-E)$. Therefore, $M\leq -\sup(-E)=\inf(-E)$.  
     \end{proof}
 \end{enumerate}
+\subsection*{6.3 Suprema and Infima of sequences}
+\subsubsection*{Definition 6.3.1 (Sup and inf of sequences).}
+Let $\an$ be a sequence of real numbers. Then we define $\sup\an$ to be the supremum of the set $\{a_n:n\geq m\}$, and $\inf\an$ to the infimum of the same set 
+$\{a_n:n\geq m\}$.
+\subsubsection*{Proposition 6.3.6 (Least upper bound property).}
+Let $\an$ be a sequence of real numbers, and let $x$ be the extended real number $x:=\sup\an$. Then we have $a_n\leq x$ for all $n\geq m$. Also, whenever $M\in\mathbf{R^*}$ is an
+upper bound for $a_n$ (i.e., $a_n\leq M$ for all $n\geq m$), we have $x\leq M$. Finally, for every extended real number $y$ for which $y<x$, there exists 
+at least one $n\geq m$ for which $y<a_n\leq x$.
+\subsubsection*{Proposition 6.3.8 (Monotone bounded sequences converge).}
+Let $\an$ be a sequence of real numbers which has some finite upper bound $M\in\mathbf{R}$, and which is also increasing (i.e., $a_{n+1}\geq a_n$ for all $n\geq m$).
+Then $\an$ is convergent, and in fact $$\lim_{n\to\infty}a_n=\sup\an\leq M.$$
+\subsubsection*{Proposition 6.3.10}
+Let $0<x<1$. Then we have $\lim_{n\to\infty}x^n=0$.
+\subsubsection*{Exercise 6.3.1.}
+Verify the claim in Example 6.3.4.
+\begin{proof}
+    $\sup(a_n)_{n=1}^\infty=1$. Since $a_{n+1}=\frac{1}{n+1}<\frac{1}{n}=a_n$ for all $n\geq 1$, we have $a_n\leq a_1=1$ for all $n\geq 1$. Therefore, $M=1$ is an upper bound for $\an$.
+    For any $\varepsilon>0$, suppose $1-\varepsilon$ is an upper bound of $\an$. Then $a_1=1>1-\varepsilon$, a contradiction. Thus, $\sup(a_n)_{n=1}^\infty=1$.\\
+    $\inf(a_n)_{n=1}^\infty=0$. Since $a_n=1/n>0$ for all $n\geq 1$, 0 is a lower bound for $(a_n)_{n=1}^\infty$. Suppose there exists an $\varepsilon>0$ such that $\varepsilon$ is a lower bound 
+    for $(a_n)_{n=1}^\infty$. Let $N=\lceil\frac{1}{\varepsilon}\rceil+1>\frac{1}{\varepsilon}$, then $0<\frac{1}{N}=\frac{1}{\lceil\frac{1}{\varepsilon}\rceil+1}<\varepsilon$, a contraction. 
+    Thus, $\inf(a_n)_{n=1}^\infty=0$.
+\end{proof}
+\subsubsection*{Exercise 6.3.2.}
+Prove Proposition 6.3.6.
+\begin{proof}
+    Consider the set $E=\{a_n:n\geq m\}$. Since $a_n\leq M$ for all $n\geq m$, $M$ is an upper bound for $E$. By Theorem 6.2.11, we have $x=\sup(E)\leq M$. 
+    Suppose there exists $y<x$ such that for all $n\geq m$ we have $a_n\leq y<x$. Then by definition, since $y\geq a_n$ for all $n\geq m$, $y$ is an upper bound for $E$.
+    This contradicts the fact that $x$ is the least upper bound for $E$. Therefore, there exists at least one $n\geq m$ for which $y<a_n\leq x$.
+\end{proof}
+\subsubsection*{Exercise 6.3.3.}
+Prove Proposition 6.3.8.
+\begin{proof}
+    Since $\an$ has a finite upper bound, $\sup\an$ is a real number. Denote $\sup\an$ by $x$. We want to show that $\lim\limits_{n\to\infty}\an=x$. Consider an arbitrary real $\varepsilon>0$,
+    we have $y=x-\varepsilon<x$. By Proposition 6.3.6, there exists an $N\geq m$ for which $y<a_N\leq x$. Since $a_n$ is increasing, for all $n\geq N\geq m$, we have $y<a_n\leq x$.
+    In other words, for all $\varepsilon>0$, we can find an integer $N\geq m$ such that $|x-a_n|=x-a_n\leq |x-y|=\varepsilon$ for all $n\geq N$. Therefore, $\an$ converges to $\sup\an$. 
+    By Proposition 6.3.6, $\sup\an\leq M$. Thus, $\lim\limits_{n\to\infty}a_n=\sup\an\leq M$.
+\end{proof}
+\subsubsection*{Exercise 6.3.4.}
+Explain why Proposition 6.3.10 fails when $x>1$. In fact, show that the sequence $(x^n)_{n=1}^\infty$ diverges when $x>1$.
+\begin{proof}
+    We would like to show that $(x^n)_{n=1}^\infty$ diverges when $x>1$. Suppose $(x^n)_{n=1}^\infty$ converges to a real number $L$. Since $0<1/x<1$, by Proposition 6.3.10, we have $\lim\limits_{n\to\infty}(1/x)^n=0$.
+    Then $\lim\limits_{n\to\infty}(1/x)^n x^n=\lim\limits_{n\to\infty}(1/x)^n\cdot \lim\limits_{n\to\infty}x^n=0\cdot L=0$. By identity, we have $\lim\limits_{n\to\infty}(1/x)^n x^n=\lim\limits_{n\to\infty}1=1$. (contradiction)
+    Thus, $(x^n)_{n=1}^\infty$ diverges when $x>1$.
+
+    In Example 1.2.3, it asserts that $x^n$ is convergent without specifying the range of $x$. If $x>1$, the sequence does not converge, which would cause the proof to be faulty.
+\end{proof}
 \end{document}
