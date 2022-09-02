@@ -233,4 +233,91 @@ Show that the concept of equivalent Cauchy sequence, as defined in Definition 5.
     Since $\an$ and $\bn$ are eventually $\varepsilon'$-close, there exists $N\geq m$ such that $|a_n-b_n|\leq\varepsilon'<\varepsilon$ for all $n\geq N$. Therefore, $\an$ and $\bn$
     are eventually $\varepsilon$-close for all real $\varepsilon>0$. 
 \end{proof}
+\subsection*{6.2 The Extended real number system}
+\subsubsection*{Definition 6.2.1 (Extended real number system).}
+The extended real number system $\mathbf{R^*}$ is the real line $\mathbf{R}$ with two additional elements attached, called $+\infty$ and $-\infty$. These elements are distinct from each 
+other and also distinct from every real number. An extended real number $x$ is called finited iff it is a real number, and infinite iff it is equal to $+\infty$ and $-\infty$.
+\subsubsection*{Definition 6.2.2 (Negation of extended reals).}
+The operation of negation $x\mapsto -x$ on $\mathbf{R}$, we now extend to $\mathbf{R^*}$ by defining $-(+\infty):=-\infty$ and $-(-\infty):=+\infty$.
+\subsubsection*{Definition 6.2.3 (Ordering of extended reals).}
+Let $x$ and $y$ be extended real numbers. We say that $x\geq y$, i.e., $x$ is less than or equal to $y$, iff one of the following three statements is true:
+\begin{enumerate}[label=(\alph*)]
+    \item $x$ and $y$ are real numbers, and $x\geq y$ as real numbers.
+    \item $y=+\infty$.
+    \item $x=-\infty$.
+\end{enumerate}
+We say that $x<y$ if we have $x\leq y$ and $x\ne y$. We sometimes write $x<y$ as $y>x$, and $x\leq y$ as $y\geq x$. 
+\subsubsection*{Proposition 6.2.5.}
+Let $x,y,z$ be extended real numbers. Then the following statements are true:
+\begin{enumerate}[label=(\alph*)]
+    \item (Reflexivity) We have $x\leq x$.
+    \item (Trichotomy) Exactly one of the statements $x<y$, $x=y$, or $x>y$ is true.
+    \item (Transitivity) If $x\leq y$ and $y\leq z$, then $x\leq z$.
+    \item (Negation reverses order) If $x\leq y$, then $-y\leq -x$.
+\end{enumerate}
+\subsubsection*{Definition 6.2.6 (Supremum of sets of extended reals).}
+Let $E$ be a subset of $\mathbf{R^*}$. Then we define the supremum $\sup(E)$ or least upper bound of $E$ by the following rule. 
+\begin{enumerate}[label=(\alph*)]
+    \item If $E$ is contained in $\mathbf{R}$ (i.e., $+\infty$ and $-\infty$ are not elements of $E$), then we let $\sup(E)$ be as defined in Definition 5.5.10.
+    \item If $E$ contains $+\infty$, then we set $\sup(E):=+\infty$.
+    \item If $E$ does not contain $+\infty$ but does contain $-\infty$, then we set $\sup(E):=\sup(E\backslash\{-\infty\})$ (which is a subset of $\mathbf{R}$ and thus falls under case (a)).
+\end{enumerate}
+We also define the infimum $\inf(E)$ of $E$ (also known as the greatest lower bound of $E$) by the formula $$\inf(E):=-\sup(-E)$$ where $-E$ is the set $-E:=\{-x:x\in E\}$.
+\subsubsection*{Theorem 6.2.11.}
+Let $E$ be a subset of $\mathbf{R^*}$. Then the following statements are true.
+\begin{enumerate}[label=(\alph*)]
+    \item For every $x\in E$ we have $x\leq \sup(E)$ and $x\geq \inf(E)$.
+    \item Suppose that $M\in\mathbf{R^*}$ is an upper bound for $E$, i.e., $x\leq M$ for all $x\in E$. Then we have $\sup(E)\leq M$.
+    \item Suppose that $M\in\mathbf{R^*}$ is a lower bound for $E$, i.e., $x\geq M$ for all $x\in E$. Then we have $\inf(E)\geq M$. 
+\end{enumerate}
+\subsubsection*{Exercise 6.2.1.}
+Prove Proposition 6.2.5.
+\begin{enumerate}[label=(\alph*)]
+    \item \begin{proof}
+        If $x$ is a real number, since $x=x$, we have $x\leq x$. If $x=+\infty$, by Definition 6.2.3, we have $x\leq x$. If $x=-\infty$, by Definition 6.2.3, we have $x\leq x$.
+        Therefore, $x\leq x$ for extended real $x$.
+    \end{proof}
+    \item \begin{proof}
+        $x$ and $y$ are both real numbers. By Proposition 5.4.7, the statement is true. \\
+        $x=+\infty$, $y=+\infty$. By Definition 6.2.3, we have $x\leq y$. Since $x=y$, $x\nless y$ and $y\nless x$. Similarly, we can show that if $x=-\infty$ and $y=-\infty$,
+        we have $x=y$ but $x\nless y$ and $y\nless x$.\\
+        $x=+\infty$, $y=-\infty$. Since $x=+\infty$, by Definition 6.2.3, we have $y\leq x$. As $x\ne y$. $y<x$. Since $y\ne +\infty$ and $x\ne -\infty$, $x\ne y$ does not hold.
+        Thus, $x\nless y$.\\
+        $x$ is real ($x=+\infty$), $y=+\infty$ ($y$ is real). Since $y=+\infty$, by Definition 6.2.3, $x\leq y$. Since $x\ne +\infty$, $x\ne$ and hence $x<y$. Also by Definition 6.2.3,
+        $y\leq x$ does not hold, hence $y\nless x$. The cases of $x=-\infty$ ($x$ is real), $y$ is real ($y=-\infty$) can be shown in a similar way.
+    \end{proof}
+    \item \begin{proof}
+        $x,y,z$ are real. Can be derived from the transitivity of real numbers.\\
+        $x=-\infty$. By Definition 6.2.3, $x\leq z$.\\
+        $y=-\infty$. By Definition 6.2.3, we have $x=-\infty$, hence $x\leq z$.\\
+        $z=-\infty$. By Definition 6.2.3, $y=-\infty$. Since $x\leq y$, $x=-\infty$. Hence, $x\leq z$.\\
+        $x=+\infty$. Since $x\leq y$, by Definition 6.2.3, we have $y=+\infty$. Since $y\leq z$, by Definition 6.2.3, we have $z=+\infty$. Hence, $x\leq z$.\\
+        $y=+\infty$. Since $y\leq z$, by Definition 6.2.3, we have $z=+\infty$. Hence, $x\leq z$.\\
+        $z=+\infty$. By Definition 6.2.3, $x\leq z$.
+    \end{proof}
+    \item \begin{proof}
+        $x,y$ are real. Since $x\leq y$, $y-x\geq 0$. Then $-y-(-x)\leq 0$. Therefore, $-y\leq -x$.\\
+        $y=+\infty$. Then $-y=-\infty$, by Definition 6.2.3, $-y\leq -x$.\\
+        $x=-\infty$. Then $-x=+\infty$, by Definition 6.2.3, $-y\leq -x$.
+    \end{proof}
+\end{enumerate}
+\subsubsection*{Exercise 6.2.2.}
+Prove Theorem 6.2.11. 
+\begin{enumerate}[label=(\alph*)]
+    \item \begin{proof}
+        $E\subseteq\mathbf{R}$. By the definition of supremum, infimum, and the least upper bound, we have $x\leq\sup(E)$ and $x\geq\inf(E)$.\\
+        $+\infty\in E$, $-\infty\notin E$. By Definition 6.2.6, $\sup(E)=+\infty$, and by Definition 6.2.3, $x\leq\sup(E)$. In this case, $\inf(E)=\inf(E\backslash\{+\infty\})$. 
+        For all $x\ne +\infty$, it follows the case we have proved above ($E\subseteq\mathbf{R}$). For $x=+\infty$, by Definition 6.2.3, $x\geq\inf(E)$.\\
+        $-\infty\in E$, $+\infty\in E$. Similar to the case above.\\
+        $+\infty\in E$, $-\infty\in E$. Since $+\infty\in E$, $x\leq\sup(E)=+\infty$. In this case, $\inf(E)=-\infty$. By Definition 6.2.3, $x\geq\inf(E)$.
+    \end{proof}
+    \item \begin{proof}
+        $E\subseteq\mathbf{R}$. We have $x\leq\sup(E)\leq M$.\\
+        $+\infty\in E$. Since $+\infty\leq M$, $M=+\infty$. By Definition 6.2.3, $\sup(E)\leq M=+\infty$.\\
+        $-\infty\in E$, $+\infty\notin E$. $\sup(E)=\sup(E\backslash\{-\infty\})$, then $\sup(E)=\sup(E\backslash\{-\infty\})\leq M$.
+    \end{proof}
+    \item \begin{proof}
+        For all $x\in E$, $M\leq x$. Then $-M\geq -x$ for all $-x\in -E$, so $-M\geq \sup(-E)$. Therefore, $M\leq -\sup(-E)=\inf(-E)$.  
+    \end{proof}
+\end{enumerate}
 \end{document}
